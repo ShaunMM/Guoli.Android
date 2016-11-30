@@ -7,6 +7,7 @@ import java.util.Date;
  */
 
 public class DrivePlan {
+
     private int id;
     private String LineName;
     private String TrainCode;
