@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="top"
+    android:id="@+id/parent"
+    android:weightSum="1">
+    <!--功能菜单栏  -->
+    <LinearLayout
+        android:id="@+id/tablist"
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary">
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/Zero"
+            android:layout_weight="5"
+            android:gravity="center_horizontal">
+
+            <TextView  android:layout_width="wrap_content"
+                android:layout_height="23dp"
+                android:text="按目索书"
+                android:textSize="20dip"
+                android:textColor="@color/black"
+                android:layout_marginBottom="4dp"
+                />
+        </LinearLayout>
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/One"
+            android:layout_weight="5"
+            android:gravity="center_horizontal">
+
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="23dp"
+                android:text="全文搜索"
+                android:textSize="20dip"
+                android:textColor="@color/black"
+                android:layout_marginBottom="4dp"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!--动态显示界面-->
+    <LinearLayout android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/body"
+        android:gravity="center">
+    </LinearLayout>
+
+</LinearLayout>

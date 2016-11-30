@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/ll_container"
+    >
+
+    <LinearLayout
+        android:background="@color/colorblue2"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        >
+        <TextView
+            android:id="@+id/daily_addremovekp_keyperson"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="添乘车次"
+            android:gravity="center"
+            android:layout_weight="1"
+            />
+        <TextView
+            android:id="@+id/daily_addremovekp_keystation"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="值乘司机"
+            android:gravity="center"
+            android:layout_weight="1"
+            />
+        <TextView
+            android:id="@+id/daily_addremovekp_address"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="添乘区段"
+            android:gravity="center"
+            android:layout_weight="1"
+            />
+        <TextView
+            android:id="@+id/daily_addremovekp_data"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="添乘时间"
+            android:gravity="center"
+            android:layout_weight="1"
+            />
+        <TextView
+            android:id="@+id/dodata1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="操作"
+            android:gravity="center"
+            android:layout_weight="1"
+            />
+
+    </LinearLayout>
+    <ListView
+
+        android:id="@+id/daily_tiancheng_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        ></ListView>
+
+
+</LinearLayout>

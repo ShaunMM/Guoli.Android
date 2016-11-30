@@ -1,0 +1,704 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="20dp"
+
+        >
+        <TextView
+            android:layout_height="wrap_content"
+            android:text="日期："
+            android:layout_width="150dp"
+            android:gravity="right"
+            android:textSize="@dimen/detailstextsize"
+
+            />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:textSize="@dimen/detailstextsize"
+                android:id="@+id/tiancheng_takedate"
+                android:layout_width="140dp"
+                android:gravity="center"
+                android:text=""
+                android:layout_height="wrap_content"
+                />
+        </LinearLayout>
+
+        <TextView
+            android:textSize="@dimen/detailstextsize"
+            android:id="@+id/checi"
+            android:layout_width="150dp"
+            android:gravity="right"
+            android:layout_height="wrap_content"
+            android:text="车次："
+            />
+            <TextView
+                android:id="@+id/tiancheng_TrainCode"
+                android:layout_width="140dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text=""
+                android:textSize="@dimen/detailstextsize"
+                />
+
+
+        <TextView
+            android:textSize="@dimen/detailstextsize"
+            android:layout_width="150dp"
+            android:gravity="right"
+            android:layout_height="wrap_content"
+            android:text="机车型号："
+
+            />
+        <EditText
+            android:id="@+id/tiancheng_LocomotiveType"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:background="@null"
+
+            android:text=""
+            android:singleLine="true"
+            android:gravity="center"
+            android:textSize="@dimen/detailstextsize">
+            <requestFocus/>
+
+        </EditText>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:layout_marginLeft="150dp"
+            android:layout_width="140dp"
+            android:layout_height="1dp"
+            android:background="@color/sblack"
+            />
+        <TextView
+            android:layout_marginLeft="150dp"
+            android:layout_width="140dp"
+            android:layout_height="1dp"
+            android:background="@color/sblack"
+            />
+        <TextView
+            android:layout_marginLeft="150dp"
+            android:layout_width="140dp"
+            android:layout_height="1dp"
+            android:background="@color/sblack"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:paddingTop="30dp"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:layout_width="150dp"
+            android:gravity="right"
+            android:layout_height="wrap_content"
+            android:text="主班司机："
+            android:textSize="@dimen/detailstextsize"
+            />
+            <TextView
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text=""
+                android:id="@+id/taincheng_DriverId"
+                android:gravity="center"
+                android:textSize="@dimen/detailstextsize"
+                />
+
+
+
+        <TextView
+            android:layout_width="150dp"
+            android:gravity="right"
+            android:layout_height="wrap_content"
+            android:text="副班司机："
+            android:textSize="@dimen/detailstextsize"
+            />
+
+            <TextView
+                android:textSize="@dimen/detailstextsize"
+                android:id="@+id/tiancheng_ViceDriverId"
+                android:layout_width="140dp"
+                android:text=""
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                />
+
+
+        <TextView
+            android:layout_width="150dp"
+            android:gravity="right"
+            android:layout_height="wrap_content"
+            android:text="学习司机："
+            android:textSize="@dimen/detailstextsize"
+            />
+
+
+            <TextView
+                android:id="@+id/tiancheng_StudentId"
+                android:layout_width="140dp"
+                android:text=""
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="@dimen/detailstextsize"
+                />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:layout_marginLeft="150dp"
+            android:layout_width="140dp"
+            android:layout_height="1dp"
+            android:background="@color/sblack"
+            />
+        <TextView
+            android:layout_marginLeft="150dp"
+            android:layout_width="140dp"
+            android:layout_height="1dp"
+            android:background="@color/sblack"
+            />
+        <TextView
+            android:layout_marginLeft="150dp"
+            android:layout_width="140dp"
+            android:layout_height="1dp"
+            android:background="@color/sblack"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="30dp"
+        >
+        <TextView
+            android:layout_width="150dp"
+            android:gravity="right"
+            android:layout_height="wrap_content"
+            android:text="辆数："
+            android:textSize="@dimen/detailstextsize"
+            />
+
+            <EditText
+                android:id="@+id/tiancheng_CarCount"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:text=""
+                android:inputType="number"
+                android:gravity="center"
+                android:textSize="@dimen/detailstextsize"
+
+                />
+
+
+        <TextView
+            android:layout_width="150dp"
+            android:gravity="right"
+            android:layout_height="wrap_content"
+            android:text="总重："
+            android:textSize="@dimen/detailstextsize"
+            />
+            <EditText
+                android:id="@+id/tiancheng_WholeWeight"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:text=""
+                android:textSize="@dimen/detailstextsize"
+                android:gravity="center"
+                android:inputType="number"
+                />
+
+        <TextView
+            android:layout_width="150dp"
+            android:gravity="right"
+            android:layout_height="wrap_content"
+            android:text="换长："
+            android:textSize="@dimen/detailstextsize"
+
+            />
+
+
+            <EditText
+                android:id="@+id/tiancheng_Length"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:text=""
+                android:textSize="@dimen/detailstextsize"
+                android:gravity="center"
+                android:inputType="number"
+                />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:layout_marginLeft="150dp"
+            android:layout_width="140dp"
+            android:layout_height="1dp"
+            android:background="@color/sblack"
+            />
+        <TextView
+            android:layout_marginLeft="150dp"
+            android:layout_width="140dp"
+            android:layout_height="1dp"
+            android:background="@color/sblack"
+            />
+        <TextView
+            android:layout_marginLeft="150dp"
+            android:layout_width="140dp"
+            android:layout_height="1dp"
+            android:background="@color/sblack"
+            />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:paddingTop="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:layout_width="150dp"
+            android:gravity="right"
+            android:layout_height="wrap_content"
+            android:text="添乘区段："
+            android:textSize="@dimen/detailstextsize"
+            />
+
+
+            <TextView
+                android:id="@+id/tiancheng_TakeSection1"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:gravity="center"
+                android:textSize="@dimen/detailstextsize"
+                />
+        <TextView
+            android:textSize="@dimen/detailstextsize"
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:text="到"
+            android:gravity="center"
+            />
+        <TextView
+            android:id="@+id/tiancheng_TakeSection2"
+            android:layout_width="60dp"
+            android:textSize="@dimen/detailstextsize"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:gravity="center"
+            />
+
+
+        <TextView
+            android:textSize="@dimen/detailstextsize"
+            android:layout_width="150dp"
+            android:gravity="right"
+            android:layout_height="wrap_content"
+            android:text="开车时间："
+            />
+
+
+            <TextView
+                android:id="@+id/tiancheng_RunStart"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text=""
+
+                android:textSize="@dimen/detailstextsize"
+                />
+
+        <TextView
+            android:layout_width="150dp"
+            android:gravity="right"
+            android:layout_height="wrap_content"
+            android:text="到达时间："
+            android:textSize="@dimen/detailstextsize"
+            />
+            <TextView
+                android:id="@+id/tiancheng_RunEnd"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="@dimen/detailstextsize"
+                android:gravity="center"
+                />
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:layout_marginLeft="150dp"
+            android:layout_width="60dp"
+            android:layout_height="1dp"
+            android:background="@color/sblack"
+            />
+        <TextView
+            android:layout_marginLeft="20dp"
+            android:layout_width="60dp"
+            android:layout_height="1dp"
+            android:background="@color/sblack"
+            />
+        <TextView
+            android:layout_marginLeft="150dp"
+            android:layout_width="140dp"
+            android:layout_height="1dp"
+            android:background="@color/sblack"
+            />
+        <TextView
+            android:layout_marginLeft="150dp"
+            android:layout_width="140dp"
+            android:layout_height="1dp"
+            android:background="@color/sblack"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="30dp"
+        >
+        <TextView
+            android:layout_width="150dp"
+            android:gravity="right"
+            android:layout_height="wrap_content"
+            android:text="操纵区段："
+            android:textSize="@dimen/detailstextsize"
+            />
+
+            <TextView
+                android:id="@+id/tiancheng_OperateSection1"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:gravity="center"
+                android:textSize="@dimen/detailstextsize"
+                />
+        <TextView
+            android:textSize="@dimen/detailstextsize"
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="到"
+            />
+        <TextView
+            android:id="@+id/tiancheng_OperateSection2"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="@dimen/detailstextsize"
+            android:gravity="center"
+            />
+        <TextView
+            android:layout_width="150dp"
+            android:gravity="right"
+            android:layout_height="wrap_content"
+            android:text="开始时间："
+            android:textSize="@dimen/detailstextsize"
+            />
+
+            <TextView
+                android:id="@+id/tiancheng_OperateStart"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:gravity="center"
+                android:textSize="@dimen/detailstextsize"
+                />
+
+        <TextView
+            android:layout_width="150dp"
+            android:gravity="right"
+            android:layout_height="wrap_content"
+            android:text="结束时分："
+            android:textSize="@dimen/detailstextsize"
+            />
+
+            <TextView
+                android:id="@+id/tiancheng_OperateEnd"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:gravity="center"
+                android:textSize="@dimen/detailstextsize"
+                />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:layout_marginLeft="150dp"
+            android:layout_width="60dp"
+            android:layout_height="1dp"
+            android:background="@color/sblack"
+            />
+        <TextView
+            android:layout_marginLeft="20dp"
+            android:layout_width="60dp"
+            android:layout_height="1dp"
+            android:background="@color/sblack"
+            />
+        <TextView
+            android:layout_marginLeft="150dp"
+            android:layout_width="140dp"
+            android:layout_height="1dp"
+            android:background="@color/sblack"
+            />
+        <TextView
+            android:layout_marginLeft="150dp"
+            android:layout_width="140dp"
+            android:layout_height="1dp"
+            android:background="@color/sblack"
+            />
+
+    </LinearLayout>
+    <LinearLayout
+        android:paddingTop="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:layout_width="150dp"
+            android:gravity="right"
+            android:layout_height="wrap_content"
+            android:text="出勤时间："
+            android:textSize="@dimen/detailstextsize"
+            />
+
+            <TextView
+                android:id="@+id/tiancheng_AttendTime"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text=""
+                android:textSize="@dimen/detailstextsize"
+                />
+
+
+        <TextView
+            android:layout_width="150dp"
+            android:gravity="right"
+            android:layout_height="wrap_content"
+            android:text="退勤时间："
+            android:textSize="@dimen/detailstextsize"
+            />
+
+            <TextView
+                android:id="@+id/tiancheng_EndAttendTime"
+                android:layout_width="140dp"
+                android:text=""
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="@dimen/detailstextsize"
+                />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:layout_marginLeft="150dp"
+            android:layout_width="140dp"
+            android:layout_height="1dp"
+            android:background="@color/sblack"
+            />
+        <TextView
+            android:layout_marginLeft="150dp"
+            android:layout_width="140dp"
+            android:layout_height="1dp"
+            android:background="@color/sblack"
+            />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="30dp"
+        >
+        <TextView
+            android:layout_width="150dp"
+            android:gravity="right"
+            android:layout_height="wrap_content"
+            android:text="添乘目的："
+            android:textSize="@dimen/detailstextsize"
+            />
+        <EditText
+            android:id="@+id/daily_tiancheng_aim"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="4"
+            android:text=""
+            android:background="@null"
+            android:textSize="@dimen/detailstextsize"
+            />
+
+    </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="150dp"
+        android:layout_marginRight="30dp"
+        android:background="@color/sblack"
+        />
+    <LinearLayout
+        android:paddingTop="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:textSize="@dimen/detailstextsize"
+            android:layout_width="150dp"
+            android:gravity="right"
+            android:layout_height="wrap_content"
+            android:text="发现问题："
+            />
+        <EditText
+            android:id="@+id/daily_tiancheng_problem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="4"
+            android:text=""
+            android:background="@null"
+            android:textSize="@dimen/detailstextsize"
+            />
+
+    </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="150dp"
+        android:layout_marginRight="30dp"
+        android:background="@color/sblack"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="30dp"
+        >
+        <TextView
+            android:textSize="@dimen/detailstextsize"
+            android:layout_width="150dp"
+            android:gravity="right"
+            android:layout_height="wrap_content"
+            android:text="指导意见："
+            />
+        <EditText
+            android:id="@+id/daily_tiancheng_dopinion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="4"
+            android:background="@null"
+            android:textSize="@dimen/detailstextsize"
+            android:text=""
+            />
+    </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="150dp"
+        android:layout_marginRight="30dp"
+        android:background="@color/sblack"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp"
+        android:gravity="center_horizontal"
+        >
+
+        <Button
+            android:id="@+id/daily_tiancheng_save"
+            android:layout_width="150dp"
+            android:layout_height="45dp"
+            android:gravity="center"
+            android:text="保存到本地"
+            android:textColor="@color/white"
+            android:background="@drawable/buttonclickcolor"
+            android:textSize="@dimen/detailstextsize"
+            />
+        <Button
+            android:id="@+id/daily_tiancheng_saveup"
+            android:layout_width="150dp"
+            android:layout_height="45dp"
+            android:gravity="center"
+            android:text="保存并上传"
+            android:textSize="@dimen/detailstextsize"
+            android:textColor="@color/white"
+            android:background="@drawable/buttonclickcolor"
+            android:layout_marginLeft="80dp"
+            android:layout_marginRight="80dp"
+            android:visibility="invisible"
+
+            />
+        <Button
+            android:id="@+id/daily_tiancheng_cancle"
+            android:layout_width="150dp"
+            android:layout_height="45dp"
+            android:gravity="center"
+            android:text="取消"
+            android:textSize="@dimen/detailstextsize"
+            android:textColor="@color/white"
+            android:background="@drawable/buttonclickcolor"
+            />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,32 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 24
+    buildToolsVersion "24.0.1"
+
+    defaultConfig {
+        applicationId "zj.com.mc"
+        minSdkVersion 17
+        targetSdkVersion 24
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile 'junit:junit:4.12'
+    compile files('libs/nohttp1.0.5-include-source.jar')
+    compile 'com.android.support:appcompat-v7:24.1.1'
+    compile 'com.google.code.gson:gson:2.7'
+    compile 'org.apache.ant:ant:1.9.7'
+    compile 'org.apache.commons:commons-io:1.3.2'
+    compile 'com.android.support:design:24.1.1'
+    compile 'de.greenrobot:eventbus:3.0.0-beta1'
+}

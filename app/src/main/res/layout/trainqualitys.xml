@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <RelativeLayout
+        android:id="@+id/qualitys_relayout"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        >
+    <TextView
+        android:id="@+id/qualitys_title2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/colorwhite"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="机车质量登记"
+        android:textStyle="bold"
+        android:textSize="16sp" />
+    <LinearLayout
+        android:id="@+id/qualitys_titleback"
+        android:layout_width="wrap_content"
+        android:layout_height= "match_parent"
+        android:padding="10dp"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:layout_width="15dp"
+            android:layout_height="match_parent"
+            android:background="@mipmap/db_1"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="返回"
+            android:layout_gravity="center"
+            android:textSize="16sp"
+            android:paddingLeft="5dp"
+            />
+    </LinearLayout>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_marginTop="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <ScrollView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none"
+            >
+            <include
+                android:id="@+id/qualitys_include"
+                layout="@layout/trainqualitys2"
+                />
+        </ScrollView>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorwhite"
+        android:id="@+id/qualitys_popuwindow"
+        android:visibility="gone"
+        >
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:background="@color/white"
+            android:layout_marginLeft="200dp"
+            android:layout_marginRight="200dp"
+            android:layout_marginTop="10dp"
+            >
+            <EditText
+                android:layout_width="0dp"
+                android:singleLine="true"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_marginLeft="10dp"
+                android:inputType="text"
+                android:layout_height="wrap_content"
+                android:id="@+id/qualitysedit_key" />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="确定"
+                android:layout_margin="5dp"
+                android:id="@+id/qualitys_popuwindow_yes"
+                />
+
+        </LinearLayout>
+
+
+
+        <ListView
+            android:layout_marginLeft="210dp"
+            android:layout_marginRight="295dp"
+            android:layout_marginTop="52dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/qualitys_poplist"
+            android:visibility="visible"
+            android:background="@color/white"
+            android:layout_gravity="center_horizontal"
+            />
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:visibility="visible"
+    >
+
+    <RelativeLayout
+        android:id="@+id/goodp_relayout"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        >
+        <TextView
+            android:id="@+id/daily_goodp_title2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:background="@color/colorwhite"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="防止事故及好人好事记录"
+
+            android:textSize="16sp" />
+        <LinearLayout
+            android:id="@+id/daily_goodp_titleback"
+            android:layout_width="wrap_content"
+            android:layout_height= "45dp"
+            android:padding="10dp"
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:layout_width="15dp"
+                android:layout_height="match_parent"
+                android:background="@mipmap/db_1"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="返回"
+                android:layout_gravity="center"
+                android:textSize="16sp"
+                android:paddingLeft="5dp"
+                />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="40dp"
+        android:layout_height="match_parent"
+        >
+        <ScrollView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none"
+            >
+            <include
+                android:id="@+id/goodp_include"
+                layout="@layout/preventgoodp"
+                />
+        </ScrollView>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorwhite"
+        android:id="@+id/goodp_popuwindow"
+        android:visibility="gone"
+        >
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:background="@color/white"
+            android:layout_marginLeft="200dp"
+            android:layout_marginRight="200dp"
+            android:layout_marginTop="10dp"
+            >
+            <EditText
+                android:layout_width="0dp"
+                android:singleLine="true"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_marginLeft="10dp"
+                android:inputType="text"
+                android:layout_height="wrap_content"
+                android:id="@+id/goodp_edit_key" />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="确定"
+                android:layout_margin="5dp"
+                android:id="@+id/goodp_popuwindow_yes"
+                />
+
+        </LinearLayout>
+
+        <ListView
+            android:layout_marginLeft="210dp"
+            android:layout_marginRight="295dp"
+            android:layout_marginTop="52dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/goodp_listv"
+            android:visibility="visible"
+            android:background="@color/white"
+            android:layout_gravity="center_horizontal"
+            />
+    </RelativeLayout>
+
+</RelativeLayout>

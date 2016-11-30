@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="30dp"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="@dimen/detailslayoutpadingtop"
+        >
+        <TextView
+            android:layout_height="wrap_content"
+            android:text="登记日期："
+            android:layout_width="120dp"
+            android:gravity="right"
+android:textSize="@dimen/detailstextsize"
+            />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:textSize="@dimen/detailstextsize"
+                android:id="@+id/qualitys_takedate"
+                android:layout_width="140dp"
+                android:gravity="center"
+                android:text=""
+                android:layout_height="wrap_content"
+                />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/checi"
+            android:layout_width="120dp"
+            android:gravity="right"
+            android:layout_height="wrap_content"
+            android:text="车次："
+            android:textSize="@dimen/detailstextsize"
+            />
+            <TextView
+                android:textSize="@dimen/detailstextsize"
+                android:id="@+id/qualitys_TrainCode"
+                android:layout_width="140dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text=""
+                />
+
+
+        <TextView
+            android:layout_width="120dp"
+            android:gravity="right"
+            android:layout_height="wrap_content"
+            android:text="机车型号："
+            android:textSize="@dimen/detailstextsize"
+            />
+        <EditText
+            android:textSize="@dimen/detailstextsize"
+            android:id="@+id/qualitys_LocomotiveType"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:text=""
+            android:singleLine="true"
+            android:gravity="center"
+            />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:layout_marginLeft="120dp"
+            android:layout_width="140dp"
+            android:layout_height="1dp"
+            android:background="@color/sblack"
+            />
+        <TextView
+            android:layout_marginLeft="120dp"
+            android:layout_width="140dp"
+            android:layout_height="1dp"
+            android:background="@color/sblack"
+            />
+        <TextView
+            android:layout_marginLeft="120dp"
+            android:layout_width="140dp"
+            android:layout_height="1dp"
+            android:background="@color/sblack"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:paddingTop="@dimen/detailslayoutpadingtop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:textSize="@dimen/detailstextsize"
+            android:layout_width="120dp"
+            android:gravity="right"
+            android:layout_height="wrap_content"
+            android:text="主班司机："
+
+            />
+            <TextView
+                android:textSize="@dimen/detailstextsize"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text=""
+                android:id="@+id/qualitys_DriverId"
+                android:gravity="center"
+                />
+
+
+
+        <TextView
+            android:layout_width="120dp"
+            android:gravity="right"
+            android:layout_height="wrap_content"
+            android:text="修程："
+            android:textSize="@dimen/detailstextsize"
+            />
+
+            <EditText
+                android:textSize="@dimen/detailstextsize"
+                android:id="@+id/qualitys_ViceDriverId"
+                android:layout_width="140dp"
+                android:text=""
+                android:background="@null"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                />
+
+
+        <TextView
+            android:layout_width="120dp"
+            android:gravity="right"
+            android:layout_height="wrap_content"
+            android:text="保养状态："
+            android:textSize="@dimen/detailstextsize"
+            />
+
+
+            <EditText
+                android:textSize="@dimen/detailstextsize"
+                android:id="@+id/qualitys_StudentId"
+                android:layout_width="140dp"
+                android:text=""
+                android:background="@null"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:layout_marginLeft="120dp"
+            android:layout_width="140dp"
+            android:layout_height="1dp"
+            android:background="@color/sblack"
+            />
+        <TextView
+            android:layout_marginLeft="120dp"
+            android:layout_width="140dp"
+            android:layout_height="1dp"
+            android:background="@color/sblack"
+            />
+        <TextView
+            android:layout_marginLeft="120dp"
+            android:layout_width="140dp"
+            android:layout_height="1dp"
+            android:background="@color/sblack"
+            />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:paddingTop="@dimen/detailslayoutpadingtop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:layout_width="120dp"
+            android:gravity="right"
+            android:layout_height="wrap_content"
+            android:text="评定成绩："
+            android:textSize="@dimen/detailstextsize"
+            />
+
+            <EditText
+                android:textSize="@dimen/detailstextsize"
+                android:id="@+id/qualitys_AttendTime"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text=""
+                android:background="@null"
+                />
+
+
+        <TextView
+            android:textSize="@dimen/detailstextsize"
+            android:layout_width="180dp"
+            android:gravity="right"
+            android:layout_height="wrap_content"
+            android:text="惯性及故障处理："
+            />
+
+            <EditText
+                android:textSize="@dimen/detailstextsize"
+                android:id="@+id/qualitys_EndAttendTime"
+                android:layout_width="match_parent"
+                android:text=""
+                android:layout_marginRight="3dp"
+                android:singleLine="true"
+                android:background="@null"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginRight="30dp"
+        >
+        <TextView
+            android:layout_marginLeft="120dp"
+            android:layout_width="140dp"
+            android:layout_height="1dp"
+            android:background="@color/sblack"
+            />
+        <TextView
+            android:layout_marginLeft="180dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/sblack"
+            />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="@dimen/detailslayoutpadingtop"
+        >
+        <TextView
+            android:textSize="@dimen/detailstextsize"
+            android:layout_width="120dp"
+            android:gravity="right"
+            android:layout_height="wrap_content"
+            android:text="概况："
+            />
+        <EditText
+            android:textSize="@dimen/detailstextsize"
+            android:id="@+id/daily_qualitys_aim"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="4"
+            android:text=""
+            android:background="@null"
+            />
+
+    </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="120dp"
+        android:layout_marginRight="30dp"
+        android:background="@color/sblack"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="30dp"
+        android:gravity="center_horizontal"
+        >
+
+        <Button
+            android:textSize="@dimen/detailstextsize"
+            android:id="@+id/daily_qualitys_save"
+            android:layout_width="150dp"
+            android:layout_height="45dp"
+            android:gravity="center"
+            android:text="保存到本地"
+            android:textColor="@color/white"
+            android:background="@drawable/buttonclickcolor"
+            />
+        <Button
+            android:textSize="@dimen/detailstextsize"
+            android:id="@+id/daily_qualitys_saveup"
+            android:layout_width="150dp"
+            android:layout_height="45dp"
+            android:gravity="center"
+            android:text="保存并上传"
+            android:textColor="@color/white"
+            android:background="@drawable/buttonclickcolor"
+            android:layout_marginLeft="80dp"
+            android:layout_marginRight="80dp"
+            android:visibility="invisible"
+            />
+        <Button
+            android:textSize="@dimen/detailstextsize"
+            android:id="@+id/daily_qualitys_cancle"
+            android:layout_width="150dp"
+            android:layout_height="45dp"
+            android:gravity="center"
+            android:text="取消"
+            android:textColor="@color/white"
+            android:background="@drawable/buttonclickcolor"
+            />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:id="@+id/daily_wroklayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="@color/colorwhite"
+            android:text="行车资料"
+            android:gravity="center"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:id="@+id/search_result_back"
+            android:visibility="gone"
+            >
+            <TextView
+                android:layout_margin="10dp"
+
+                android:layout_width="15dp"
+                android:layout_height="match_parent"
+                android:background="@mipmap/db_1"
+                />
+            <TextView
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="返回"
+                />
+        </LinearLayout>
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="20dp"
+
+
+        >
+        <AutoCompleteTextView
+            android:id="@+id/search_edittext"
+            android:layout_width="0dp"
+            android:layout_weight="6"
+            android:layout_height="match_parent"
+            android:hint="输入关键字搜索"
+            android:completionThreshold ="1"
+            android:background="@drawable/textview_border"
+            />
+        <Button
+            android:id="@+id/search_buttonsearch"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="搜索"
+            android:focusable="false"
+            android:clickable="true"
+            android:textColor="@color/white"
+            android:background="@drawable/buttonclickcolor"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/search_layout1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="150dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="历史记录："
+                android:textSize="@dimen/detailstextsize"
+
+                />
+
+            <GridView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:numColumns="5"
+                android:id="@+id/search_keywords_history"
+                ></GridView>
+
+        </LinearLayout>
+        <GridView
+            android:id="@+id/search_gridview"
+            android:layout_margin="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:numColumns="3"
+            android:horizontalSpacing="10dp"
+            android:verticalSpacing="10dp"
+            ></GridView>
+    </LinearLayout>
+    <TextView
+        android:id="@+id/search_result_textcount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="共搜索到14个结果"
+        android:layout_marginLeft="30dp"
+        />
+    <TextView
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorblue"
+        />
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:id="@+id/search_layout2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginBottom="20dp"
+
+        >
+        <ListView
+            android:id="@+id/search_type"
+            android:layout_marginLeft="30dp"
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:divider="@null"
+            ></ListView>
+
+        <ListView
+            android:id="@+id/search_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            ></ListView>
+
+    </LinearLayout>
+
+</LinearLayout>

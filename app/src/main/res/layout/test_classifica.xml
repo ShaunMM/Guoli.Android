@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    >
+
+    <TextView
+        android:textSize="16sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="选择要学习的业务分类"
+        android:gravity="center"
+        android:padding="8dp"
+        android:background="@color/colorblue"
+        android:textColor="@color/white"
+        />
+
+    <GridView
+        android:layout_margin="30dp"
+        android:id="@+id/test_class_gridv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:numColumns="3"
+        android:gravity="center"
+        ></GridView>
+
+</LinearLayout>

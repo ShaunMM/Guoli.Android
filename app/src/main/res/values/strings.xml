@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">机务运用管控系统</string>
+    <string name="homepage">机务运用管控系统</string>
+    <string name="dailyworktitle">日常工作</string>
+    <string name="beijingwulu">北京—乌鲁木齐南</string>
+    <string name="title_activity_tab">行车资料</string>
+    <string name="action_settings">Settings</string>
+    <string name="appDoor">http://192.168.0.112:8080</string>
+    <string name="diolagtitle">提示信息</string>
+    <string name="dateuped">数据更新完成！</string>
+    <string name="sure">确定</string>
+    <string name="cancle">取消</string>
+    <string name="havenewdate">数据有更新！</string>
+    <string name="datehavauped">数据上传完成！</string>
+
+</resources>

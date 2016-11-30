@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <include layout="@layout/homepagetitle" />
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp"
+    android:orientation="horizontal"
+    >
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="8"
+        android:orientation="vertical"
+        >
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:orientation="horizontal"
+            android:weightSum="5"
+            android:background="@color/colorblue2"
+            android:id="@+id/traindriver_radiogroup"
+            >
+            <RadioButton
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:button="@null"
+                android:text="首页"
+                android:textSize="@dimen/detailstextsize"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:checked="true"
+                android:id="@+id/traindriver_radio1"
+                android:textColor="@color/white"
+                android:background="@drawable/homeradiosty"
+                />
+            <RadioButton
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:button="@null"
+                android:textStyle="bold"
+                android:id="@+id/traindriver_radio2"
+                android:text="最新公告"
+                android:textSize="@dimen/detailstextsize"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:background="@drawable/homeradiosty"
+                />
+
+        </RadioGroup>
+
+
+<android.support.v4.view.ViewPager
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/traindriver_viewpager"
+    >
+
+</android.support.v4.view.ViewPager>
+
+    <ListView
+        android:id="@+id/driver_listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        >
+
+    </ListView>
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="3"
+        android:orientation="vertical"
+        >
+        <ImageView
+
+            android:layout_margin="10dp"
+            android:id="@+id/driver_photo"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:src="@mipmap/ic_launcher"
+            />
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:textSize="@dimen/homepagetextsize"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="工号："
+                />
+            <TextView
+                android:textSize="@dimen/homepagetextsize"
+                android:id="@+id/driver_worknumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:textSize="@dimen/homepagetextsize"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="姓名："
+                />
+            <TextView
+                android:textSize="@dimen/homepagetextsize"
+                android:id="@+id/driver_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                />
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:textSize="@dimen/homepagetextsize"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="部门："
+                />
+            <TextView
+                android:textSize="@dimen/homepagetextsize"
+                android:id="@+id/driver_department"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                />
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:textSize="@dimen/homepagetextsize"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="岗位："
+                />
+            <TextView
+                android:id="@+id/driver_postname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="@dimen/homepagetextsize"
+                />
+
+
+        </LinearLayout>
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:textSize="@dimen/detailstextsize"
+                android:layout_margin="5dp"
+                android:id="@+id/driver_loaded"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/buttonclickcolor"
+                android:text="资料更新"
+                android:gravity="center"
+                android:padding="10dp"
+                android:textColor="@color/white"
+                />
+            <TextView
+                android:layout_marginTop="10dp"
+                android:textSize="@dimen/detailstextsize"
+                android:layout_margin="5dp"
+                android:gravity="center"
+                android:id="@+id/driver_uploaded"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/buttonclickcolor"
+                android:text="资料上传"
+                android:padding="10dp"
+                android:textColor="@color/white"
+                />
+
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="10dp"
+            android:gravity="center_vertical"
+            >
+            <ImageView
+
+                android:id="@+id/driver_wifiicon"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@mipmap/i2_8"
+                android:layout_gravity="left"
+                />
+
+            <TextView
+                android:layout_marginLeft="5dp"
+                android:id="@+id/driver_wifiname"
+                android:layout_width="60dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/detailstextsize"
+                android:text=" "
+                />
+
+            <TextView
+                android:id="@+id/driver_linked"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/detailstextsize"
+                android:text="断开"
+                android:padding="5dp"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:background="@drawable/buttonclickcolor"
+                />
+
+
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/uploaded_time1"
+
+            />
+    </LinearLayout>
+</LinearLayout>
+
+
+
+</LinearLayout>

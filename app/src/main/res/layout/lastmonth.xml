@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:id="@+id/month_relayout"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        >
+        <TextView
+            android:id="@+id/month_title2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="@color/colorwhite"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="工作总结计划"
+            android:textStyle="bold"
+            android:textSize="16sp" />
+
+        <LinearLayout
+            android:id="@+id/daily_month_titleback"
+            android:layout_width="wrap_content"
+            android:layout_height= "45dp"
+            android:padding="10dp"
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:layout_width="15dp"
+                android:layout_height="match_parent"
+                android:background="@mipmap/db_1"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="返回"
+                android:layout_gravity="center"
+                android:textSize="16sp"
+                android:paddingLeft="5dp"
+                />
+        </LinearLayout>
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <ScrollView
+            android:layout_marginTop="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <include
+                android:id="@+id/select_include"
+                layout="@layout/lmonthdetails"
+                />
+        </ScrollView>
+    </RelativeLayout>
+
+
+</RelativeLayout>

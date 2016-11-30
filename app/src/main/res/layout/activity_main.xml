@@ -1,0 +1,119 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+
+    <RadioGroup
+        android:id="@+id/list_menu"
+        android:orientation="vertical"
+        android:layout_width="235px"
+        android:layout_height="match_parent"
+        >
+
+        <RadioButton
+            android:id="@+id/radio1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:button="@null"
+            android:paddingLeft="20dp"
+            android:background="@drawable/radio1sty"
+            android:text="   首页"
+            android:textColor="@drawable/radiotext1sty"
+            android:drawableLeft="@drawable/radiobutton1sty"
+            android:checked="true"
+            android:textSize="16sp"
+
+            android:layout_weight="1"
+            />
+        <RadioButton
+            android:id="@+id/radio2"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:button="@null"
+            android:drawableLeft="@drawable/radiobutton2sty"
+            android:text="   司机手账"
+            android:textColor="@drawable/radiotext2sty"
+            android:paddingLeft="20dp"
+            android:background="@drawable/radio2sty"
+            android:textSize="16sp"
+            android:layout_weight="1"
+            android:visibility="gone"
+            />
+        <RadioButton
+            android:id="@+id/radio3"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:paddingLeft="20dp"
+            android:button="@null"
+            android:gravity="center_vertical"
+            android:textColor="@drawable/radiotext2sty"
+            android:drawableLeft="@drawable/radiobutton3sty"
+            android:text="   行车资料"
+            android:background="@drawable/radio2sty"
+            android:textSize="16sp"
+            android:layout_weight="1"
+            />
+        <RadioButton
+            android:id="@+id/radio4"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:button="@null"
+            android:drawableLeft="@drawable/radiobutton4sty"
+            android:paddingLeft="20dp"
+            android:text="   业务学习"
+            android:textColor="@drawable/radiotext2sty"
+            android:background="@drawable/radio2sty"
+            android:textSize="16sp"
+            android:layout_weight="1"
+            />
+        <RadioButton
+            android:id="@+id/radio5"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:button="@null"
+            android:textColor="@drawable/radiotext2sty"
+            android:drawableLeft="@drawable/radiobutton5sty"
+            android:paddingLeft="20dp"
+            android:text="   指导司机"
+            android:background="@drawable/radio2sty"
+            android:textSize="16sp"
+            android:layout_weight="1"
+            />
+        <RadioButton
+            android:id="@+id/radio6"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:button="@null"
+            android:textColor="@drawable/radiotext2sty"
+            android:drawableLeft="@drawable/radiobutton6sty"
+            android:paddingLeft="20dp"
+            android:background="@drawable/radio2sty"
+            android:text="   列车时刻"
+            android:textSize="16sp"
+            android:layout_weight="1"
+            />
+        <RadioButton
+            android:id="@+id/radio7"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:button="@null"
+            android:background="@drawable/radio2sty"
+            android:text="   系统工具"
+            android:textColor="@drawable/radiotext2sty"
+            android:drawableLeft="@drawable/radiobutton2sty"
+            android:paddingLeft="20dp"
+            android:textSize="16sp"
+            android:layout_weight="1"
+            />
+    </RadioGroup>
+
+    <LinearLayout
+        android:id="@+id/frg_conn"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        ></LinearLayout>
+
+</LinearLayout>
