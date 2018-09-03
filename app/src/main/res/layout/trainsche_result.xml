@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
     <RelativeLayout
 
         android:layout_width="match_parent"
-        android:layout_height="45dp"
-        >
+        android:layout_height="@dimen/hd_function">
+
         <TextView
             android:id="@+id/trainsche_result_title"
             android:layout_width="match_parent"
@@ -17,150 +18,154 @@
             android:gravity="center"
             android:padding="10dp"
             android:text="列车时刻查询"
-            android:textStyle="bold"
-            android:textSize="16sp" />
+            android:textSize="@dimen/ts_twenty"
+            android:textStyle="bold" />
+
         <LinearLayout
             android:id="@+id/trainshe_result_back"
             android:layout_width="wrap_content"
-            android:layout_height= "match_parent"
-            android:padding="10dp"
+            android:layout_height="match_parent"
             android:orientation="horizontal"
-            >
+            android:padding="10dp">
+
             <TextView
                 android:layout_width="15dp"
                 android:layout_height="match_parent"
-                android:background="@mipmap/db_1"
-                />
+                android:background="@mipmap/db_1" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="返回"
                 android:layout_gravity="center"
-                android:textSize="16sp"
                 android:paddingLeft="5dp"
-                />
+                android:text="返回"
+                android:textSize="16sp" />
         </LinearLayout>
     </RelativeLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:orientation="horizontal"
-        >
+        android:layout_marginTop="40dp"
+        android:orientation="horizontal">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="查询结果:"
-            android:textSize="16sp"
-            />
+            android:textSize="@dimen/ts_eighteen" />
+
         <TextView
             android:id="@+id/trainsche_result_train"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="16sp"
             android:text=""
-            />
+            android:textSize="@dimen/ts_eighteen" />
+
         <TextView
             android:id="@+id/trainsche_result_startstop"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="16sp"
             android:layout_marginLeft="20dp"
             android:text=""
-            />
-
+            android:textSize="@dimen/ts_eighteen" />
 
     </LinearLayout>
+
     <TextView
-        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
         android:layout_marginBottom="10dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/colorwhite"
-        />
+        android:layout_marginTop="10dp"
+        android:background="@color/colorwhite" />
+
     <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
+        android:background="@drawable/circle_bg"
+        android:layout_height="wrap_content">
 
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        >
-        <GridView
-            android:id="@+id/trainsche_result_grid1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:numColumns="6"
-            android:visibility="gone"
-
-            ></GridView>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/colorblue2"
-            android:orientation="horizontal"
-            android:padding="5dp"
-            >
-            <TextView
-                android:layout_width="0dp"
-                android:layout_weight="1"
+            android:layout_height="match_parent"
+
+            android:orientation="vertical">
+
+            <GridView
+                android:id="@+id/trainsche_result_grid1"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="车站"
-                android:textSize="18sp"
+                android:numColumns="6"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@color/colorblue2"
+                android:orientation="horizontal"
                 android:gravity="center"
-                />
-            <TextView
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:text="到达时间"
-                android:textSize="18sp"
-                android:gravity="center"
-                />
-            <TextView
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:text="发车时间"
-                android:textSize="18sp"
-                android:gravity="center"
-                />
-            <TextView
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:text="停车时间"
-                android:textSize="18sp"
-                android:gravity="center"
-                />
-            <TextView
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:text="区间公里"
-                android:textSize="18sp"
-                android:gravity="center"
-                />
-            <TextView
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:text="建议车速"
-                android:textSize="18sp"
-                android:gravity="center"
-                />
-        </LinearLayout>
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="车站"
+                    android:textSize="@dimen/ts_twenty" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="到达时间"
+                    android:textSize="@dimen/ts_twenty" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="发车时间"
+                    android:textSize="@dimen/ts_twenty" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="停车时间"
+                    android:textSize="@dimen/ts_twenty" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="区间公里"
+                    android:textSize="@dimen/ts_eighteen" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="建议车速"
+                    android:textSize="@dimen/ts_twenty" />
+            </LinearLayout>
+
             <ListView
                 android:id="@+id/trainsche_result_grid2"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-                android:background="@drawable/textview_border3"
-            ></ListView>
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
+        </LinearLayout>
     </LinearLayout>
 
 </LinearLayout>

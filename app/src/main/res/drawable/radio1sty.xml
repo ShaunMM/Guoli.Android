@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:state_checked="false" android:drawable="@color/colorblue2"/>
-    <item android:state_checked="true" android:drawable="@mipmap/zd_aa1"/>
-
-    <item android:state_checkable="true" android:drawable="@mipmap/zd_aa1"/>
+    <item android:drawable="@color/colorblue2" android:state_checked="false" />
+    <item android:drawable="@mipmap/zd_aaa" android:state_checked="true" />
+    <item android:drawable="@mipmap/zd_aaa" android:state_checkable="true" />
 
 </selector>

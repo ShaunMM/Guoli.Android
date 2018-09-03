@@ -1,112 +1,100 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:gravity="center_horizontal"
-    >
+    android:orientation="vertical">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="8"
-        android:orientation="vertical"
+        android:layout_weight="6"
         android:background="@mipmap/sy_1"
         android:gravity="center"
-        >
-        <TextView
-            android:layout_marginTop="@dimen/registertitletop1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="欢迎使用"
-            android:textSize="@dimen/registertitlesize1"
-            android:textColor="@color/white"
-            android:background="@null"
+        android:orientation="vertical">
 
-            />
         <TextView
-            android:layout_marginTop="@dimen/registertitletop2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/registertitletop1"
+            android:background="@null"
+            android:text="欢迎使用"
+            android:textColor="@color/white"
+            android:textSize="@dimen/registertitlesize1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/registertitletop1"
             android:text="机务运用管控系统"
             android:textColor="@color/white"
-            android:textSize="@dimen/registertitlesize1"
-            />
+            android:textSize="@dimen/registertitlesize1" />
+
         <TextView
-            android:layout_marginTop="@dimen/registertitletop3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/registertitletop3"
             android:text="Locomotive Control System"
             android:textColor="@color/white"
-            android:textSize="@dimen/registertitlesize2"
-            />
-
+            android:textSize="@dimen/registertitlesize2" />
     </LinearLayout>
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="0dp"
-    android:layout_weight="4.5"
-    android:orientation="vertical"
-    android:background="#f2f2f2"
-    android:gravity="center_horizontal"
-    >
-    <EditText
-        android:layout_marginTop="@dimen/registeredittexttop"
-        android:layout_width="280dp"
-        android:layout_height="40dp"
-        android:inputType="numberSigned"
-        android:ems="10"
-        android:background="@color/colorwhite"
-        android:id="@+id/account"
-        android:hint="请输入工号"
-        android:paddingLeft="10dp"
-        android:drawableLeft="@mipmap/sy_3"
-        />
 
-    <EditText
-        android:layout_marginTop="@dimen/registeredittexttop"
-        android:layout_width="280dp"
-        android:layout_height="40dp"
-        android:inputType="textPassword"
-        android:ems="10"
-        android:paddingLeft="10dp"
-        android:drawableLeft="@mipmap/sy_4"
-        android:background="@color/colorwhite"
-        android:hint="请输入密码"
-        android:id="@+id/password"
-        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4"
+        android:background="#f2f2f2"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
 
-    <Button
+        <EditText
+            android:id="@+id/account"
+            android:layout_width="280dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="@dimen/registeredittexttop"
+            android:background="@color/colorwhite"
+            android:drawableLeft="@mipmap/sy_3"
+            android:ems="10"
+            android:hint="请输入工号"
+            android:inputType="numberSigned"
+            android:paddingLeft="10dp"/>
 
-        android:layout_marginTop="@dimen/registeredittexttop"
-        android:layout_width="280dp"
-        android:layout_height="40dp"
-        android:text="确定登录"
-        android:textSize="18sp"
-        android:id="@+id/logging"
-        android:textColor="#ffffff"
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="280dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="@dimen/registeredittexttop"
+            android:background="@color/colorwhite"
+            android:drawableLeft="@mipmap/sy_4"
+            android:ems="10"
+            android:hint="请输入密码"
+            android:inputType="textPassword"
+            android:paddingLeft="10dp" />
 
-        android:background="@mipmap/sy_5"
+        <Button
+            android:id="@+id/logging"
+            android:layout_width="280dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="@dimen/registeredittexttop"
+            android:background="@mipmap/sy_5"
+            android:text="确 定 登 录"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/ts_twenty" />
+    </LinearLayout>
 
-        />
-
-
-
-</LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="0.8"
-        android:gravity="center"
         android:background="#fafafa"
-        >
+        android:gravity="center">
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="本系统由   国力时代公司   提供"
-            android:gravity="center_horizontal"
-            android:textSize="14sp"
+            android:gravity="center"
+            android:text="内蒙古铁路运营管理集团 与 北京国力时代 联合开发（研制）"
             android:textColor="#222222"
-            />
-
+            android:textSize="@dimen/ts_twenty"
+            android:textStyle="bold" />
     </LinearLayout>
-
 </LinearLayout>

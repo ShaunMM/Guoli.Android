@@ -1,140 +1,148 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    >
+    android:orientation="vertical">
+
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="考试信息"
-        android:gravity="center"
-        android:textSize="16sp"
-        android:padding="5dp"
-        android:textColor="@color/white"
+        android:layout_height="50dp"
         android:background="@color/colorblue2"
-        />
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="考 试 信 息"
+        android:textColor="@color/white"
+        android:textSize="@dimen/ts_twenty" />
+
     <LinearLayout
-        android:layout_marginTop="80dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:layout_marginTop="15dp"
         android:gravity="center"
+        android:orientation="horizontal">
 
-        >
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        >
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="考试内容:"
-            />
-        <TextView
-
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="考试限时："
-            android:layout_marginTop="10dp"
-            />
-        <TextView
-
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="通过分数："
-            android:layout_marginTop="10dp"
-            />
-        <TextView
-            android:gravity="right"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="总题数："
-            android:layout_marginTop="10dp"
-            />
-        <TextView
-
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="已考次数："
-            android:layout_marginTop="10dp"
-            />
-        <TextView
-
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="最高分数"
-            android:layout_marginTop="10dp"
-            />
-    </LinearLayout>
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            >
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="考试内容:"
+                android:textSize="@dimen/ts_eighteen" />
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="考试限时："
+                android:textSize="@dimen/ts_eighteen" />
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="通过分数："
+                android:textSize="@dimen/ts_eighteen" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:gravity="right"
+                android:text="总题数："
+                android:textSize="@dimen/ts_eighteen" />
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="已考次数："
+                android:textSize="@dimen/ts_eighteen" />
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="最高分数"
+                android:textSize="@dimen/ts_eighteen" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
             <TextView
                 android:id="@+id/pop_context"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="关于。。。。"
-                />
+                android:textSize="@dimen/ts_eighteen" />
+
             <TextView
                 android:id="@+id/pop_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
                 android:text="30分钟"
-                android:layout_marginTop="10dp"
-                />
+                android:textSize="@dimen/ts_eighteen" />
+
             <TextView
                 android:id="@+id/pop_score"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
                 android:text="通过分数："
-                android:layout_marginTop="10dp"
-                />
+                android:textSize="@dimen/ts_eighteen" />
+
             <TextView
                 android:id="@+id/pop_contextscore"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
                 android:text="95"
-                android:layout_marginTop="10dp"
-                />
+                android:textSize="@dimen/ts_eighteen" />
+
             <TextView
                 android:id="@+id/pop_testtime"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
                 android:text="40"
-                android:layout_marginTop="10dp"
-                />
+                android:textSize="@dimen/ts_eighteen" />
+
             <TextView
                 android:id="@+id/pop_hightst_score"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
                 android:text="80"
-                android:layout_marginTop="10dp"
-                />
+                android:textSize="@dimen/ts_eighteen" />
         </LinearLayout>
-</LinearLayout>
+    </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
         android:gravity="center"
-        android:layout_marginTop="30dp"
-        >
+        android:orientation="horizontal">
+
         <Button
             android:id="@+id/pop_start"
             android:layout_width="120dp"
             android:layout_height="wrap_content"
-            android:text="开始考试"
             android:background="@drawable/buttonclickcolor"
-android:textColor="@color/white"
-
-            />
-
+            android:text="开始考试"
+            android:textColor="@color/white"
+            android:textSize="@dimen/ts_eighteen" />
 
     </LinearLayout>
 

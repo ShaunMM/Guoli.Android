@@ -57,7 +57,6 @@ public class GridlistAdapter extends BaseAdapter{
 
     class Viewholder{
         TextView tv;
-
     }
 
 }

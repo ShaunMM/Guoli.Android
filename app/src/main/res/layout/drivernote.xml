@@ -1,121 +1,238 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    >
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:orientation="vertical"
+        android:layout_height="@dimen/hd_function"
         android:background="@color/colorwhite"
-        android:gravity="center">
+        android:gravity="center"
+        android:orientation="vertical">
 
         <TextView
+            android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="司机手账"
-            android:id="@+id/textView"
             android:layout_gravity="center_horizontal"
-            android:textSize="16sp"
-            android:textStyle="bold"/>
+            android:text="司 机 手 账"
+            android:textSize="@dimen/ts_twenty_four"
+            android:textStyle="bold" />
     </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/tiancheng_popuwindow"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/searchbackground"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/searchMarginLeft"
+            android:layout_marginRight="@dimen/searchMarginRight"
+            android:layout_marginTop="20dp"
+            android:background="@color/white"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/et_addcode"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:inputType="text"
+                android:singleLine="true"
+                android:textSize="@dimen/ts_sixteen" />
+
+        </LinearLayout>
+
+        <ListView
+            android:id="@+id/lv_addcodes"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="210dp"
+            android:layout_marginRight="295dp"
+            android:layout_marginTop="60dp"
+            android:background="@color/white"
+            android:visibility="gone" />
+    </RelativeLayout>
+
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:scrollbars="none">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="32dp"
-        android:orientation="vertical"
-        android:background="@mipmap/i3_5"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="15dp"
-        android:gravity="top">
-        <TextView
-            android:textColor="@color/black"
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="今日行车计划"
-            android:layout_marginLeft="10dp"
-            android:textSize="14sp"
-            android:textStyle="bold"/>
-    </LinearLayout>
+            android:orientation="vertical">
 
-    <ListView
-        android:id="@+id/lv_carplan"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:scrollbars="none"
-        android:divider="@null"
-        android:background="@color/colorwhite"
-        android:layout_margin="10dp">
-    </ListView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="15dp"
+                android:background="@mipmap/i3_5"
+                android:gravity="top"
+                android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/tv_work"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="出勤"
-        android:layout_margin="10dp"
-        android:background="@drawable/buttonclickcolor"
-        android:textColor="@color/white"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        android:gravity="center"
-        android:padding="10dp"
-        android:hint="sdfafeadfaefa"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="今日行车计划"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/ts_twenty"
+                    android:textStyle="bold" />
+            </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="32dp"
-        android:orientation="vertical"
-        android:background="@mipmap/i3_5"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="15dp"
-        android:gravity="top">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="近期手账记录"
-            android:layout_marginLeft="10dp"
-            android:textColor="@color/black"
-            android:textSize="14sp"
-            android:textStyle="bold"/>
-    </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
 
-    <ListView
-        android:id="@+id/lv_carkeep"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:scrollbars="none"
-        android:divider="@null"
-        android:background="@color/colorwhite"
-        android:layout_margin="10dp">
-    </ListView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text="手动添加行车计划"
+                    android:textSize="@dimen/ts_eighteen"
+                    android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/tv_one_up"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="一键上传"
-        android:layout_margin="10dp"
-        android:background="@drawable/buttonclickcolor"
-        android:textColor="@color/white"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        android:gravity="center"
-        android:padding="10dp"
-        android:hint="sdfafeadfaefa"
-        android:layout_marginBottom="30dp"/>
-    </LinearLayout>
+                <TextView
+                    android:id="@+id/tv_addcarcode"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_weight="1"
+                    android:text="手动输入车次"
+                    android:textColor="#329bff"
+                    android:textSize="@dimen/ts_eighteen"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+
+            <ListView
+                android:id="@+id/lv_carplan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:background="@color/colorwhite"
+                android:divider="@null"
+                android:scrollbars="none" />
+
+            <LinearLayout
+                android:id="@+id/ll_noplan"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginLeft="150dp"
+                android:layout_marginRight="150dp"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/circle_bg"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:text="今日暂无行车计划"
+                    android:textSize="@dimen/ts_eighteen"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center_horizontal"
+                    android:text="手动添加--> 点击“手动输入车次” 添加 “行车计划” -->点击 “行车计划” --> 出勤"
+                    android:textSize="@dimen/ts_eighteen"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_work"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:background="@drawable/buttonclickcolor"
+                android:gravity="center"
+                android:hint="sdfafeadfaefa"
+                android:padding="10dp"
+                android:text="出勤"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="15dp"
+                android:background="@mipmap/i3_5"
+                android:gravity="top"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:text="近期手账记录"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/ts_twenty"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <ListView
+                android:id="@+id/lv_carkeep"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_margin="15dp"
+                android:background="@color/colorwhite"
+                android:divider="@null"
+                android:scrollbars="none" />
+
+            <TextView
+                android:id="@+id/tv_nokeep"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="150dp"
+                android:layout_marginRight="150dp"
+                android:background="@drawable/circle_bg"
+                android:gravity="center"
+                android:text="暂 无 行 车 手 账 记 录"
+                android:textSize="@dimen/ts_twenty"
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/tv_one_up"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:layout_marginBottom="30dp"
+                android:background="@drawable/buttonclickcolor"
+                android:gravity="center"
+                android:hint="sdfafeadfaefa"
+                android:padding="10dp"
+                android:text="一键上传"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:visibility="invisible" />
+        </LinearLayout>
     </ScrollView>
+
 </LinearLayout>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/hd_function">
+
+        <TextView
+            android:id="@+id/videoimageshow_title"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorwhite"
+            android:gravity="center"
+            android:textSize="@dimen/ts_twenty_four"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/videoimageshow_back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            android:textSize="16sp">
+
+            <TextView
+                android:layout_width="15dp"
+                android:layout_height="match_parent"
+                android:background="@mipmap/db_1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingLeft="5dp"
+                android:text="返回"
+                android:textSize="@dimen/ts_eighteen" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/videoimageshow_path"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="10dp"
+        android:text="行车资料"
+        android:textSize="@dimen/ts_twenty" />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/colorwhite" />
+
+    <ListView
+        android:id="@+id/videoimageshow_folder"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="30dp" />
+    <ListView
+        android:id="@+id/videoimageshow_files"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="30dp" />
+
+</LinearLayout>

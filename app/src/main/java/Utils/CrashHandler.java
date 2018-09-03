@@ -22,20 +22,21 @@ import java.util.HashMap;
 import java.util.Map;
 
 import DBUtils.DBOpenHelper;
+import zj.com.mc.Myapplilcation;
 import zj.com.mc.UtilisClass;
 
 /**
- * Created by zhou on 2016/9/30.
+ * Created BYJ on 2016/9/30.
  */
 public class CrashHandler implements Thread.UncaughtExceptionHandler {
 
-    public static final String TAG="CrashHandler";
-//    DBOpenHelper dbOpenHelper=DBOpenHelper.getInstance(CrashHandler.getInstance().mContext);
+    public static final String TAG = "CrashHandler";
+    //DBOpenHelper dbOpenHelper=DBOpenHelper.getInstance(CrashHandler.getInstance().mContext);
 
     //系统默认的Uncaughtexception处理类
     private Thread.UncaughtExceptionHandler mDefaultHandler;
     //Crashhandler实例
-    private static CrashHandler INSTANCE=new CrashHandler();
+    private static CrashHandler INSTANCE = new CrashHandler();
     //程序的Context对象
     private Context mContext;
     //用来存储设备信息和异常信息
@@ -44,11 +45,15 @@ public class CrashHandler implements Thread.UncaughtExceptionHandler {
     //用于格式化日期,作为日志文件名的一部分
     private DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss");
 
-    /** 保证只有一个CrashHandler实例 */
+    /**
+     * 保证只有一个CrashHandler实例
+     */
     private CrashHandler() {
     }
 
-    /** 获取CrashHandler实例 ,单例模式 */
+    /**
+     * 获取CrashHandler实例 ,单例模式
+     */
     public static CrashHandler getInstance() {
         return INSTANCE;
     }
@@ -76,11 +81,12 @@ public class CrashHandler implements Thread.UncaughtExceptionHandler {
             mDefaultHandler.uncaughtException(thread, ex);
         } else {
             try {
-                Thread.sleep(3000);
+                Thread.sleep(1000);
             } catch (InterruptedException e) {
                 Log.e(TAG, "error : ", e);
             }
-            //退出程序
+            ((Myapplilcation)mContext).exit();
+//            Myapplilcation.getInstance().exit();
             android.os.Process.killProcess(android.os.Process.myPid());
             System.exit(1);
         }
@@ -96,7 +102,6 @@ public class CrashHandler implements Thread.UncaughtExceptionHandler {
         if (ex == null) {
             return false;
         }
-        //使用Toast来显示异常信息
         new Thread() {
             @Override
             public void run() {
@@ -105,15 +110,14 @@ public class CrashHandler implements Thread.UncaughtExceptionHandler {
                 Looper.loop();
             }
         }.start();
-        //收集设备参数信息
         collectDeviceInfo(mContext);
-        //保存日志文件
         saveCrashInfo2File(ex);
         return true;
     }
 
     /**
      * 收集设备参数信息
+     *
      * @param ctx
      */
     public void collectDeviceInfo(Context ctx) {
@@ -140,11 +144,12 @@ public class CrashHandler implements Thread.UncaughtExceptionHandler {
             }
         }
     }
+
     /**
      * 保存错误信息到文件中
      *
      * @param ex
-     * @return  返回文件名称,便于将文件传送到服务器
+     * @return 返回文件名称, 便于将文件传送到服务器
      */
     private String saveCrashInfo2File(Throwable ex) {
 
@@ -155,9 +160,9 @@ public class CrashHandler implements Thread.UncaughtExceptionHandler {
             sb.append(key + "=" + value + "\n");
         }
 
-        String data= UtilisClass.getStringDate3();
-        DBOpenHelper.getInstance(mContext).insert("ExceptionLog",new String[]{"Message","HappenTime"},
-                new Object[]{sb.toString(),data});
+        String data = UtilisClass.getStringDate3();
+        DBOpenHelper.getInstance(mContext).insert("ExceptionLog", new String[]{"Message", "HappenTime"},
+                new Object[]{sb.toString(), data});
 
 
         Writer writer = new StringWriter();

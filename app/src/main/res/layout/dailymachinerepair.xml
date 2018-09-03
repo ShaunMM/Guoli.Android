@@ -1,68 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:background="@color/colorblue2"
-        android:padding="5dp"
-        >
+        android:gravity="center"
+        android:orientation="horizontal">
+
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
             android:text="机车型号"
-            android:gravity="center"
-            android:layout_weight="1"
-            />
+            android:textSize="@dimen/ts_twenty" />
+
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
             android:text="值乘司机"
-            android:gravity="center"
-            android:layout_weight="1"
-            />
+            android:textSize="@dimen/ts_twenty" />
+
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
             android:text="车次"
-            android:gravity="center"
-            android:layout_weight="1"
-            />
+            android:textSize="@dimen/ts_twenty" />
+
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
             android:text="发生时间"
-            android:gravity="center"
-            android:layout_weight="1"
-            />
+            android:textSize="@dimen/ts_twenty" />
+
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="操作"
-            android:gravity="center"
             android:layout_weight="1"
-            />
+            android:gravity="center"
+            android:text="操作"
+            android:textSize="@dimen/ts_twenty" />
 
     </LinearLayout>
+
     <ListView
         android:id="@+id/daily_machinerepair_list"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp" />
 
-        ></ListView>
-
+    <TextView
+        android:id="@+id/tv_nomachinerepair"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginLeft="150dp"
+        android:layout_marginRight="150dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/circle_bg"
+        android:gravity="center"
+        android:text="暂 无 机 破 维 修 记 录"
+        android:textSize="@dimen/ts_twenty"
+        android:textStyle="bold"
+        android:visibility="gone" />
 
 </LinearLayout>

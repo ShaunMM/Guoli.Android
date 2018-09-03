@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/hd_function"
+        android:background="@color/colorwhite">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <RadioGroup
+                android:id="@+id/rp_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rb_attentinfo"
+                    android:layout_width="120dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/radiomaosty"
+                    android:button="@null"
+                    android:checked="true"
+                    android:gravity="center"
+                    android:text="出勤信息"
+                    android:textSize="@dimen/ts_twenty" />
+
+                <RadioButton
+                    android:id="@+id/rb_rign"
+                    android:layout_width="120dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/radiomaosty"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:text="签点信息"
+                    android:textSize="@dimen/ts_twenty" />
+
+                <RadioButton
+                    android:id="@+id/rb_exitattent"
+                    android:layout_width="120dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/radiomaosty"
+                    android:button="@null"
+                    android:drawableLeft="@null"
+                    android:gravity="center"
+                    android:text="退勤信息"
+                    android:textSize="@dimen/ts_twenty" />
+            </RadioGroup>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/search_result_back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="15dp"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:background="@mipmap/db_1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="返回"
+                android:textSize="@dimen/homepagetextsize" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_save"
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/buttonclickcolor"
+            android:gravity="center"
+            android:text="保 存"
+            android:textSize="@dimen/ts_twenty" />
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/fl_temp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>

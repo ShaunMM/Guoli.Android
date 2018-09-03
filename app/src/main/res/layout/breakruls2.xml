@@ -1,231 +1,229 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="10dp"
+    android:orientation="vertical">
 
-    >
     <LinearLayout
-        android:paddingTop="@dimen/detailslayoutpadingtop"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        >
-        <TextView
-            android:textSize="@dimen/detailstextsize"
-            android:layout_height="wrap_content"
-            android:text="日期："
-            android:layout_width="120dp"
-            android:gravity="right"
+        android:paddingTop="@dimen/detailslayoutpadingtop">
 
-            />
+        <TextView
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:text="日期："
+            android:textSize="@dimen/detailstextsize"
+            android:textStyle="bold" />
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            >
+            android:orientation="vertical">
 
             <TextView
-                android:textSize="@dimen/detailstextsize"
                 android:id="@+id/breakruls_takedate"
                 android:layout_width="140dp"
-                android:gravity="center"
                 android:layout_height="wrap_content"
-                />
+                android:gravity="center"
+                android:textSize="@dimen/detailstextsize" />
         </LinearLayout>
 
         <TextView
-            android:textSize="@dimen/detailstextsize"
             android:layout_width="120dp"
-            android:gravity="right"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:gravity="right"
             android:text="违章司机："
-            />
-        <TextView
             android:textSize="@dimen/detailstextsize"
+            android:textStyle="bold" />
+
+        <TextView
             android:id="@+id/breakruls_TrainCode"
             android:layout_width="140dp"
             android:layout_height="match_parent"
             android:gravity="center"
-            />
+            android:textSize="@dimen/detailstextsize" />
 
 
         <TextView
-            android:textSize="@dimen/detailstextsize"
             android:layout_width="120dp"
-            android:gravity="right"
             android:layout_height="wrap_content"
+            android:gravity="right"
             android:text="性质："
+            android:textSize="@dimen/detailstextsize"
+            android:textStyle="bold" />
 
-            />
         <EditText
             android:id="@+id/brealruls_LocomotiveType"
             android:layout_width="140dp"
             android:layout_height="wrap_content"
             android:background="@null"
-            android:textSize="@dimen/detailstextsize"
-            android:singleLine="true"
             android:gravity="center"
-            />
+            android:singleLine="true"
+            android:textSize="@dimen/detailstextsize" />
 
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="140dp"
+            android:layout_height="1dp"
+            android:layout_marginLeft="120dp"
+            android:background="@color/sblack" />
+
+        <TextView
+            android:layout_width="140dp"
+            android:layout_height="1dp"
+            android:layout_marginLeft="120dp"
+            android:background="@color/sblack" />
+
+        <TextView
+            android:layout_width="140dp"
+            android:layout_height="1dp"
+            android:layout_marginLeft="120dp"
+            android:background="@color/sblack" />
+
+    </LinearLayout>
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        >
-        <TextView
-            android:layout_marginLeft="120dp"
-            android:layout_width="140dp"
-            android:layout_height="1dp"
-            android:background="@color/sblack"
-            />
-        <TextView
-            android:layout_marginLeft="120dp"
-            android:layout_width="140dp"
-            android:layout_height="1dp"
-            android:background="@color/sblack"
-            />
-        <TextView
-            android:layout_marginLeft="120dp"
-            android:layout_width="140dp"
-            android:layout_height="1dp"
-            android:background="@color/sblack"
-            />
+        android:paddingTop="@dimen/detailslayoutpadingtop">
 
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:paddingTop="@dimen/detailslayoutpadingtop"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        >
         <TextView
             android:layout_width="120dp"
-            android:gravity="right"
             android:layout_height="wrap_content"
+            android:gravity="right"
             android:text="概况："
             android:textSize="@dimen/detailstextsize"
-            />
+            android:textStyle="bold" />
+
         <EditText
             android:id="@+id/breakruls_aim"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:maxLines="4"
             android:background="@null"
-            android:textSize="@dimen/detailstextsize"
-            />
+            android:maxLines="4"
+            android:textSize="@dimen/detailstextsize" />
 
     </LinearLayout>
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginLeft="120dp"
         android:layout_marginRight="30dp"
-        android:background="@color/sblack"
-        />
+        android:background="@color/sblack" />
+
     <LinearLayout
-        android:paddingTop="@dimen/detailslayoutpadingtop"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        >
+        android:paddingTop="@dimen/detailslayoutpadingtop">
+
         <TextView
             android:layout_width="120dp"
-            android:gravity="right"
             android:layout_height="wrap_content"
+            android:gravity="right"
             android:text="分析情况："
             android:textSize="@dimen/detailstextsize"
-            />
+            android:textStyle="bold" />
+
         <EditText
             android:id="@+id/breakruls_problem"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:maxLines="4"
             android:background="@null"
-            android:textSize="@dimen/detailstextsize"
-            />
+            android:maxLines="4"
+            android:textSize="@dimen/detailstextsize" />
 
     </LinearLayout>
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginLeft="120dp"
         android:layout_marginRight="30dp"
-        android:background="@color/sblack"
-        />
+        android:background="@color/sblack" />
+
     <LinearLayout
-        android:paddingTop="@dimen/detailslayoutpadingtop"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        >
+        android:paddingTop="@dimen/detailslayoutpadingtop">
+
         <TextView
             android:layout_width="120dp"
-            android:gravity="right"
             android:layout_height="wrap_content"
+            android:gravity="right"
             android:text="处理意见："
             android:textSize="@dimen/detailstextsize"
-            />
+            android:textStyle="bold" />
+
         <EditText
             android:id="@+id/breakruls_dopinion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:maxLines="4"
-            android:textSize="@dimen/detailstextsize"
             android:background="@null"
-            />
+            android:maxLines="4"
+            android:textSize="@dimen/detailstextsize" />
     </LinearLayout>
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginLeft="120dp"
         android:layout_marginRight="30dp"
-        android:background="@color/sblack"
-        />
+        android:background="@color/sblack" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="50dp"
         android:gravity="center_horizontal"
-        >
+        android:orientation="horizontal">
 
         <Button
-            android:textSize="@dimen/detailstextsize"
             android:id="@+id/breakruls_save"
             android:layout_width="150dp"
-            android:layout_height="45dp"
+            android:layout_height="50dp"
+            android:background="@drawable/buttonclickcolor"
             android:gravity="center"
             android:text="保存到本地"
             android:textColor="@color/white"
-            android:background="@drawable/buttonclickcolor"
-            />
+            android:textSize="@dimen/detailstextsize" />
+
         <Button
-            android:textSize="@dimen/detailstextsize"
             android:id="@+id/breakruls_saveup"
             android:layout_width="150dp"
-            android:layout_height="45dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="80dp"
+            android:layout_marginRight="80dp"
+            android:background="@drawable/buttonclickcolor"
             android:gravity="center"
             android:text="保存并上传"
             android:textColor="@color/white"
-            android:background="@drawable/buttonclickcolor"
-            android:layout_marginLeft="80dp"
-            android:layout_marginRight="80dp"
-            android:visibility="invisible"
-            />
-        <Button
             android:textSize="@dimen/detailstextsize"
+            android:visibility="invisible" />
+
+        <Button
             android:id="@+id/breakruls_cancle"
             android:layout_width="150dp"
-            android:layout_height="45dp"
+            android:layout_height="50dp"
+            android:background="@drawable/buttonclickcolor"
             android:gravity="center"
             android:text="取消"
             android:textColor="@color/white"
-            android:background="@drawable/buttonclickcolor"
-            />
+            android:textSize="@dimen/detailstextsize" />
     </LinearLayout>
 </LinearLayout>

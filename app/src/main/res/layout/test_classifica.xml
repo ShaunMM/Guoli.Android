@@ -1,28 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    >
+    android:orientation="vertical">
 
     <TextView
-        android:textSize="16sp"
+        android:id="@+id/tv_studyname"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="选择要学习的业务分类"
-        android:gravity="center"
-        android:padding="8dp"
         android:background="@color/colorblue"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="选择要模拟考试的题目"
         android:textColor="@color/white"
-        />
+        android:textSize="@dimen/ts_eighteen" />
+
+    <EditText
+        android:id="@+id/tv_testnum"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/blue_circlebg"
+        android:gravity="center"
+        android:hint="请先输入模拟考试题数，再选择类型"
+        android:textColor="@color/btn_pressed_color"
+        android:textSize="@dimen/ts_eighteen" />
 
     <GridView
-        android:layout_margin="30dp"
         android:id="@+id/test_class_gridv"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:numColumns="3"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
         android:gravity="center"
-        ></GridView>
+        android:numColumns="3" />
 
 </LinearLayout>

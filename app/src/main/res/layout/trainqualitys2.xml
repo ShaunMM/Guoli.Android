@@ -1,259 +1,251 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="30dp"
-    >
+    android:orientation="vertical">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:paddingTop="@dimen/detailslayoutpadingtop"
-        >
+        android:paddingTop="@dimen/detailslayoutpadingtop">
+
         <TextView
-            android:layout_height="wrap_content"
-            android:text="登记日期："
             android:layout_width="120dp"
+            android:layout_height="wrap_content"
             android:gravity="right"
-android:textSize="@dimen/detailstextsize"
-            />
+            android:text="登记日期："
+            android:textStyle="bold"
+            android:textSize="@dimen/detailstextsize" />
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            >
+            android:orientation="vertical">
 
             <TextView
-                android:textSize="@dimen/detailstextsize"
                 android:id="@+id/qualitys_takedate"
                 android:layout_width="140dp"
+                android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text=""
-                android:layout_height="wrap_content"
-                />
+                android:textSize="@dimen/detailstextsize" />
         </LinearLayout>
 
         <TextView
             android:id="@+id/checi"
             android:layout_width="120dp"
-            android:gravity="right"
             android:layout_height="wrap_content"
+            android:gravity="right"
             android:text="车次："
-            android:textSize="@dimen/detailstextsize"
-            />
-            <TextView
-                android:textSize="@dimen/detailstextsize"
-                android:id="@+id/qualitys_TrainCode"
-                android:layout_width="140dp"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:text=""
-                />
+            android:textStyle="bold"
+            android:textSize="@dimen/detailstextsize" />
+
+        <TextView
+            android:id="@+id/qualitys_TrainCode"
+            android:layout_width="140dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text=""
+            android:textSize="@dimen/detailstextsize" />
 
 
         <TextView
             android:layout_width="120dp"
-            android:gravity="right"
             android:layout_height="wrap_content"
+            android:gravity="right"
             android:text="机车型号："
-            android:textSize="@dimen/detailstextsize"
-            />
+            android:textStyle="bold"
+            android:textSize="@dimen/detailstextsize" />
+
         <EditText
-            android:textSize="@dimen/detailstextsize"
             android:id="@+id/qualitys_LocomotiveType"
             android:layout_width="140dp"
             android:layout_height="wrap_content"
             android:background="@null"
-            android:text=""
-            android:singleLine="true"
             android:gravity="center"
-            />
-
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        >
-        <TextView
-            android:layout_marginLeft="120dp"
-            android:layout_width="140dp"
-            android:layout_height="1dp"
-            android:background="@color/sblack"
-            />
-        <TextView
-            android:layout_marginLeft="120dp"
-            android:layout_width="140dp"
-            android:layout_height="1dp"
-            android:background="@color/sblack"
-            />
-        <TextView
-            android:layout_marginLeft="120dp"
-            android:layout_width="140dp"
-            android:layout_height="1dp"
-            android:background="@color/sblack"
-            />
+            android:singleLine="true"
+            android:text=""
+            android:textSize="@dimen/detailstextsize" />
 
     </LinearLayout>
 
     <LinearLayout
-        android:paddingTop="@dimen/detailslayoutpadingtop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="140dp"
+            android:layout_height="1dp"
+            android:layout_marginLeft="120dp"
+            android:background="@color/sblack" />
+
+        <TextView
+            android:layout_width="140dp"
+            android:layout_height="1dp"
+            android:layout_marginLeft="120dp"
+            android:background="@color/sblack" />
+
+        <TextView
+            android:layout_width="140dp"
+            android:layout_height="1dp"
+            android:layout_marginLeft="120dp"
+            android:background="@color/sblack" />
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        >
+        android:paddingTop="@dimen/detailslayoutpadingtop">
+
         <TextView
-            android:textSize="@dimen/detailstextsize"
             android:layout_width="120dp"
-            android:gravity="right"
             android:layout_height="wrap_content"
+            android:gravity="right"
             android:text="主班司机："
+            android:textStyle="bold"
+            android:textSize="@dimen/detailstextsize"/>
 
-            />
-            <TextView
-                android:textSize="@dimen/detailstextsize"
-                android:layout_width="140dp"
-                android:layout_height="wrap_content"
-                android:textStyle="bold"
-                android:text=""
-                android:id="@+id/qualitys_DriverId"
-                android:gravity="center"
-                />
-
+        <TextView
+            android:id="@+id/qualitys_DriverId"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text=""
+            android:textSize="@dimen/detailstextsize"
+            android:textStyle="bold" />
 
 
         <TextView
             android:layout_width="120dp"
-            android:gravity="right"
             android:layout_height="wrap_content"
+            android:gravity="right"
             android:text="修程："
-            android:textSize="@dimen/detailstextsize"
-            />
+            android:textStyle="bold"
+            android:textSize="@dimen/detailstextsize" />
 
-            <EditText
-                android:textSize="@dimen/detailstextsize"
-                android:id="@+id/qualitys_ViceDriverId"
-                android:layout_width="140dp"
-                android:text=""
-                android:background="@null"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                />
+        <EditText
+            android:id="@+id/qualitys_ViceDriverId"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:gravity="center"
+            android:text=""
+            android:textSize="@dimen/detailstextsize" />
 
 
         <TextView
             android:layout_width="120dp"
-            android:gravity="right"
             android:layout_height="wrap_content"
+            android:gravity="right"
             android:text="保养状态："
-            android:textSize="@dimen/detailstextsize"
-            />
+            android:textStyle="bold"
+            android:textSize="@dimen/detailstextsize" />
 
 
-            <EditText
-                android:textSize="@dimen/detailstextsize"
-                android:id="@+id/qualitys_StudentId"
-                android:layout_width="140dp"
-                android:text=""
-                android:background="@null"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                />
+        <EditText
+            android:id="@+id/qualitys_StudentId"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:gravity="center"
+            android:text=""
+            android:textSize="@dimen/detailstextsize" />
 
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="140dp"
+            android:layout_height="1dp"
+            android:layout_marginLeft="120dp"
+            android:background="@color/sblack" />
+
+        <TextView
+            android:layout_width="140dp"
+            android:layout_height="1dp"
+            android:layout_marginLeft="120dp"
+            android:background="@color/sblack" />
+
+        <TextView
+            android:layout_width="140dp"
+            android:layout_height="1dp"
+            android:layout_marginLeft="120dp"
+            android:background="@color/sblack" />
+
+    </LinearLayout>
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        >
-        <TextView
-            android:layout_marginLeft="120dp"
-            android:layout_width="140dp"
-            android:layout_height="1dp"
-            android:background="@color/sblack"
-            />
-        <TextView
-            android:layout_marginLeft="120dp"
-            android:layout_width="140dp"
-            android:layout_height="1dp"
-            android:background="@color/sblack"
-            />
-        <TextView
-            android:layout_marginLeft="120dp"
-            android:layout_width="140dp"
-            android:layout_height="1dp"
-            android:background="@color/sblack"
-            />
+        android:paddingTop="@dimen/detailslayoutpadingtop">
 
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:paddingTop="@dimen/detailslayoutpadingtop"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        >
         <TextView
             android:layout_width="120dp"
-            android:gravity="right"
             android:layout_height="wrap_content"
+            android:gravity="right"
+            android:textStyle="bold"
             android:text="评定成绩："
-            android:textSize="@dimen/detailstextsize"
-            />
+            android:textSize="@dimen/detailstextsize" />
 
-            <EditText
-                android:textSize="@dimen/detailstextsize"
-                android:id="@+id/qualitys_AttendTime"
-                android:layout_width="140dp"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text=""
-                android:background="@null"
-                />
+        <EditText
+            android:id="@+id/qualitys_AttendTime"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:gravity="center"
+            android:text=""
+            android:textSize="@dimen/detailstextsize" />
 
 
         <TextView
-            android:textSize="@dimen/detailstextsize"
             android:layout_width="180dp"
-            android:gravity="right"
             android:layout_height="wrap_content"
+            android:gravity="right"
+            android:textStyle="bold"
             android:text="惯性及故障处理："
-            />
+            android:textSize="@dimen/detailstextsize" />
 
-            <EditText
-                android:textSize="@dimen/detailstextsize"
-                android:id="@+id/qualitys_EndAttendTime"
-                android:layout_width="match_parent"
-                android:text=""
-                android:layout_marginRight="3dp"
-                android:singleLine="true"
-                android:background="@null"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                />
+        <EditText
+            android:id="@+id/qualitys_EndAttendTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="3dp"
+            android:background="@null"
+            android:gravity="center"
+            android:singleLine="true"
+            android:text=""
+            android:textSize="@dimen/detailstextsize" />
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:layout_marginRight="30dp"
-        >
+        android:orientation="horizontal">
+
         <TextView
-            android:layout_marginLeft="120dp"
             android:layout_width="140dp"
             android:layout_height="1dp"
-            android:background="@color/sblack"
-            />
+            android:layout_marginLeft="120dp"
+            android:background="@color/sblack" />
+
         <TextView
-            android:layout_marginLeft="180dp"
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@color/sblack"
-            />
+            android:layout_marginLeft="180dp"
+            android:background="@color/sblack" />
 
 
     </LinearLayout>
@@ -263,74 +255,72 @@ android:textSize="@dimen/detailstextsize"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:paddingTop="@dimen/detailslayoutpadingtop"
-        >
+        android:paddingTop="@dimen/detailslayoutpadingtop">
+
         <TextView
-            android:textSize="@dimen/detailstextsize"
             android:layout_width="120dp"
-            android:gravity="right"
             android:layout_height="wrap_content"
+            android:gravity="right"
             android:text="概况："
-            />
+            android:textStyle="bold"
+            android:textSize="@dimen/detailstextsize" />
+
         <EditText
-            android:textSize="@dimen/detailstextsize"
             android:id="@+id/daily_qualitys_aim"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@null"
             android:maxLines="4"
             android:text=""
-            android:background="@null"
-            />
+            android:textSize="@dimen/detailstextsize" />
 
     </LinearLayout>
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginLeft="120dp"
         android:layout_marginRight="30dp"
-        android:background="@color/sblack"
-        />
+        android:background="@color/sblack" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="50dp"
         android:gravity="center_horizontal"
-        >
+        android:orientation="horizontal">
 
         <Button
-            android:textSize="@dimen/detailstextsize"
             android:id="@+id/daily_qualitys_save"
             android:layout_width="150dp"
             android:layout_height="45dp"
+            android:background="@drawable/buttonclickcolor"
             android:gravity="center"
             android:text="保存到本地"
             android:textColor="@color/white"
-            android:background="@drawable/buttonclickcolor"
-            />
+            android:textSize="@dimen/detailstextsize" />
+
         <Button
-            android:textSize="@dimen/detailstextsize"
             android:id="@+id/daily_qualitys_saveup"
             android:layout_width="150dp"
             android:layout_height="45dp"
+            android:layout_marginLeft="80dp"
+            android:layout_marginRight="80dp"
+            android:background="@drawable/buttonclickcolor"
             android:gravity="center"
             android:text="保存并上传"
             android:textColor="@color/white"
-            android:background="@drawable/buttonclickcolor"
-            android:layout_marginLeft="80dp"
-            android:layout_marginRight="80dp"
-            android:visibility="invisible"
-            />
-        <Button
             android:textSize="@dimen/detailstextsize"
+            android:visibility="invisible" />
+
+        <Button
             android:id="@+id/daily_qualitys_cancle"
             android:layout_width="150dp"
             android:layout_height="45dp"
+            android:background="@drawable/buttonclickcolor"
             android:gravity="center"
             android:text="取消"
             android:textColor="@color/white"
-            android:background="@drawable/buttonclickcolor"
-            />
+            android:textSize="@dimen/detailstextsize" />
     </LinearLayout>
 </LinearLayout>

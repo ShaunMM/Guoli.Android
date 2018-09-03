@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:background="@color/colorblue2"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/tv_fullname"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="0.2"
+            android:gravity="center"
+            android:text="6056"
+            android:textSize="@dimen/ts_twenty" />
+
+        <TextView
+            android:id="@+id/tv_beginstation"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="0.2"
+            android:gravity="center"
+            android:text="大同"
+            android:textSize="@dimen/ts_twenty" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="0.1"
+            android:gravity="center"
+            android:text="----->"
+            android:textSize="@dimen/ts_twenty" />
+
+        <TextView
+            android:id="@+id/tv_overstation"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="0.2"
+            android:gravity="center"
+            android:text="包头"
+            android:textSize="@dimen/ts_twenty" />
+
+        <TextView
+            android:id="@+id/tv_direction"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="0.2"
+            android:gravity="center"
+            android:text="上行"
+            android:textSize="@dimen/ts_twenty" />
+
+    </LinearLayout>
+
+</LinearLayout>

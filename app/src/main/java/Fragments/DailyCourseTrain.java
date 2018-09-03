@@ -1,6 +1,5 @@
 package Fragments;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -9,27 +8,30 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
+import java.util.TimeZone;
 
 import DBUtils.DBOpenHelper;
-import EventClass.TeachDetailsEvent;
 import Utils.CommonAdapter;
 import Utils.NetUtils;
 import Utils.ViewHolder;
+import config.ISystemConfig;
+import config.SystemConfigFactory;
 import de.greenrobot.event.EventBus;
-import de.greenrobot.event.Subscribe;
-import de.greenrobot.event.ThreadMode;
 import zj.com.mc.CourseTrain;
 import zj.com.mc.Myapplilcation;
 import zj.com.mc.R;
-import zj.com.mc.UtilisClass;
 
 /**
- * Created by dell on 2016/8/3.
+ * 授课培训记录Frgment
  */
 public class DailyCourseTrain extends BaseFragment {
 
@@ -37,96 +39,49 @@ public class DailyCourseTrain extends BaseFragment {
     private Bundle bundlecourse;
     private DBOpenHelper dbOpenHelper;
     private ListView daily_coursetrain_list;
+    private TextView tv_nocoursetrain;
     private CommonAdapter adapteraourse;
     private List<Map> listcourse;
     private String personId;
-    private String searchdate;
     private String sql;
-
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        EventBus.getDefault().register(DailyCourseTrain.this);
-    }
-
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-        EventBus.getDefault().unregister(DailyCourseTrain.this);
-    }
+    private ISystemConfig systemConfig;
 
     @Override
     View initView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view=inflater.inflate(R.layout.dailycoursetrain,container,false);
-        daily_coursetrain_list= (ListView) view.findViewById(R.id.daily_coursetrain_list);
+        View view = inflater.inflate(R.layout.dailycoursetrain, container, false);
+        daily_coursetrain_list = (ListView) view.findViewById(R.id.daily_coursetrain_list);
+        tv_nocoursetrain = (TextView) view.findViewById(R.id.tv_nocoursetrain);
+        dbOpenHelper = DBOpenHelper.getInstance(getActivity().getApplicationContext());
+        systemConfig = SystemConfigFactory.getInstance(getActivity()).getSystemConfig();
         title.setText("授课培训记录");
-        sql="select * from InstructorTeach where TeachStart like ? and InstructorId=?";
-        personId=getActivity().getSharedPreferences("PersonInfo", Context.MODE_PRIVATE).getString("PersonId",null);
-        dbOpenHelper= DBOpenHelper.getInstance(getActivity().getApplicationContext());
-        searchdate=UtilisClass.getStringDate2();
-//        inintview();
-
-
+        sql = "select * from InstructorTeach where InstructorId=?";
+        personId = systemConfig.getUserId();
+        listcourse = new ArrayList<>();
         return view;
     }
 
-
     private void inintview() {
-//        listcourse=dbOpenHelper.queryListMap(sql,new String[]{searchdate+"%",personId});
-
-        Myapplilcation.getExecutorService().execute(new Runnable() {
-            @Override
-            public void run() {
-
-
-                List<Map>  listmap=dbOpenHelper.queryListMap(sql,
-                        new String[]{searchdate+"%",personId});
-
-                EventBus.getDefault().post(new TeachDetailsEvent(listmap));
-            }
-        });
-
-
-
-    }
-
-
-    //自动刷新数据
-    @Subscribe(threadMode = ThreadMode.MainThread)
-    public void setDateChangeAdapter(TeachDetailsEvent event){
-
-        listcourse=event.getList();
-        if (listcourse.size()!=0) {
-Collections.reverse(listcourse);
+        listcourse = dbOpenHelper.queryListMap(sql, new String[]{personId});
+        if (listcourse.size() > 0) {
+            tv_nocoursetrain.setVisibility(View.GONE);
+            Collections.reverse(listcourse);
             adapteraourse = new CommonAdapter<Map>(getActivity(), listcourse, R.layout.dailylistinglistitem) {
                 @Override
                 protected void convertlistener(final ViewHolder holder, final Map map) {
-
                     holder.getView(R.id.daily_Listing_itemdo).setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
 
-
-//                        UtilisClass.setconverlisten(holder,map,dbOpenHelper,"InstructorTeach");
-                            if (map.get("IsUploaded").equals(1)) {
+                            if (map.get("IsUploaded").equals(0)) {
                                 Myapplilcation.getExecutorService().execute(new Runnable() {
                                     @Override
                                     public void run() {
-                                        NetUtils.updataarguments3dingle(dbOpenHelper, "InstructorTeach", map.get("Id") + "");
+                                        NetUtils.updataarguments3dingle(dbOpenHelper, systemConfig, "InstructorTeach", map.get("Id") + "");
                                     }
                                 });
-                                List<Map> isUpdata = dbOpenHelper.queryListMap("select * from InstructorTeach where Id=?", new String[]{map.get("Id") + ""});
-                                String isuploaded = isUpdata.get(0).get("IsUploaded") + "";
-                                if (isuploaded.equals(0)) {
-                                    map.put("IsUploaded", "0");
-                                    holder.setText(R.id.daily_Listing_itemdo, "已上传");
-                                } else {
-                                    UtilisClass.showToast(getActivity(), "上传失败！");
-                                }
-
-
-                            } else {
-
+                                map.put("IsUploaded", "1");
+                                holder.setText(R.id.daily_Listing_itemdo, "已上传");
+                                holder.setTextViewBGD(R.id.daily_Listing_itemdo, R.mipmap.i2_2);
                             }
                         }
 
@@ -135,66 +90,54 @@ Collections.reverse(listcourse);
 
                 @Override
                 public void convert(ViewHolder holder, Map map) {
-                    String start = map.get("TeachStart").toString().split(" ")[1];
-
-                    String starttime1 = start.toString().split(":")[0];
-                    String starttime2 = start.toString().split(":")[1];
-                    int s = Integer.parseInt(starttime1) * 60 + Integer.parseInt(starttime2);
-                    String stop = map.get("TeachEnd").toString().split(" ")[1];
-                    String stoptime1 = stop.toString().split(":")[0];
-                    String stoptime2 = stop.toString().split(":")[1];
-
-                    int e = Integer.parseInt(stoptime1) * 60 + Integer.parseInt(stoptime2);
-                    double d = (e - s) / 60;
-
+                    if ((map.get("TeachStart").toString().length()>11)&&(map.get("TeachEnd").toString().length()>11)){
+                        long startlong = Long.valueOf(dateToStamp(map.get("TeachStart").toString() + ":00"));
+                        long stoplong = Long.valueOf(dateToStamp(map.get("TeachEnd").toString() + ":00"));
+                        holder.setText(R.id.daily_Listing_itemtype, stampToDate(String.valueOf(stoplong - startlong)));
+                    }else{
+                        holder.setText(R.id.daily_Listing_itemtype, "");
+                    }
                     holder.setText(R.id.daily_Listing_itemmessage, String.valueOf(map.get("TeachPlace")));
-                    holder.setText(R.id.daily_Listing_itemtype, d + "");
                     holder.setText(R.id.daily_Listing_itemnumber, String.valueOf(map.get("JoinCount")));
-
                     holder.setText(R.id.daily_Listing_itemtime, map.get("TeachStart") + "");
-                    if (map.get("IsUploaded").equals(1)) {
+                    if (map.get("IsUploaded").equals(0)) {
                         holder.setText(R.id.daily_Listing_itemdo, "上传");
+                        holder.setTextViewBGD(R.id.daily_Listing_itemdo, R.mipmap.i2_3);
                     } else {
                         holder.setText(R.id.daily_Listing_itemdo, "已上传");
-
+                        holder.setTextViewBGD(R.id.daily_Listing_itemdo, R.mipmap.i2_2);
                     }
-
-
                 }
-
             };
-            daily_coursetrain_list.setAdapter(adapteraourse);
 
+            daily_coursetrain_list.setAdapter(adapteraourse);
             daily_coursetrain_list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                     intentcourse = new Intent(getActivity(), CourseTrain.class);
                     bundlecourse = new Bundle();
                     bundlecourse.putInt("listitemId", (Integer) listcourse.get(i).get("Id"));
+                    bundlecourse.putString("IsUploaded", listcourse.get(i).get("IsUploaded").toString());
                     intentcourse.putExtra("InstructorTeach", bundlecourse);
                     startActivity(intentcourse);
                 }
             });
+        } else {
+            tv_nocoursetrain.setVisibility(View.VISIBLE);
         }
     }
 
-
-
     @Override
     protected void setDateChanged(String date) {
-        searchdate=date;
         inintview();
     }
 
     @Override
-    protected void setTestButton() {
-
-    }
+    protected void setTestButton() {}
 
     @Override
     protected void setDataButton() {
         //添加记录
-
         intentcourse = new Intent(getActivity(), CourseTrain.class);
         bundlecourse = new Bundle();
         bundlecourse.putInt("listitemId", -1);
@@ -202,14 +145,44 @@ Collections.reverse(listcourse);
         startActivity(intentcourse);
     }
 
-    public void setToast(String str){
-        Toast.makeText(getActivity(), str, Toast.LENGTH_SHORT).show();
+    @Override
+    protected void showAddButton(TextView textView) {}
 
+    public void setToast(String str) {
+        Toast.makeText(getActivity(), str, Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void onResume() {
         super.onResume();
         inintview();
+    }
+
+    /*
+     * 将时间转换为时间戳
+     */
+    public static String dateToStamp(String s) {
+        String res = null;
+        try {
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            Date date = simpleDateFormat.parse(s);
+            long ts = date.getTime();
+            res = String.valueOf(ts);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return res;
+    }
+
+    /*
+     * 将时间戳转换为时间
+     */
+    public static String stampToDate(String s) {
+        String res;
+        long lt = new Long(s);
+        SimpleDateFormat formatter = new SimpleDateFormat("HH:mm:ss");
+        formatter.setTimeZone(TimeZone.getTimeZone("GMT+00:00"));
+        res = formatter.format(lt);
+        return res;
     }
 }

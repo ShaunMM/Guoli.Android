@@ -1,66 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
 
     <LinearLayout
-        android:background="@color/colorblue2"
-        android:padding="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        >
+        android:background="@color/colorblue2"
+        android:gravity="center"
+        android:orientation="horizontal">
+
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
             android:text="责任司机"
-            android:gravity="center"
-            android:layout_weight="1"
-            />
+            android:textSize="@dimen/ts_twenty" />
+
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
             android:text="概况"
-            android:gravity="center"
-            android:layout_weight="1"
-            />
+            android:textSize="@dimen/ts_twenty" />
+
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
             android:text="性质"
-            android:gravity="center"
-            android:layout_weight="1"
-            />
+            android:textSize="@dimen/ts_twenty" />
+
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
             android:text="记录时间"
-            android:gravity="center"
-            android:layout_weight="1"
-            />
+            android:textSize="@dimen/ts_twenty" />
+
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="操作"
-            android:gravity="center"
             android:layout_weight="1"
-            />
+            android:gravity="center"
+            android:text="操作"
+            android:textSize="@dimen/ts_twenty" />
 
     </LinearLayout>
+
     <ListView
         android:id="@+id/daily_preventtofacc_list"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
-        ></ListView>
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp" />
+
+    <TextView
+        android:id="@+id/tv_nopreventionaccid"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginLeft="150dp"
+        android:layout_marginRight="150dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/circle_bg"
+        android:gravity="center"
+        android:text="暂 无 防 止 事 故 及 好 人 好 事 记 录"
+        android:textSize="@dimen/ts_twenty"
+        android:textStyle="bold"
+        android:visibility="gone" />
 
 
 </LinearLayout>

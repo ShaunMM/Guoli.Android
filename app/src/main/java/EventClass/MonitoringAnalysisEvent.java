@@ -55,7 +55,4 @@ public class MonitoringAnalysisEvent {
         this.list = list;
     }
 
-
-
-
 }

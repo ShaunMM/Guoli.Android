@@ -1,81 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="10dp"
-        >
+        android:orientation="vertical">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:paddingTop="@dimen/detailslayoutpadingtop"
-            >
+            android:paddingTop="@dimen/detailslayoutpadingtop">
+
             <TextView
-                android:layout_height="wrap_content"
-                android:text="授课地点："
                 android:layout_width="120dp"
+                android:layout_height="wrap_content"
                 android:gravity="right"
+                android:text="授课地点："
                 android:textSize="@dimen/detailstextsize"
-                />
+                android:textStyle="bold" />
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                >
+                android:orientation="horizontal">
 
                 <EditText
-                    android:textSize="@dimen/detailstextsize"
-
                     android:id="@+id/course_takedate"
+
                     android:layout_width="140dp"
-                    android:gravity="center"
                     android:layout_height="wrap_content"
                     android:background="@null"
-
-                    />
-                <TextView
+                    android:gravity="center"
                     android:textSize="@dimen/detailstextsize"
 
-                    android:layout_width="120dp"
-                    android:gravity="right"
-                    android:layout_height="wrap_content"
-                    android:text="参与人数："
                     />
+
+                <TextView
+                    android:layout_width="120dp"
+
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:text="参与人数："
+                    android:textSize="@dimen/detailstextsize"
+                    android:textStyle="bold" />
 
                 <EditText
-                    android:textSize="@dimen/detailstextsize"
                     android:id="@+id/course_personcount"
                     android:layout_width="140dp"
                     android:layout_height="wrap_content"
                     android:background="@null"
                     android:inputType="number"
-                    />
+                    android:textSize="@dimen/detailstextsize" />
             </LinearLayout>
 
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            >
+            android:orientation="horizontal">
+
             <TextView
-                android:layout_marginLeft="120dp"
                 android:layout_width="140dp"
                 android:layout_height="1dp"
-                android:background="@color/sblack"
-                />
-            <TextView
                 android:layout_marginLeft="120dp"
+                android:background="@color/sblack" />
+
+            <TextView
                 android:layout_width="140dp"
                 android:layout_height="1dp"
-                android:background="@color/sblack"
-                />
+                android:layout_marginLeft="120dp"
+                android:background="@color/sblack" />
 
 
         </LinearLayout>
@@ -84,164 +84,156 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:paddingTop="@dimen/detailslayoutpadingtop"
+            android:paddingTop="@dimen/detailslayoutpadingtop">
 
-            >
             <TextView
-                android:textSize="@dimen/detailstextsize"
                 android:layout_width="120dp"
-                android:gravity="right"
                 android:layout_height="wrap_content"
+                android:gravity="right"
                 android:text="授课日期："
-                />
+                android:textSize="@dimen/detailstextsize"
+                android:textStyle="bold" />
 
             <TextView
-                android:textSize="@dimen/detailstextsize"
                 android:id="@+id/course_date"
                 android:layout_width="140dp"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                />
+                android:textSize="@dimen/detailstextsize" />
 
 
             <TextView
 
-                android:textSize="@dimen/detailstextsize"
                 android:layout_width="120dp"
-                android:gravity="right"
                 android:layout_height="wrap_content"
+                android:gravity="right"
                 android:text="授课时间："
-                />
+                android:textSize="@dimen/detailstextsize"
+                android:textStyle="bold" />
 
             <TextView
-                android:textSize="@dimen/detailstextsize"
                 android:id="@+id/course_time1"
-                android:layout_width="60dp"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                />
+                android:textSize="@dimen/detailstextsize" />
+
             <TextView
-                android:textSize="@dimen/detailstextsize"
                 android:layout_width="20dp"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="到"
-                />
+                android:textColor="@color/colorblue"
+                android:textSize="@dimen/detailstextsize" />
+
             <TextView
-                android:textSize="@dimen/detailstextsize"
                 android:id="@+id/course_time2"
-                android:layout_width="60dp"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                />
+                android:textSize="@dimen/detailstextsize" />
 
 
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            >
+            android:orientation="horizontal">
+
             <TextView
-                android:layout_marginLeft="120dp"
                 android:layout_width="140dp"
                 android:layout_height="1dp"
-                android:background="@color/sblack"
-                />
+                android:layout_marginLeft="120dp"
+                android:background="@color/sblack" />
 
             <TextView
+                android:layout_width="100dp"
+                android:layout_height="1dp"
                 android:layout_marginLeft="120dp"
-                android:layout_width="60dp"
-                android:layout_height="1dp"
-                android:background="@color/sblack"
-                />
+                android:background="@color/sblack" />
+
             <TextView
-                android:layout_marginLeft="20dp"
-                android:layout_width="60dp"
+                android:layout_width="100dp"
                 android:layout_height="1dp"
-                android:background="@color/sblack"
-                />
+                android:layout_marginLeft="20dp"
+                android:background="@color/sblack" />
 
 
         </LinearLayout>
-
 
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:paddingTop="@dimen/detailslayoutpadingtop"
+            android:paddingTop="@dimen/detailslayoutpadingtop">
 
-            >
             <TextView
-                android:textSize="@dimen/detailstextsize"
                 android:layout_width="120dp"
-                android:gravity="right"
                 android:layout_height="wrap_content"
+                android:gravity="right"
                 android:text="授课内容："
-                />
-            <EditText
                 android:textSize="@dimen/detailstextsize"
+                android:textStyle="bold" />
+
+            <EditText
                 android:id="@+id/daily_course_aim"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:maxLines="4"
                 android:background="@null"
-                />
+                android:maxLines="4"
+                android:textSize="@dimen/detailstextsize" />
 
         </LinearLayout>
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_marginLeft="120dp"
             android:layout_marginRight="30dp"
-            android:background="@color/sblack"
-            />
+            android:background="@color/sblack" />
 
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="50dp"
             android:gravity="center_horizontal"
-            >
+            android:orientation="horizontal">
 
             <Button
                 android:id="@+id/daily_course_save"
                 android:layout_width="150dp"
                 android:layout_height="45dp"
+                android:background="@drawable/buttonclickcolor"
                 android:gravity="center"
                 android:text="保存到本地"
-                android:textSize="@dimen/detailstextsize"
                 android:textColor="@color/white"
-                android:background="@drawable/buttonclickcolor"
-                />
+                android:textSize="@dimen/detailstextsize" />
+
             <Button
-                android:visibility="invisible"
-                android:textSize="@dimen/detailstextsize"
                 android:id="@+id/daily_course_saveup"
                 android:layout_width="150dp"
                 android:layout_height="45dp"
+                android:layout_marginLeft="80dp"
+                android:layout_marginRight="80dp"
+                android:background="@drawable/buttonclickcolor"
                 android:gravity="center"
                 android:text="保存并上传"
                 android:textColor="@color/white"
-                android:background="@drawable/buttonclickcolor"
-                android:layout_marginLeft="80dp"
-                android:layout_marginRight="80dp"
+                android:textSize="@dimen/detailstextsize"
+                android:visibility="invisible" />
 
-                />
             <Button
                 android:id="@+id/daily_course_cancle"
                 android:layout_width="150dp"
                 android:layout_height="45dp"
+                android:background="@drawable/buttonclickcolor"
                 android:gravity="center"
                 android:text="取消"
-                android:textSize="@dimen/detailstextsize"
                 android:textColor="@color/white"
-                android:background="@drawable/buttonclickcolor"
-                />
+                android:textSize="@dimen/detailstextsize" />
         </LinearLayout>
     </LinearLayout>
 

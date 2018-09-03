@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="#f0f0f0">
+        <TextView
+            android:id="@+id/tv_StationName"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="车站"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:padding="10dp"
+            android:hint="    " />
+        <TextView
+            android:id="@+id/tv_ArriveTime"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="到"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:padding="10dp"
+            android:hint="    " />
+        <TextView
+            android:id="@+id/tv_DepartTime"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="发"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:padding="10dp"
+            android:hint="    " />
+        <TextView
+            android:id="@+id/tv_SuggestSpeed"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="建议车速"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:padding="10dp"
+            android:hint="    " />
+    </LinearLayout>
+</LinearLayout>

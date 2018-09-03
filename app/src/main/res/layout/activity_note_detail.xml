@@ -2,17 +2,36 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F0E68C" >
+    android:background="#F0E68C">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:text="站点："
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/tv_currentSite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/textView"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:text="六个鸡"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:text="标题"
+        android:layout_below="@+id/textView"
         android:paddingLeft="10dp"
-        android:paddingTop="10dp"
+        android:text="标题"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <EditText
@@ -23,12 +42,11 @@
         android:layout_alignParentRight="true"
         android:layout_below="@+id/textView1"
         android:layout_marginRight="10dp"
-        android:paddingLeft="5dp"
-        android:paddingTop="3dp"
+        android:background="#ffffff"
+        android:ems="10"
         android:paddingBottom="3dp"
-        android:background="#7FFFD4"
-        android:ems="10" >
-
+        android:paddingLeft="5dp"
+        android:paddingTop="3dp">
         <requestFocus />
     </EditText>
 
@@ -40,14 +58,14 @@
         android:layout_alignLeft="@+id/textView2"
         android:layout_alignParentRight="true"
         android:layout_below="@+id/textView2"
-        android:background="#7FFFD4"
-        android:layout_marginRight="10dp"
         android:layout_marginBottom="5dp"
-        android:paddingLeft="5dp"
-        android:paddingTop="3dp"
+        android:layout_marginRight="10dp"
+        android:background="#ffffff"
         android:ems="10"
         android:gravity="top"
-        android:paddingRight="10dp" />
+        android:paddingLeft="5dp"
+        android:paddingRight="10dp"
+        android:paddingTop="3dp" />
 
     <TextView
         android:id="@+id/textView2"
@@ -65,9 +83,9 @@
         android:layout_alignLeft="@+id/editText2"
         android:layout_alignParentBottom="true"
         android:layout_alignRight="@+id/editText2"
+        android:layout_marginBottom="5dp"
         android:background="#ADFF2F"
         android:paddingRight="10dp"
-        android:layout_marginBottom="5dp"
         android:text="保存" />
 
 </RelativeLayout>

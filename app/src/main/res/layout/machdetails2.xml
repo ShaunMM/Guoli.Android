@@ -1,362 +1,354 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="10dp"
-    >
+    android:orientation="vertical">
+
     <LinearLayout
-        android:paddingTop="@dimen/detailslayoutpadingtop"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        >
-        <TextView
-            android:textSize="@dimen/detailstextsize"
-            android:layout_height="wrap_content"
-            android:text="日期："
-            android:layout_width="120dp"
-            android:gravity="right"
+        android:paddingTop="@dimen/detailslayoutpadingtop">
 
-            />
+        <TextView
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:text="日期："
+            android:textSize="@dimen/detailstextsize"
+            android:textStyle="bold" />
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            >
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/machine_takedate"
                 android:layout_width="140dp"
+                android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text=""
-                android:textSize="@dimen/detailstextsize"
-                android:layout_height="wrap_content"
-                />
+                android:textSize="@dimen/detailstextsize" />
         </LinearLayout>
 
         <TextView
             android:id="@+id/checi"
             android:layout_width="120dp"
-            android:gravity="right"
-            android:textSize="@dimen/detailstextsize"
             android:layout_height="wrap_content"
+            android:gravity="right"
             android:text="车次："
-            />
-            <TextView
-                android:id="@+id/machine_TrainCode"
-                android:layout_width="140dp"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:text=""
-                />
+            android:textSize="@dimen/detailstextsize"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/machine_TrainCode"
+            android:layout_width="140dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text=""
+            android:textSize="@dimen/detailstextsize" />
 
 
         <TextView
             android:layout_width="120dp"
-            android:gravity="right"
             android:layout_height="wrap_content"
+            android:gravity="right"
             android:text="机车型号："
             android:textSize="@dimen/detailstextsize"
+            android:textStyle="bold" />
 
-            />
         <EditText
-            android:textSize="@dimen/detailstextsize"
             android:id="@+id/machine_LocomotiveType"
             android:layout_width="140dp"
             android:layout_height="wrap_content"
             android:background="@null"
-            android:text=""
-            android:singleLine="true"
             android:gravity="center"
-            />
-
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        >
-        <TextView
-            android:layout_marginLeft="120dp"
-            android:layout_width="140dp"
-            android:layout_height="1dp"
-            android:background="@color/sblack"
-            />
-        <TextView
-            android:layout_marginLeft="120dp"
-            android:layout_width="140dp"
-            android:layout_height="1dp"
-            android:background="@color/sblack"
-            />
-        <TextView
-            android:layout_marginLeft="120dp"
-            android:layout_width="140dp"
-            android:layout_height="1dp"
-            android:background="@color/sblack"
-            />
+            android:singleLine="true"
+            android:text=""
+            android:textSize="@dimen/detailstextsize" />
 
     </LinearLayout>
 
     <LinearLayout
-        android:paddingTop="@dimen/detailslayoutpadingtop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="140dp"
+            android:layout_height="1dp"
+            android:layout_marginLeft="120dp"
+            android:background="@color/sblack" />
+
+        <TextView
+            android:layout_width="140dp"
+            android:layout_height="1dp"
+            android:layout_marginLeft="120dp"
+            android:background="@color/sblack" />
+
+        <TextView
+            android:layout_width="140dp"
+            android:layout_height="1dp"
+            android:layout_marginLeft="120dp"
+            android:background="@color/sblack" />
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        >
+        android:paddingTop="@dimen/detailslayoutpadingtop">
+
         <TextView
             android:layout_width="120dp"
-            android:gravity="right"
-            android:textSize="@dimen/detailstextsize"
             android:layout_height="wrap_content"
+            android:gravity="right"
             android:text="主班司机："
+            android:textSize="@dimen/detailstextsize"
+            android:textStyle="bold" />
 
-            />
-            <TextView
-                android:textSize="@dimen/detailstextsize"
-                android:layout_width="140dp"
-                android:layout_height="wrap_content"
-                android:textStyle="bold"
-                android:text=""
-                android:id="@+id/machine_DriverId"
-                android:gravity="center"
-                />
-
+        <TextView
+            android:id="@+id/machine_DriverId"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text=""
+            android:textSize="@dimen/detailstextsize"
+            android:textStyle="bold" />
 
 
         <TextView
             android:layout_width="120dp"
-            android:gravity="right"
             android:layout_height="wrap_content"
+            android:gravity="right"
             android:text="副班司机："
             android:textSize="@dimen/detailstextsize"
-            />
+            android:textStyle="bold" />
 
-            <TextView
-                android:textSize="@dimen/detailstextsize"
-                android:id="@+id/machine_ViceDriverId"
-                android:layout_width="140dp"
-                android:text=""
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                />
+        <TextView
+            android:id="@+id/machine_ViceDriverId"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text=""
+            android:textSize="@dimen/detailstextsize" />
 
 
         <TextView
             android:layout_width="120dp"
-            android:gravity="right"
             android:layout_height="wrap_content"
+            android:gravity="right"
             android:text="学习司机："
             android:textSize="@dimen/detailstextsize"
-            />
+            android:textStyle="bold" />
 
 
-            <TextView
-                android:textSize="@dimen/detailstextsize"
-                android:id="@+id/machine_StudentId"
-                android:layout_width="140dp"
-                android:text=""
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                />
+        <TextView
+            android:id="@+id/machine_StudentId"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text=""
+            android:textSize="@dimen/detailstextsize" />
 
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="140dp"
+            android:layout_height="1dp"
+            android:layout_marginLeft="120dp"
+            android:background="@color/sblack" />
+
+        <TextView
+            android:layout_width="140dp"
+            android:layout_height="1dp"
+            android:layout_marginLeft="120dp"
+            android:background="@color/sblack" />
+
+        <TextView
+            android:layout_width="140dp"
+            android:layout_height="1dp"
+            android:layout_marginLeft="120dp"
+            android:background="@color/sblack" />
+
+    </LinearLayout>
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        >
-        <TextView
-            android:layout_marginLeft="120dp"
-            android:layout_width="140dp"
-            android:layout_height="1dp"
-            android:background="@color/sblack"
-            />
-        <TextView
-            android:layout_marginLeft="120dp"
-            android:layout_width="140dp"
-            android:layout_height="1dp"
-            android:background="@color/sblack"
-            />
-        <TextView
-            android:layout_marginLeft="120dp"
-            android:layout_width="140dp"
-            android:layout_height="1dp"
-            android:background="@color/sblack"
-            />
+        android:paddingTop="@dimen/detailslayoutpadingtop">
 
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:paddingTop="@dimen/detailslayoutpadingtop"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        >
         <TextView
             android:layout_width="120dp"
-            android:gravity="right"
             android:layout_height="wrap_content"
+            android:gravity="right"
             android:text="发生地点："
             android:textSize="@dimen/detailstextsize"
-            />
+            android:textStyle="bold" />
 
-            <TextView
-                android:textSize="@dimen/detailstextsize"
-                android:id="@+id/machine_AttendTime"
-                android:layout_width="140dp"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text=""
-                />
+        <TextView
+            android:id="@+id/machine_AttendTime"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text=""
+            android:textSize="@dimen/detailstextsize" />
 
 
         <TextView
             android:layout_width="120dp"
-            android:gravity="right"
             android:layout_height="wrap_content"
+            android:gravity="right"
             android:text="故障处所："
             android:textSize="@dimen/detailstextsize"
-            />
+            android:textStyle="bold" />
 
-            <EditText
-                android:id="@+id/machine_EndAttendTime"
-                android:layout_width="140dp"
-                android:text=""
-                android:background="@null"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:textSize="@dimen/detailstextsize"
-                />
+        <EditText
+            android:id="@+id/machine_EndAttendTime"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:gravity="center"
+            android:text=""
+            android:textSize="@dimen/detailstextsize" />
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        >
+        android:orientation="horizontal">
+
         <TextView
-            android:layout_marginLeft="120dp"
             android:layout_width="140dp"
             android:layout_height="1dp"
-            android:background="@color/sblack"
-            />
-        <TextView
             android:layout_marginLeft="120dp"
+            android:background="@color/sblack" />
+
+        <TextView
             android:layout_width="140dp"
             android:layout_height="1dp"
-            android:background="@color/sblack"
-            />
+            android:layout_marginLeft="120dp"
+            android:background="@color/sblack" />
 
 
     </LinearLayout>
 
 
     <LinearLayout
-        android:paddingTop="@dimen/detailslayoutpadingtop"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        >
+        android:paddingTop="@dimen/detailslayoutpadingtop">
+
         <TextView
             android:layout_width="120dp"
-            android:gravity="right"
-            android:textSize="@dimen/detailstextsize"
             android:layout_height="wrap_content"
+            android:gravity="right"
             android:text="故障原因："
-            />
-        <EditText
             android:textSize="@dimen/detailstextsize"
+            android:textStyle="bold" />
+
+        <EditText
             android:id="@+id/daily_machine_aim"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@null"
             android:maxLines="4"
             android:text=""
-            android:background="@null"
-            />
+            android:textSize="@dimen/detailstextsize" />
 
     </LinearLayout>
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginLeft="120dp"
         android:layout_marginRight="30dp"
-        android:background="@color/sblack"
-        />
+        android:background="@color/sblack" />
+
     <LinearLayout
-        android:paddingTop="@dimen/detailslayoutpadingtop"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        >
+        android:paddingTop="@dimen/detailslayoutpadingtop">
+
         <TextView
             android:layout_width="120dp"
-            android:gravity="right"
             android:layout_height="wrap_content"
+            android:gravity="right"
             android:text="责任："
             android:textSize="@dimen/detailstextsize"
-            />
+            android:textStyle="bold" />
+
         <EditText
-            android:textSize="@dimen/detailstextsize"
             android:id="@+id/daily_machine_problem"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@null"
             android:maxLines="4"
             android:text=""
-            android:background="@null"
-            />
+            android:textSize="@dimen/detailstextsize" />
 
     </LinearLayout>
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginLeft="120dp"
         android:layout_marginRight="30dp"
-        android:background="@color/sblack"
-        />
+        android:background="@color/sblack" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="50dp"
         android:gravity="center_horizontal"
-        >
+        android:orientation="horizontal">
 
         <Button
             android:id="@+id/daily_machine_save"
             android:layout_width="150dp"
             android:layout_height="45dp"
+            android:background="@drawable/buttonclickcolor"
             android:gravity="center"
             android:text="保存到本地"
             android:textColor="@color/white"
-            android:textSize="@dimen/detailstextsize"
-            android:background="@drawable/buttonclickcolor"
-            />
+            android:textSize="@dimen/detailstextsize" />
+
         <Button
-            android:visibility="invisible"
-            android:textSize="@dimen/detailstextsize"
             android:id="@+id/daily_machine_saveup"
             android:layout_width="150dp"
             android:layout_height="45dp"
+            android:layout_marginLeft="80dp"
+            android:layout_marginRight="80dp"
+            android:background="@drawable/buttonclickcolor"
             android:gravity="center"
             android:text="保存并上传"
             android:textColor="@color/white"
-            android:background="@drawable/buttonclickcolor"
-            android:layout_marginLeft="80dp"
-            android:layout_marginRight="80dp"
+            android:textSize="@dimen/detailstextsize"
+            android:visibility="invisible"
 
             />
+
         <Button
             android:id="@+id/daily_machine_cancle"
             android:layout_width="150dp"
             android:layout_height="45dp"
+            android:background="@drawable/buttonclickcolor"
             android:gravity="center"
             android:text="取消"
-            android:textSize="@dimen/detailstextsize"
             android:textColor="@color/white"
-            android:background="@drawable/buttonclickcolor"
-            />
+            android:textSize="@dimen/detailstextsize" />
     </LinearLayout>
 </LinearLayout>

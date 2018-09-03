@@ -1,70 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="45dp"
+        android:layout_height="@dimen/hd_function">
 
-        >
         <TextView
+            android:id="@+id/fileshow_title"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/colorwhite"
-            android:textStyle="bold"
-            android:id="@+id/fileshow_title"
             android:gravity="center"
-            android:textSize="@dimen/homepagetextsize"
-            />
+            android:textSize="@dimen/ts_twenty_four"
+            android:textStyle="bold" />
+
         <LinearLayout
             android:id="@+id/search_file_back"
             android:layout_width="wrap_content"
-            android:layout_height= "45dp"
-            android:padding="10dp"
-            android:textSize="16sp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
             android:orientation="horizontal"
+            android:padding="10dp"
+            android:textSize="16sp">
 
-            >
             <TextView
                 android:layout_width="15dp"
                 android:layout_height="match_parent"
-                android:background="@mipmap/db_1"
-                />
+                android:background="@mipmap/db_1" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="返回"
                 android:layout_gravity="center"
-                android:textSize="16sp"
                 android:paddingLeft="5dp"
-                />
+                android:text="返回"
+                android:textSize="@dimen/ts_eighteen" />
         </LinearLayout>
     </RelativeLayout>
 
     <TextView
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="30dp"
         android:id="@+id/fileshow_filepath"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="10dp"
         android:text="行车资料"
-        android:textSize="@dimen/detailstextsize"
-        />
+        android:textSize="@dimen/ts_twenty" />
 
 
     <TextView
-        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="2dp"
-        android:background="@color/colorwhite"
-        />
+        android:layout_marginTop="10dp"
+        android:background="@color/colorwhite" />
+
     <ListView
         android:id="@+id/search_showfiles"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="30dp"
-
-        ></ListView>
+        android:layout_margin="30dp" />
 
 </LinearLayout>

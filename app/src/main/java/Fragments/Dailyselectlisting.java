@@ -1,6 +1,6 @@
 package Fragments;
 
-import android.content.Context;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.Collections;
@@ -19,44 +20,43 @@ import DBUtils.DBOpenHelper;
 import Utils.CommonAdapter;
 import Utils.NetUtils;
 import Utils.ViewHolder;
+import config.ISystemConfig;
+import config.SystemConfigFactory;
 import zj.com.mc.Myapplilcation;
 import zj.com.mc.R;
 import zj.com.mc.SelectiveDatials;
-import zj.com.mc.UtilisClass;
 
 /**
- * Created by dell on 2016/8/2.
+ * 抽查信息单Fragment
  */
-public class Dailyselectlisting extends BaseFragment {
+public class  Dailyselectlisting extends BaseFragment {
 
     private DBOpenHelper dbOpenHelper;
     private List<Map> listselec;
     private CommonAdapter<Map> adapterselec1;
-    ListView addlv;
+    private ListView addlv;
+    private TextView tv_noselect;
     private Intent intentselect;
     private Bundle bundleselect;
     private String personId;
-    private String searchdate;
-
+    private ISystemConfig systemConfig;
 
     @Override
     View initView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view=inflater.inflate(R.layout.dailyselectlisting,container,false);
-        addlv= (ListView) view.findViewById(R.id.daily_Listing_list);
-        title.setText("抽查信息单");
-        personId=getActivity().getSharedPreferences("PersonInfo", Context.MODE_PRIVATE).getString("PersonId",null);
-        searchdate= UtilisClass.getStringDate2();
-        dbOpenHelper= DBOpenHelper.getInstance(getActivity().getApplicationContext());
-//        initview();
-
-
-
+        View view = inflater.inflate(R.layout.dailyselectlisting, container, false);
+        addlv = (ListView) view.findViewById(R.id.daily_Listing_list);
+        tv_noselect = (TextView) view.findViewById(R.id.tv_noselect);
+        title.setText("抽 查 信 息 单");
+        dbOpenHelper = DBOpenHelper.getInstance(getActivity().getApplicationContext());
+        systemConfig = SystemConfigFactory.getInstance(getActivity()).getSystemConfig();
+        personId = systemConfig.getUserId();
         return view;
     }
 
     private void initview() {
-        listselec=dbOpenHelper.queryListMap("select * from InstructorCheck where InstructorId=? and StartTime like ?",new String[]{personId,searchdate+"%"});
-        if (listselec.size()!=0) {
+        listselec = dbOpenHelper.queryListMap("select * from InstructorCheck where InstructorId=?", new String[]{personId});
+        if (listselec.size() != 0) {
+            tv_noselect.setVisibility(View.GONE);
             Collections.reverse(listselec);
             adapterselec1 = new CommonAdapter<Map>(getActivity(), listselec, R.layout.dailylistinglistitem) {
                 @Override
@@ -64,21 +64,18 @@ public class Dailyselectlisting extends BaseFragment {
                     holder.getView(R.id.daily_Listing_itemdo).setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                            if (map.get("IsUploaded").equals(1)) {
+                            if (map.get("IsUploaded").equals(0)) {
                                 Myapplilcation.getExecutorService().execute(new Runnable() {
                                     @Override
                                     public void run() {
-                                        NetUtils.updataarguments3dingle(dbOpenHelper, "InstructorCheck", map.get("Id") + "");
+                                        NetUtils.updataarguments3dingle(dbOpenHelper, systemConfig, "InstructorCheck", map.get("Id") + "");
                                     }
                                 });
                                 List<Map> isUpdata = dbOpenHelper.queryListMap("select * from InstructorCheck where Id=?", new String[]{map.get("Id") + ""});
                                 String isuploaded = isUpdata.get(0).get("IsUploaded") + "";
-//                                if (isuploaded.equals(0)) {
-                                map.put("IsUploaded", "0");
+                                map.put("IsUploaded", "1");
                                 holder.setText(R.id.daily_Listing_itemdo, "已上传");
-//                                } else {
-//                                    UtilisClass.showToast(getActivity(), "上传失败！");
-//                                }
+                                holder.setTextViewBGD(R.id.daily_Listing_itemdo, R.mipmap.i2_2);
                             }
                         }
                     });
@@ -89,12 +86,17 @@ public class Dailyselectlisting extends BaseFragment {
                     holder.setText(R.id.daily_Listing_itemmessage, String.valueOf(map.get("Location")));
                     holder.setText(R.id.daily_Listing_itemtype, String.valueOf(map.get("CheckType")));
                     holder.setText(R.id.daily_Listing_itemnumber, map.get("ProblemCount") + "");
-                    holder.setText(R.id.daily_Listing_itemtime, map.get("StartTime") + "");
-                    if (map.get("IsUploaded").equals(1)) {
+                    if (map.get("StartTime").toString().length() > 11) {
+                        holder.setText(R.id.daily_Listing_itemtime, map.get("StartTime").toString().split(" ")[0]);
+                    } else {
+                        holder.setText(R.id.daily_Listing_itemtime, map.get("StartTime").toString());
+                    }
+                    if (map.get("IsUploaded").equals(0)) {
                         holder.setText(R.id.daily_Listing_itemdo, "上传");
+                        holder.setTextViewBGD(R.id.daily_Listing_itemdo, R.mipmap.i2_3);
                     } else {
                         holder.setText(R.id.daily_Listing_itemdo, "已上传");
-
+                        holder.setTextViewBGD(R.id.daily_Listing_itemdo, R.mipmap.i2_2);
                     }
                 }
             };
@@ -104,11 +106,14 @@ public class Dailyselectlisting extends BaseFragment {
                 public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                     intentselect = new Intent(getActivity(), SelectiveDatials.class);
                     bundleselect = new Bundle();
-                    bundleselect.putInt("listitemId", i);
+                    bundleselect.putInt("listitemId", (Integer) listselec.get(i).get("Id"));
+                    bundleselect.putString("IsUploaded", listselec.get(i).get("IsUploaded").toString());
                     intentselect.putExtra("InstructorCheck", bundleselect);
                     startActivity(intentselect);
                 }
             });
+        } else {
+            tv_noselect.setVisibility(View.VISIBLE);
         }
     }
 
@@ -119,33 +124,34 @@ public class Dailyselectlisting extends BaseFragment {
     }
 
     @Override
-    public void onDestroy() {
-        super.onDestroy();
-    }
-
-
-    @Override
     protected void setDateChanged(String date) {
-        searchdate=date;
         initview();
     }
 
     @Override
     protected void setTestButton() {
+    }
 
+    @Override
+    protected void showAddButton(TextView textView) {
     }
 
     @Override
     protected void setDataButton() {
-        intentselect=new Intent(getActivity(), SelectiveDatials.class);
-        bundleselect=new Bundle();
-        bundleselect.putInt("listitemId",-1);
-        intentselect.putExtra("InstructorCheck",bundleselect);
+        intentselect = new Intent(getActivity(), SelectiveDatials.class);
+        bundleselect = new Bundle();
+        bundleselect.putInt("listitemId", -1);
+        intentselect.putExtra("InstructorCheck", bundleselect);
         startActivity(intentselect);
-
     }
 
-    public void showToast(String str){
+    public void showToast(String str) {
         Toast.makeText(getActivity(), str, Toast.LENGTH_SHORT).show();
     }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+    }
+
 }

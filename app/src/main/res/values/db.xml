@@ -7,124 +7,826 @@
     </array>
     <integer name="DATABASE_VERSION">1</integer>
     <array name="CREATE_TABLE_SQL">
-        <item>CREATE TABLE SeacherHistory (Id INTEGER PRIMARY KEY AUTOINCREMENT,SearchCode text,TableNamessss text)</item>
-        <item>CREATE TABLE if not exists DbUpdateLog (Id INTEGER,TableName text,UpdateTime text,UpdateType integer,TargetId integer,IsUploaded integer,TableNamessss text)</item>
-        <item>create table if not exists BaseStation(Id INTEGER,SN integer,StationName text,Spell text,IsDelete text not null DEFAULT false,UpdateTime text,TableNamessss text)</item>
 
-        <item>create table if not exists Announcement(Id INTEGER PRIMARY KEY AUTOINCREMENT,Title text,Content text,SystemUserId integer,AnnounceType integer,FileName text,FilePath text,PubTime text,IsLoaded integer not null DEFAULT false,LocaPath text,IsRead integer not null DEFAULT 0,TableNamessss text)</item>
-
-        <item>create table if not exists AnnounceCommands(Id INTEGER,CommandNo text,CommandInterval text,Direction text,SpeedLimitLocation text,StartEndTime text,LoseEffectTime text,LimitedSpeed integer,AddTime text,IsActive text,TableNamessss text)</item>
-
-        <item>create table if not exists TrainNoLine(Id INTEGER,TrainNoId integer,LineId integer,Sort integer,UpdateTime text,IsDelete text not null DEFAULT false,TableNamessss text)</item>
-
-        <item>create table if not exists TrainMoment(Id INTEGER,TrainNoLineId integer,ArriveTime text,DepartTime text,IntervalKms text,SuggestSpeed text,TrainStationId integer,StopMinutes integer,Sort integer,TableNamessss text)</item>
-
-        <item>create table if not exists TrainFormation(Id INTEGER,DriveRecordId integer,StationId integer,CarriageCount integer,CarryingCapacity text,Length text,NoteTime text,TableNamessss text)</item>
-
-        <item>create table if not exists TraficSearchResult(Id INTEGER,KeywordsId integer,TraficFileId text,SearchResult text,Position  text,TableNamessss text)</item>
-
-        <item>create table if not exists TraficSearchRecord(Id INTEGER,PersonId integer,Keywords text,SearchCount integer,IsUploaded integer,TableNamessss text)</item>
-
-        <item>create table if not exists TraficKeywords(Id INTEGER,SearchCount integer,Keywords text,AddTime integer,TableNamessss text)</item>
-
-        <item>create table if not exists TraficFileType(Id INTEGER,ParentId integer,TypeName text,TableNamessss text)</item>
-
-        <item>create table if not exists TraficFiles(Id INTEGER,TypeId integer,FileName text,FileExtension text,FileSize text,FilePath text,AddTime text,LocaPath text,IsLoaded text not null DEFAULT false,IsDelete text not null DEFAULT false,TableNamessss text)</item>
-
-        <item>create table if not exists StationFiles2(Id INTEGER,StationId integer,FileType integer,FilePath text,AddTime text,IsDelete text not null DEFAULT false,TableNamessss text)</item>
-
-        <item>create table if not exists StationFiles(Id INTEGER,StationId integer,FileType integer,FileSize text,FilePath text,FileName text,AddTime text,IsDelete text not null DEFAULT false,TableNamessss text)</item>
-
-        <item>create table if not exists Posts(Id INTEGER,PostName text,IsDelete text not null DEFAULT false,TableNamessss text)</item>
-
-
-        <item>create table if not exists PersonInfo(Id INTEGER,Sex integer,PostId integer,PersonId text,WorkNo text,UpdateTime text,DepartmentId text,Name text,Spell text,BirthDate text,PhotoPath text,IdentityNo text,Password text,IsDelete text not null DEFAULT false,LocaPhotoPath text,TableNamessss text)</item>
-
-        <item>create table if not exists InstructorTempTake(Id INTEGER PRIMARY KEY AUTOINCREMENT,InstructorId integer,DriverId integer,ViceDriverId integer,StudentId integer,CarCount integer,TakeDate text,TrainCode text,LocomotiveType text,WholeWeight text,Length text,TakeSection text,RunStart text,RunEnd text,OperateSection text,OperateStart text,OperateEnd text,AttendTime text,EndAttendTime text,TakeAims text,Problems text,UploadTime text,Suggests text,IsDelete text not null DEFAULT false,IsUploaded integer,RecirdTime integer,TableNamessss text)</item>
-
-        <item>create table if not exists InstructorTeach(Id INTEGER PRIMARY KEY AUTOINCREMENT,InstructorId integer,JoinCount integer,TeachPlace text,TeachStart text,TeachEnd text,TeachContent text,UploadTime text,IsDelete text not null DEFAULT false,IsUploaded integer,TableNamessss text)</item>
-
-        <item>create table if not exists InstructorRepair(Id INTEGER PRIMARY KEY AUTOINCREMENT,InstructorId integer,DriverId integer,ViceDriverId integer,StudentId integer,HappenTime text,Location text,TrainCode text,LocomotiveType text,FaultLocation text,FaultReason text,Responsibility text,UploadTime text,IsDelete text not null DEFAULT false,IsUploaded integer,TableNamessss text)</item>
-
-        <item>create table if not exists InstructorQuotaRecord(Id INTEGER PRIMARY KEY AUTOINCREMENT,InstructorId integer,QuotaId integer,IsDelete text not null DEFAULT false,QuotaName text,FinishedAmmount text,Year integer ,Month integer,UpdateTime text,IsUploaded integer not null default 1,TableNamessss text)</item>
-
-        <item>create table if not exists InstructorQuota(Id INTEGER,QuotaName text,QuataAmmount text,AddTime text,IsDelete text not null DEFAULT false,TableNamessss text)</item>
-
-        <item>create table if not exists InstructorPlan(Id INTEGER PRIMARY KEY AUTOINCREMENT,InstructorId integer,WriteDate text,WorkSummary text,Problems text,WorkPlans text,UploadTime text,IsDelete text not null DEFAULT false,IsUploaded integer,TableNamessss text)</item>
-
-        <item>create table if not exists InstructorPeccancy(Id INTEGER PRIMARY KEY AUTOINCREMENT,InstructorId integer,WriteDate text,DriverId integer,PeccancyType text,GeneralSituation text,Analysis text,Suggests text,UploadTime text,IsDelete text not null DEFAULT false,IsUploaded integer,TableNamessss text)</item>
-
-        <item>create table if not exists InstructorLocoQuality(Id INTEGER PRIMARY KEY AUTOINCREMENT,InstructorId integer,RegistDate text,TrainCode text,LocomotiveType text,DriverId integer,RepairClass text,MaintenanceStatus text,FaultLocation text,GeneralSituation text,UploadTime text,IsDelete text not null DEFAULT false,IsUploaded integer,TableNamessss text,Score text)</item>
-
-        <item>create table if not exists InstructorKeyPerson(Id INTEGER PRIMARY KEY AUTOINCREMENT,InstructorId integer,ConfirmDate text,KeyPersonId integer,ExpectRemoveTime text,ActualRemoveTime text,KeyLocation text,PersonConfirmReason text,HelpMethod text,Changes text,PersonRemoveSuggests text,LocationConfirmReason text,ControlMethod text,ActualControl text,LocationRemoveSuggests text,UploadTime text,IsDelete text not null DEFAULT false,IsRemoved text not null DEFAULT false,IsUploaded integer,TableNamessss text)</item>
-
-        <item>create table if not exists InstructorGoodJob(Id INTEGER PRIMARY KEY AUTOINCREMENT,InstructorId integer,WriteDate text,DriverId integer,GoodJobType text,GeneralSituation text,Suggests text,UploadTime text,IsDelete text not null DEFAULT false,IsUploaded integer,TableNamessss text)</item>
-
-        <item>create table if not exists InstructorCheck(Id INTEGER PRIMARY KEY AUTOINCREMENT,InstructorId integer,StartTime text,EndTime text,Location text,CheckType text,ProblemCount integer,CheckContent text,Problems text,Suggests text,UploadTime text,IsDelete text not null DEFAULT false,IsUploaded integer,RecirdTime ingeter,TableNamessss text)</item>
-
-        <item>create table if not exists InstructorAnalysis(Id INTEGER PRIMARY KEY AUTOINCREMENT,InstructorId integer,TrainCode text,LocomotiveType text,RunDate text,RunSection text,DriverId integer,ViceDriverId integer,AnalysisStart text,AnalysisEnd text,Problems text,Suggests text,UploadTime text,IsDelete text not null DEFAULT false,IsUploaded integer,RecirdTime integer,TableNamessss text)</item>
-
-        <item>create table if not exists Feedback(Id INTEGER PRIMARY KEY AUTOINCREMENT,Content text,PersonId integer,AddTime text,IsUploaded integer,TableNamessss text)</item>
-
-        <item>create table if not exists ExamType(Id INTEGER,TypeName text,TableNamessss text)</item>
-        <item>create table if not exists ExamFiles(Id INTEGER,ExamTypeId integer,FileName text,FileDesc text,FilePath text,AddTime text,IsDelete text not null DEFAULT false,TableNamessss text)</item>
-
-        <item>create table if not exists ExamRecords(Id INTEGER PRIMARY KEY AUTOINCREMENT,ExamNotifyId integer,PersionId integer,RightCount integer,WrongCount integer,Score integer,ExamTime text,IsUploaded integer,TimeSpends integer,UploadTime String,TableNamessss text)</item>
-
-        <item>create table if not exists ExamQuestion(Id INTEGER,ExamFileId integer,Question text,AnswerType integer,TableNamessss text)</item>
-
-        <item>create table if not exists ExamNotify(Id INTEGER,PostId integer,ExamTypeId integer,QuestionCount integer,TimeLimit text,PassScore integer,ResitCount integer,EndTime text,ExamName text,ExamFilesId integer,AddTime text,IsDelete text not null DEFAULT false,TableNamessss text)</item>
-
-        <item>create table if not exists ExamErrorQuestions(Id INTEGER,PersionId integer,QuestionId integer,ErrorCount integer,IsUploaded integer,HasRemembered text,TableNamessss text)</item>
-
-        <item>create table if not exists ExamAnswers(Id INTEGER,QuestionId integer,Answer text,IsRight text,TableNamessss text)</item>
-
-        <item>create table if not exists DriveTrainNoAndLine(Id INTEGER,DriveRecordId integer,TrainNoId text,LineId integer,AddTime integer,IsDelete text not null DEFAULT false,TableNamessss text)</item>
-
-        <item>create table if not exists DriveSignPoint(Id INTEGER,DriveRecordId integer,StationId integer,ArriveTime text,LeaveTime text,EarlyMinutes integer,LateMinutes integer,EarlyOrLateReason text,TableNamessss text)</item>
-
-        <item>create table if not exists DriveRecords(Id INTEGER,DriverId1 integer,DriverId2 integer,ViceDriverId integer,StudentDriverId integer,OtherDriverId integer,LocomotiveType text,AttendTime text,GetTrainTime text,LeaveDepotTime1 text,LeaveDepotTime2 text,AttendForecast text,ArriveDepotTime1 text,ArriveDepotTime2 text,GiveTrainTime text,RecordEndTime text,OperateConsume text,StopConsume text,RecieveEnergy text,LeftEnergy text,EngineOil text,AirCompressorOil text,TurbineOil text,GearOil text,GovernorOil text,OtherOil text,Staple text,MultiLocoDepot text,MultiLocoType text,MultiLocoSection text,EndSummary text,AddTime text,IsDelete text not null DEFAULT false,IsUploaded integer,TableNamessss text)</item>
-
-        <item>create table if not exists DrivePlan(Id INTEGER,LineName text,TrainCode text,LocoType text,DriverNo text,DriverName text,ViceDriverNo text,ViceDriverName text,StudentNo text,StudentName text,OtherNo1 text,OtherName1 text,OtherNo2 text,OtherName2 text,AttendTime text,StartTime text,TableNamessss text)</item>
-
-        <item>create table if not exists BaseLine(Id INTEGER,LineName text,FirstStationId integer,FirstStation text,LastStationId integer,LastStation text,LineLength text,Spell text,UpdateTime text,IsDelete text not null DEFAULT false,TableNamessss text)</item>
-
-        <item>create table if not exists TrainNob(Id INTEGER,FullName text,RunType integer,Code text,Number integer,Direction text,FirstStation text,LastStation text,UpdateTime text,IsDelete text not null DEFAULT false,TableNamessss text)</item>
-
-        <item>create table if not exists LineStations(Id INTEGER,LineId integer,StationId integer,StationName text,Sort integer,TableNamessss text)</item>
-
-        <item>create table if not exists DepartInfo(Id INTEGER,ParentId integer,DepartmentName text,AddTime text,IsDelete text not null DEFAULT false,TableNamessss text)</item>
-
-        <item>create table if not exists TraficSearchText(Id INTEGER,FileId integer,Chapter text,IsDelete text not null DEFAULT false,Item text,Content text,UpdateTime text,TableNamessss text)</item>
-        <item>create table if not exists InstructorodJob(Id integer,InstructorId integer,WriteDate text,DriverId integer,odJobType text,GeneralSituation text,Suggests text,UploadTime text,IsDelete text not null DEFAULT false)</item>
-        <item>create table if not exists TrainNo(Id integer,FullName text,Code text,Number text,Direction text,RunType integer,FirstStation text,LastStation text,UpdateTime text,IsDelete text not null DEFAULT false)</item>
-
-        <item>create table if not exists InstructorAccept(Id INTEGER PRIMARY KEY AUTOINCREMENT,AcceptDate text,InstructorId  integer,DriverId integer,ViceDriverId integer,DriverScore text,ViceDriverScore text,Problems text,Suggests text,UploadTime text, IsDelete text not null DEFAULT false ,IsUploaded integer)</item>
-
-        <item>create table if not exists InstructorWifiRecord(Id INTEGER PRIMARY KEY AUTOINCREMENT,InstructorId  integer,ConnectFlag integer,RouterPositionId integer,ConnectTime  text,IsUploaded integer not null DEFAULT 1,IsDelete  text not null default false)</item>
-
-        <item>create table if not exists InstructorRouterPosition(Id INTEGER ,Location text,BssId text,AddTime text,IsDelete text not null DEFAULT false)</item>
-        <item>create table if not exists ExceptionLog(Id INTEGER PRIMARY KEY AUTOINCREMENT,Message text,Source text,FileName text,Classname text,MethodName text,Instance text,Stacktrace text,HappenTime text,IsDelete text not null default false,IsUploaded integer not null default 1)</item>
-        <item>create table if not exists HttpDoor(Id INTEGER PRIMARY KEY AUTOINCREMENT,Message text)</item>
-
-
-
-        <item>create view ViewPersonInfo as
-            SELECT P.Id,P.PersonId,P.WorkNo,P.DepartmentId,D.DepartmentName,P.Name,P.Spell,P.BirthDate,P.Sex,P.PostId,T.PostName,P.PhotoPath,P.IdentityNo,P.Password,P.UpdateTime FROM PersonInfo P
-            LEFT JOIN DepartInfo D ON P.DepartmentId=D.Id
-            LEFT JOIN Posts T ON P.PostId=T.Id
-            WHERE P.IsDelete=0;</item>
-        <item>CREATE VIEW ViewInstructorAccept AS SELECT  A.Id,A.AcceptDate,A.InstructorId, A.DriverId, (SELECT Name FROM PersonInfo WHERE Id=A.DriverId) AS DriverName,
-            A.ViceDriverId, (SELECT Name FROM PersonInfo WHERE Id=A.ViceDriverId) AS ViceDriverName, A.DriverScore,A.ViceDriverScore,A.Problems,A.Suggests,A.UploadTime,
-            P.DepartmentId,P.DepartmentName,P.PostName,P.PostId,P.Name  FROM InstructorAccept A LEFT JOIN ViewPersonInfo P ON A.InstructorId=P.Id WHERE A.IsDelete=0;
+        <!--运行揭示命令表-->
+        <item>create table if not exists AnnounceCommands(
+            Id INTEGER,
+            CommandNo text,
+            CommandInterval text,
+            Direction text,
+            SpeedLimitLocation text,
+            StartEndTime text,
+            LoseEffectTime text,
+            LimitedSpeed integer,
+            AddTime text,
+            IsActive text,
+            TableNamessss text)
         </item>
 
-        <item>create view ViewInstructorAnalysis as SELECT A.Id,A.InstructorId,A.TrainCode,A.LocomotiveType,A.RunDate,A.RunSection,A.DriverId,(SELECT Name FROM PersonInfo WHERE Id=A.DriverId) AS DriverName,A.ViceDriverId,(SELECT Name FROM PersonInfo WHERE Id=A.ViceDriverId) AS ViceDriverName,A.AnalysisStart,A.AnalysisEnd,A.Problems,A.Suggests,A.UploadTime,P.DepartmentId,P.DepartmentName,P.PostName,P.PostId,P.Name FROM InstructorAnalysis A LEFT JOIN ViewPersonInfo P ON A.InstructorId=P.Id WHERE A.IsDelete=0;</item>
-        <item>create view ViewInstructorTempTake as SELECT A.Id,A.InstructorId,A.TakeDate,A.TrainCode,A.LocomotiveType,A.DriverId,(SELECT Name FROM PersonInfo WHERE Id=A.DriverId) AS DriverName,A.ViceDriverId,(SELECT Name FROM PersonInfo WHERE Id=A.ViceDriverId) AS ViceDriverName,A.StudentId,(SELECT Name FROM PersonInfo WHERE Id=A.StudentId) AS StudentName,A.CarCount,A.WholeWeight,A.Length,A.TakeSection,A.RunStart,A.RunEnd,A.OperateSection,A.OperateStart,A.OperateEnd,A.AttendTime,A.EndAttendTime,A.TakeAims,A.Problems,A.Suggests,A.UploadTime,P.DepartmentId,P.DepartmentName,P.PostName,P.PostId,P.Name FROM InstructorTempTake A LEFT JOIN ViewPersonInfo P ON A.InstructorId=P.Id WHERE A.IsDelete=0</item>
+        <!--公告信息表-->
+        <item>create table if not exists Announcement(
+            Id INTEGER PRIMARY KEY AUTOINCREMENT,
+            Title text,
+            Content text,
+            SystemUserId integer,
+            AnnounceType integer,
+            BusinessType integer,
+            DepartmentId integer,
+            DepartmentName text,
+            FileName text,
+            FilePath text,
+            PubTime text,
+            IsLoaded integer not null DEFAULT false,
+            LocaPath text,
+            IsRead integer not null DEFAULT 0,
+            TableNamessss text)
+        </item>
+
+        <!--App操作日志-->
+        <item exclude="true">create table if not exists AppOperateLog (
+            Id INTEGER PRIMARY KEY AUTOINCREMENT,
+            LogType integer,
+            LogContent text,
+            OperatorId integer,
+            DeviceId integer,
+            AddTime text,
+            IsUploaded text not null DEFAULT 0)
+        </item>
+
+        <!--应用更新表-->
+        <item exclude="true">create table if not exists AppUpdate (
+            Id INTEGER PRIMARY KEY AUTOINCREMENT,
+            Version text,
+            UpdateLog text,
+            Url text,
+            HashCode text,
+            Token text,
+            AddTime text,
+            IsDelete text not null DEFAULT false,
+            TableNamessss text)
+        </item>
+
+        <!--基础线路信息表-->
+        <item>create table if not exists BaseLine(
+            Id INTEGER,
+            LineName text,
+            FirstStationId integer,
+            FirstStation text,
+            LastStationId integer,
+            LastStation text,
+            LineLength text,
+            Spell text,
+            UpdateTime text,
+            IsDelete text not null DEFAULT false,
+            TableNamessss text)
+        </item>
+
+        <!--基础车站信息-->
+        <item>create table if not exists BaseStation(
+            Id INTEGER,
+            StationName text,
+            SN integer,
+            Spell text,
+            UpdateTime text,
+            IsDelete text not null DEFAULT false,
+            TableNamessss text)
+        </item>
+
+        <!--数据库更新记录表-->
+        <item>create table if not exists DbUpdateLog (
+            Id INTEGER,
+            TableName text,
+            UpdateType integer,
+            TargetId integer,
+            UpdateTime text,
+            IsUploaded integer,
+            TableNamessss text)
+        </item>
+
+        <!--描述机务段部门信息-->
+        <item>create table if not exists DepartInfo(
+            Id INTEGER,
+            DepartmentName text,
+            ParentId integer,
+            IsDelete text not null DEFAULT 0,
+            AddTime text,
+            TableNamessss text)
+        </item>
+
+        <!--行车计划表-->
+        <item>create table if not exists DrivePlan(
+            Id INTEGER,
+            LineName text,
+            TrainCode text,
+            LocoType text,
+            DriverNo text,
+            DriverName text,
+            ViceDriverNo text,
+            ViceDriverName text,
+            StudentNo text,
+            StudentName text,
+            OtherNo1 text,
+            OtherName1 text,
+            OtherNo2 text,
+            OtherName2 text,
+            AttendTime text,
+            StartTime text,
+            TableNamessss text)
+        </item>
+
+        <!--列车行车记录表-->
+        <item exclude="true">create table if not exists DriveRecords(
+            Id INTEGER PRIMARY KEY AUTOINCREMENT,
+            DriverId1 integer,
+            DriverId2 integer,
+            ViceDriverId integer,
+            StudentDriverId integer,
+            OtherDriverId integer,
+            LocomotiveType text,
+            AttendTime text,
+            GetTrainTime text,
+            LeaveDepotTime1 text,
+            LeaveDepotTime2 text,
+            AttendForecast text,
+            ArriveDepotTime1 text,
+            ArriveDepotTime2 text,
+            GiveTrainTime text,
+            RecordEndTime text,
+            OperateConsume text,
+            StopConsume text,
+            RecieveEnergy text,
+            LeftEnergy text,
+            EngineOil text,
+            AirCompressorOil text,
+            TurbineOil text,
+            GearOil text,
+            GovernorOil text,
+            OtherOil text,
+            Staple text,
+            MultiLocoDepot text,
+            MultiLocoType text,
+            MultiLocoSection text,
+            EndSummary text,
+            AddTime text,
+            IsDelete text not null DEFAULT 0,
+            CarriageCount text,
+            CarryingCapacity text,
+            Length text,
+            TrainCode text,
+            LineName text,
+            IsUploaded integer,
+            TableNamessss text)
+        </item>
+
+        <!--行车签点记录以及重联机车变化记录-->
+        <item exclude="true">create table if not exists DriveSignPoint(
+            Id INTEGER PRIMARY KEY AUTOINCREMENT,
+            DriveRecordId integer,
+            StationId integer,
+            ArriveTime text,
+            LeaveTime text,
+            EarlyMinutes integer,
+            LateMinutes integer,
+            EarlyOrLateReason text,
+            TableNamessss text)
+        </item>
+
+        <!--描述手账-车次-线路对应关系-->
+        <item exclude="true">create table if not exists DriveTrainNoAndLine(
+            Id INTEGER PRIMARY KEY AUTOINCREMENT,
+            DriveRecordId integer,
+            TrainNoId integer,
+            LineId integer,
+            AddTime text,
+            IsDelete text not null DEFAULT 0,
+            TableNamessss text)
+        </item>
+
+        <!--试题答案表-->
+        <item>create table if not exists ExamAnswers(
+            Id INTEGER,
+            QuestionId integer,
+            Answer text,
+            IsRight text,
+            TableNamessss text)
+        </item>
+
+        <!--我的错题-->
+        <item exclude="true">create table if not exists ExamErrorQuestions(
+            Id INTEGER,
+            PersionId integer,
+            QuestionId integer,
+            ErrorCount integer,
+            HasRemembered text,
+            IsUploaded integer,
+            TableNamessss text)
+        </item>
+
+        <!--试题文件表-->
+        <item>create table if not exists ExamFiles(
+            Id INTEGER,
+            ExamTypeId integer,
+            FileName text,
+            FileDesc text,
+            FilePath text,
+            AddTime text,
+            IsDelete text not null DEFAULT 0,
+            TableNamessss text)
+        </item>
+
+        <!--考试通知表-->
+        <item>create table if not exists ExamNotify(
+            Id INTEGER,
+            ExamName text,
+            PostId integer,
+            ExamFilesId integer,
+            QuestionCount integer,
+            PassScore integer,
+            ResitCount integer,
+            EndTime text,
+            TimeLimit text,
+            AddTime text,
+            IsDelete text not null DEFAULT 0,
+            ExamTypeId integer,
+            TableNamessss text)
+        </item>
+
+        <!--考试试题表-->
+        <item>create table if not exists ExamQuestion(
+            Id INTEGER,
+            ExamFileId integer,
+            Question text,
+            AnswerType integer,
+            TableNamessss text)
+        </item>
+
+        <!--人员考试记录表-->
+        <item exclude="true">create table if not exists ExamRecords(
+            Id INTEGER PRIMARY KEY AUTOINCREMENT,
+            ExamNotifyId integer,
+            PersionId integer,
+            RightCount integer,
+            WrongCount integer,
+            Score integer,
+            ExamTime text,
+            TimeSpends integer,
+            UploadTime text,
+            IsDelete text not null DEFAULT 0,
+            IsUploaded integer,
+            TableNamessss text)
+        </item>
+
+        <!--考试试题分类-->
+        <item>create table if not exists ExamType(
+            Id INTEGER,
+            TypeName text,
+            TableNamessss text)
+        </item>
+
+        <!--程序异常日志表-->
+        <item exclude="true">create table if not exists ExceptionLog(
+            Id INTEGER PRIMARY KEY AUTOINCREMENT,
+            Message text,
+            Source text,
+            FileName text,
+            Classname text,
+            MethodName text,
+            Instance text,
+            Stacktrace text,
+            HappenTime text,
+            IsDelete text not null default false,
+            IsUploaded integer not null default 0)
+        </item>
+
+        <!--意见反馈表-->
+        <item exclude="true">create table if not exists Feedback(
+            Id INTEGER PRIMARY KEY AUTOINCREMENT,
+            Content text,
+            PersonId integer,
+            AddTime text,
+            IsUploaded integer,
+            TableNamessss text)
+        </item>
+
+        <!--标准化验收-->
+        <item exclude="true">create table if not exists InstructorAccept(
+            Id INTEGER PRIMARY KEY AUTOINCREMENT,
+            InstructorId integer,
+            AcceptDate text,
+            DriverId integer,
+            ViceDriverId integer,
+            DriverScore text,
+            ViceDriverScore text,
+            Problems text,
+            Suggests text,
+            UploadTime text,
+            IsDelete text not null DEFAULT false,
+            IsUploaded integer)
+        </item>
+
+        <!--监控分析单-->
+        <item exclude="true">create table if not exists InstructorAnalysis(
+            Id INTEGER PRIMARY KEY AUTOINCREMENT,
+            InstructorId integer,
+            TrainCode text,
+            LocomotiveType text,
+            RunDate text,
+            RunSection text,
+            DriverId integer,
+            ViceDriverId integer,
+            AnalysisStart text,
+            AnalysisEnd text,
+            Problems text,
+            Suggests text,
+            UploadTime text,
+            IsDelete text not null DEFAULT false,
+            IsUploaded integer,
+            RecirdTime integer,
+            TableNamessss text)
+        </item>
+
+        <!--抽查信息单-->
+        <item exclude="true">create table if not exists InstructorCheck(
+            Id INTEGER PRIMARY KEY AUTOINCREMENT,
+            InstructorId integer,
+            StartTime text,
+            EndTime text,
+            Location text,
+            CheckType text,
+            ProblemCount integer,
+            CheckContent text,
+            Problems text,
+            Suggests text,
+            UploadTime text,
+            IsDelete text not null DEFAULT false,
+            IsUploaded integer,
+            RecirdTime ingeter,
+            TableNamessss text)
+        </item>
+
+        <!--防止事故及好人好事记录-->
+        <item exclude="true">create table if not exists InstructorGoodJob(
+            Id INTEGER PRIMARY KEY AUTOINCREMENT,
+            InstructorId integer,
+            WriteDate text,
+            DriverId integer,
+            GoodJobType text,
+            GeneralSituation text,
+            Suggests text,
+            UploadTime text,
+            IsDelete text not null DEFAULT false,
+            IsUploaded integer,
+            TableNamessss text)
+        </item>
+
+        <!--关键人记录-->
+        <item exclude="true">create table if not exists InstructorKeyPerson(
+            Id INTEGER PRIMARY KEY AUTOINCREMENT,
+            InstructorId integer,
+            ConfirmDate text,
+            KeyPersonId integer,
+            ExpectRemoveTime text,
+            ActualRemoveTime text,
+            KeyLocation text,
+            PersonConfirmReason text,
+            HelpMethod text,
+            Changes text,
+            PersonRemoveSuggests text,
+            LocationConfirmReason text,
+            ControlMethod text,
+            ActualControl text,
+            LocationRemoveSuggests text,
+            UploadTime text,
+            IsRemoved text not null DEFAULT false,
+            IsDelete text not null DEFAULT false,
+            IsUploaded integer,
+            TableNamessss text)
+        </item>
+
+        <!--机车质量登记-->
+        <item exclude="true">create table if not exists InstructorLocoQuality(
+            Id INTEGER PRIMARY KEY AUTOINCREMENT,
+            InstructorId integer,
+            RegistDate text,
+            TrainCode text,
+            LocomotiveType text,
+            DriverId integer,
+            RepairClass text,
+            MaintenanceStatus text,
+            Score text,
+            FaultLocation text,
+            GeneralSituation text,
+            UploadTime text,
+            IsDelete text not null DEFAULT false,
+            IsUploaded integer,
+            TableNamessss text)
+        </item>
+
+        <!--违章违纪记录-->
+        <item exclude="true">create table if not exists InstructorPeccancy(
+            Id INTEGER PRIMARY KEY AUTOINCREMENT,
+            InstructorId integer,
+            WriteDate text,
+            DriverId integer,
+            PeccancyType text,
+            GeneralSituation text,
+            Analysis text,
+            Suggests text,
+            UploadTime text,
+            IsDelete text not null DEFAULT false,
+            IsUploaded integer,
+            TableNamessss text)
+        </item>
+
+        <!--工作总结及计划-->
+        <item exclude="true">create table if not exists InstructorPlan(
+            Id INTEGER PRIMARY KEY AUTOINCREMENT,
+            InstructorId integer,
+            WriteDate text,
+            WorkSummary text,
+            Problems text,
+            WorkPlans text,
+            UploadTime text,
+            IsDelete text not null DEFAULT false,
+            IsUploaded integer,
+            TableNamessss text)
+        </item>
+
+        <!--指导司机指标量化库-->
+        <item exclude="true">create table if not exists InstructorQuota(
+            Id INTEGER,
+            QuotaName text,
+            QuataAmmount text,
+            AddTime text,
+            IsDelete text not null DEFAULT false,
+            TableNamessss text)
+        </item>
+
+        <!--指导司机指标完成情况-->
+        <item exclude="true">create table if not exists InstructorQuotaRecord(
+            Id INTEGER PRIMARY KEY AUTOINCREMENT,
+            InstructorId integer,
+            QuotaId integer,
+            FinishedAmmount text,
+            Year integer,
+            Month integer,
+            UpdateTime text,
+            IsDelete text not null DEFAULT false,
+            QuotaName text,
+            IsUploaded integer not null default 0,
+            TableNamessss text)
+        </item>
+
+        <!--机破临修记录-->
+        <item exclude="true">create table if not exists InstructorRepair(
+            Id INTEGER PRIMARY KEY AUTOINCREMENT,
+            InstructorId integer,
+            HappenTime text,
+            Location text,
+            TrainCode text,
+            LocomotiveType text,
+            DriverId integer,
+            ViceDriverId integer,
+            StudentId integer,
+            FaultLocation text,
+            FaultReason text,
+            Responsibility text,
+            UploadTime text,
+            IsDelete text not null DEFAULT false,
+            IsUploaded integer,
+            TableNamessss text)
+        </item>
+
+        <!--路由器地点对照表-->
+        <item>create table if not exists InstructorRouterPosition(
+            Id INTEGER,
+            BssId text,
+            Location text,
+            AddTime text,
+            IsDelete text not null DEFAULT false,
+            Ip text)
+        </item>
+
+        <!--授课培训记录-->
+        <item exclude="true">create table if not exists InstructorTeach(
+            Id INTEGER PRIMARY KEY AUTOINCREMENT,
+            InstructorId integer,
+            TeachPlace text,
+            JoinCount integer,
+            TeachStart text,
+            TeachEnd text,
+            TeachContent text,
+            UploadTime text,
+            IsDelete text not null DEFAULT false,
+            IsUploaded integer,
+            TableNamessss text)
+        </item>
+
+        <!--添乘信息单-->
+        <item exclude="true">create table if not exists InstructorTempTake(
+            Id INTEGER PRIMARY KEY AUTOINCREMENT,
+            InstructorId integer,
+            TakeDate text,
+            TrainCode text,
+            LocomotiveType text,
+            DriverId integer,
+            ViceDriverId integer,
+            StudentId integer,
+            CarCount integer,
+            WholeWeight text,
+            Length text,
+            TakeSection text,
+            RunStart text,
+            RunEnd text,
+            OperateSection text,
+            OperateStart text,
+            OperateEnd text,
+            AttendTime text,
+            EndAttendTime text,
+            TakeAims text,
+            Problems text,
+            Suggests text,
+            UploadTime text,
+            IsDelete text not null DEFAULT false,
+            IsUploaded integer,
+            RecirdTime integer,
+            TableNamessss text)
+        </item>
+
+        <!--Wifi连接记录-->
+        <item exclude="true">create table if not exists InstructorWifiRecord(
+            Id INTEGER PRIMARY KEY AUTOINCREMENT,
+            InstructorId integer,
+            RouterPositionId intege,
+            ConnectFlag integer,
+            ConnectTime text,
+            IsDelete text not null default false,
+            DeviceId integer,
+            IsUploaded text not null default false)
+        </item>
+
+        <!--描述运行揭示命令与线路关系-->
+        <item>create table if not exists LineAnnounceCommands(
+            Id integer,
+            TrainNoId integer,
+            LineId integer,
+            DriverId integer,
+            CommandId integer,
+            IsPassed integer not null default false,
+            PassedTime text)
+        </item>
+
+        <!--线路车站对应表-->
+        <item>create table if not exists LineStations(
+            Id INTEGER,
+            LineId integer,
+            StationName text,
+            StationId integer,
+            Sort integer,
+            TableNamessss text)
+        </item>
+
+        <!--移动终端设备表-->
+        <item exclude="true">create table if not exists MobileDevice(
+            Id INTEGER,
+            UniqueId text,
+            DeviceType text,
+            OsVersion text,
+            AddTime text,
+            TableNamessss text)
+        </item>
+
+        <!--描述机务段人员信息-->
+        <item>create table if not exists PersonInfo(
+            Id INTEGER,
+            PersonId text,
+            WorkNo text,
+            DepartmentId text,
+            Name text,
+            Spell text,
+            BirthDate text,
+            Sex integer,
+            PostId integer,
+            PhotoPath text,
+            IdentityNo text,
+            UpdateTime text,
+            Password text,
+            IsDelete text not null DEFAULT false,
+            LocaPhotoPath text,
+            TableNamessss text)
+        </item>
+
+        <!--描述岗位信息-->
+        <item>create table if not exists Posts(
+            Id INTEGER,
+            PostName text,
+            IsDelete text not null DEFAULT false,
+            TableNamessss text)
+        </item>
+
+        <!--与车站相关的文件（如站段明细、操作提示卡、站场示意图等）-->
+        <item>create table if not exists StationFiles(
+            Id INTEGER,
+            StationId integer,
+            FileType integer,
+            FileSize text,
+            FileName text,
+            FilePath text,
+            AddTime text,
+            IsDelete text not null DEFAULT false,
+            LocaPath text,
+            IsLoaded text not null DEFAULT false,
+            TableNamessss text)
+        </item>
+
+        <!--行车资料文件管理表-->
+        <item>create table if not exists TraficFiles(
+            Id INTEGER,
+            TypeId integer,
+            FileName text,
+            FileExtension text,
+            FileSize text,
+            FilePath text,
+            OriginFilePath text,
+            CreatorId integer,
+            DepartmentId integer,
+            AddTime text,
+            IsDelete text not null DEFAULT false,
+            LocaPath text,
+            IsLoaded text not null DEFAULT false,
+            TableNamessss text)
+        </item>
+
+        <!--行车资料分类表-->
+        <item>create table if not exists TraficFileType(
+            Id INTEGER,
+            TypeName text,
+            ParentId integer,
+            CreatorId integer,
+            CreateTime text,
+            DepartmentId integer,
+            IsPublic text not null DEFAULT false,
+            Hidden integer,
+            IsDelete text not null DEFAULT false,
+            TableNamessss text)
+        </item>
+
+        <!--搜索关键字表-->
+        <item>create table if not exists TraficKeywords(
+            Id INTEGER,
+            Keywords text,
+            SearchCount integer,
+            AddTime integer,
+            TableNamessss text)
+        </item>
+
+        <item>create table if not exists TraficSearchRecord(
+            Id INTEGER,
+            PersonId integer,
+            Keywords text,
+            SearchCount integer,
+            IsUploaded integer,
+            TableNamessss text)
+        </item>
+
+        <!--关键字搜索结果表-->
+        <item>create table if not exists TraficSearchResult(
+            Id INTEGER,
+            KeywordsId integer,
+            SearchResult text,
+            TraficFileId text,
+            Position text,
+            TableNamessss text)
+        </item>
+
+        <!--搜索结果文本内容-->
+        <item>create table if not exists TraficSearchText(
+            Id INTEGER,
+            FileId integer,
+            Chapter text,
+            Item text,
+            Content text,
+            UpdateTime text,
+            IsDelete text not null DEFAULT false,
+            TableNamessss text)
+        </item>
+
+        <!--手账-列车编组记录-->
+        <item exclude="true">create table if not exists TrainFormation(
+            Id INTEGER PRIMARY KEY AUTOINCREMENT,
+            DriveRecordId integer,
+            StationId integer,
+            CarriageCount integer,
+            CarryingCapacity text,
+            Length text,
+            Decompress text,
+            RowTime text,
+            FillingTime text,
+            Missing text,
+            NoteTime text,
+            TableNamessss text)
+        </item>
+
+        <!--列车时刻表-->
+        <item>create table if not exists TrainMoment(
+            Id INTEGER,
+            TrainNoLineId integer,
+            TrainStationId integer,
+            ArriveTime text,
+            DepartTime text,
+            StopMinutes integer,
+            IntervalKms text,
+            SuggestSpeed text,
+            Sort integer,
+            TableNamessss text)
+        </item>
+
+        <!--基础车次信息-->
+        <item>create table if not exists TrainNo(
+            Id integer,
+            FullName text,
+            Code text,
+            Number text,
+            Direction text,
+            RunType integer,
+            FirstStation text,
+            LastStation text,
+            UpdateTime text,
+            IsDelete text not null DEFAULT false)
+        </item>
+
+        <!--车次与线路关联表，车次与线路为一对多的关系-->
+        <item>create table if not exists TrainNoLine(
+            Id INTEGER,
+            TrainNoId integer,
+            LineId integer,
+            Sort integer,
+            UpdateTime text,
+            IsDelete text not null DEFAULT false,
+            TableNamessss text)
+        </item>
+
+        <item exclude="true">create table SeacherHistory(
+            Id INTEGER PRIMARY KEY AUTOINCREMENT,
+            SearchCode text,
+            TableNamessss text)
+        </item>
+
+        <item>create table if not exists InstructorodJob(
+            Id integer,
+            InstructorId integer,
+            WriteDate text,
+            DriverId integer,
+            odJobType text,
+            GeneralSituation text,
+            Suggests text,
+            UploadTime text,
+            IsDelete text not null DEFAULT false)
+        </item>
+
+        <item>create view ViewPersonInfo as
+            SELECT
+            P.Id,P.PersonId,P.WorkNo,P.DepartmentId,D.DepartmentName,P.Name,P.Spell,P.BirthDate,P.Sex,P.PostId,T.PostName,P.PhotoPath,P.IdentityNo,P.Password,P.UpdateTime
+            FROM PersonInfo P
+            LEFT JOIN DepartInfo D ON P.DepartmentId=D.Id
+            LEFT JOIN Posts T ON P.PostId=T.Id
+            WHERE P.IsDelete=0;
+        </item>
+
+        <item>CREATE VIEW ViewInstructorAccept AS SELECT A.Id,A.AcceptDate,A.InstructorId,
+            A.DriverId, (SELECT Name FROM PersonInfo WHERE Id=A.DriverId) AS DriverName,
+            A.ViceDriverId, (SELECT Name FROM PersonInfo WHERE Id=A.ViceDriverId) AS ViceDriverName,
+            A.DriverScore,A.ViceDriverScore,A.Problems,A.Suggests,A.UploadTime,
+            P.DepartmentId,P.DepartmentName,P.PostName,P.PostId,P.Name FROM InstructorAccept A LEFT
+            JOIN ViewPersonInfo P ON A.InstructorId=P.Id WHERE A.IsDelete=0;
+        </item>
+
+        <item>create view ViewInstructorAnalysis as SELECT
+            A.Id,A.InstructorId,A.TrainCode,A.LocomotiveType,A.RunDate,A.RunSection,A.DriverId,(SELECT
+            Name FROM PersonInfo WHERE Id=A.DriverId) AS DriverName,A.ViceDriverId,(SELECT Name FROM
+            PersonInfo WHERE Id=A.ViceDriverId) AS
+            ViceDriverName,A.AnalysisStart,A.AnalysisEnd,A.Problems,A.Suggests,A.UploadTime,P.DepartmentId,P.DepartmentName,P.PostName,P.PostId,P.Name
+            FROM InstructorAnalysis A LEFT JOIN ViewPersonInfo P ON A.InstructorId=P.Id WHERE
+            A.IsDelete=0;
+        </item>
+
+        <item>create view ViewInstructorTempTake as SELECT
+            A.Id,A.InstructorId,A.TakeDate,A.TrainCode,A.LocomotiveType,A.DriverId,(SELECT Name FROM
+            PersonInfo WHERE Id=A.DriverId) AS DriverName,A.ViceDriverId,(SELECT Name FROM
+            PersonInfo WHERE Id=A.ViceDriverId) AS ViceDriverName,A.StudentId,(SELECT Name FROM
+            PersonInfo WHERE Id=A.StudentId) AS
+            StudentName,A.CarCount,A.WholeWeight,A.Length,A.TakeSection,A.RunStart,A.RunEnd,A.OperateSection,A.OperateStart,A.OperateEnd,A.AttendTime,A.EndAttendTime,A.TakeAims,A.Problems,A.Suggests,A.UploadTime,P.DepartmentId,P.DepartmentName,P.PostName,P.PostId,P.Name
+            FROM InstructorTempTake A LEFT JOIN ViewPersonInfo P ON A.InstructorId=P.Id WHERE
+            A.IsDelete=0
+        </item>
+
         <item>create view ViewInstructorCheck as
             SELECT
             C.Id,C.InstructorId,C.StartTime,C.EndTime,C.Location,C.CheckType,C.ProblemCount,C.CheckContent,C.Problems,C.Suggests,C.UploadTime,
-            P.DepartmentId,P.DepartmentName,P.PostName,P.PostId,P.Name FROM InstructorCheck C LEFT JOIN ViewPersonInfo P ON C.InstructorId=P.Id WHERE C.IsDelete=0</item>
+            P.DepartmentId,P.DepartmentName,P.PostName,P.PostId,P.Name FROM InstructorCheck C LEFT
+            JOIN ViewPersonInfo P ON C.InstructorId=P.Id WHERE C.IsDelete=0
+        </item>
+
         <item>create view ViewInstructorodJob as
             SELECT
             A.Id,A.InstructorId,A.WriteDate,
@@ -134,7 +836,9 @@
             P.DepartmentId,P.DepartmentName,P.PostName,P.PostId,P.Name
             FROM InstructorodJob A
             LEFT JOIN ViewPersonInfo P ON A.InstructorId=P.Id
-            WHERE A.IsDelete=0;</item>
+            WHERE A.IsDelete=0;
+        </item>
+
         <item>create view ViewInstructorKeyPerson as
             SELECT
             A.Id,A.InstructorId,A.ConfirmDate,A.KeyPersonId,
@@ -143,7 +847,9 @@
             P.DepartmentId,P.DepartmentName,P.PostName,P.PostId,P.Name
             FROM InstructorKeyPerson A
             LEFT JOIN ViewPersonInfo P ON A.InstructorId=P.Id
-            WHERE A.IsDelete=0;</item>
+            WHERE A.IsDelete=0;
+        </item>
+
         <item>create view ViewInstructorLocoQuality as
             SELECT
             A.Id,A.InstructorId,A.RegistDate,A.TrainCode,A.LocomotiveType,
@@ -153,7 +859,9 @@
             P.DepartmentId,P.DepartmentName,P.PostName,P.PostId,P.Name
             FROM InstructorLocoQuality A
             LEFT JOIN ViewPersonInfo P ON A.InstructorId=P.Id
-            WHERE A.IsDelete=0;</item>
+            WHERE A.IsDelete=0;
+        </item>
+
         <item>
             create view ViewInstructorPeccancy as
             SELECT
@@ -166,13 +874,16 @@
             LEFT JOIN ViewPersonInfo P ON A.InstructorId=P.Id
             WHERE A.IsDelete=0;
         </item>
+
         <item>create view ViewInstructorPlan as
             SELECT
             A.Id,A.InstructorId,A.WriteDate,A.WorkSummary,A.Problems,A.WorkPlans,A.UploadTime,
             P.DepartmentId,P.DepartmentName,P.PostName,P.PostId,P.Name
             FROM InstructorPlan A
             LEFT JOIN ViewPersonInfo P ON A.InstructorId=P.Id
-            WHERE A.IsDelete=0;</item>
+            WHERE A.IsDelete=0;
+        </item>
+
         <item>
             create view ViewInstructorRepair as
             SELECT
@@ -187,25 +898,87 @@
             P.DepartmentId,P.DepartmentName,P.PostName,P.PostId,P.Name
             FROM InstructorRepair A
             LEFT JOIN ViewPersonInfo P ON A.InstructorId=P.Id
-            WHERE A.IsDelete=0;</item>
+            WHERE A.IsDelete=0;
+        </item>
+
         <item>create view ViewInstructorTeach as
             SELECT
             A.Id,A.InstructorId,A.TeachPlace,A.JoinCount,A.TeachStart,A.TeachEnd,A.TeachContent,A.UploadTime,
             P.DepartmentId,P.DepartmentName,P.PostName,P.PostId,P.Name
             FROM InstructorTeach A
             LEFT JOIN ViewPersonInfo P ON A.InstructorId=P.Id
-            WHERE A.IsDelete=0;</item>
-        <item> create view ViewTrainNoLIne as SELECT   TN.Id, TN.FullName, TL.Id AS TrainNoLineId, TL.Sort, BL.Id AS LineId, BL.LineName, BL.FirstStationId, BL.FirstStation, BL.LastStationId, BL.LastStation FROM  TrainNo AS TN LEFT OUTER JOIN TrainNoLine AS TL ON TN.Id = TL.TrainNoId LEFT OUTER JOIN BaseLine AS BL ON TL.LineId = BL.Id  WHERE   (TN.IsDelete = 0);
+            WHERE A.IsDelete=0;
         </item>
-        <item> create view View_Station as SELECT   Id, SN, StationName, Spell, UpdateTime, FileCount, ZdCount, CzCount, ZcCount  FROM  (SELECT   S.Id, S.SN, S.StationName, S.Spell, S.UpdateTime, (SELECT   COUNT(1) AS Expr1 FROM  StationFiles WHERE   (StationId = S.Id) AND (IsDelete = 0)) AS FileCount, (SELECT   COUNT(1) AS Expr1 FROM  StationFiles WHERE (StationId = S.Id) AND (IsDelete = 0) AND (FileType = 1)) AS ZdCount, (SELECT COUNT(1) AS Expr1 FROM StationFiles WHERE (StationId = S.Id) AND (IsDelete = 0) AND (FileType = 2)) AS CzCount, (SELECT COUNT(1) AS Expr1 FROM StationFiles WHERE (StationId = S.Id) AND (IsDelete = 0) AND (FileType = 3)) AS ZcCount FROM BaseStation AS S LEFT OUTER JOIN StationFiles AS F ON S.Id = F.StationId WHERE   (S.IsDelete = 0)) AS T GROUP BY Id, SN, StationName, Spell, UpdateTime, FileCount, ZdCount, ZcCount, CzCount;</item>
-    <item>create view ViewTrainMoment as
-        SELECT
-        M.Id,M.TrainNoLineId,M.TrainStationId,M.ArriveTime,M.DepartTime,M.StopMinutes,M.IntervalKms,M.SuggestSpeed,M.Sort,
-        N.FullName,S.StationName
-        FROM TrainMoment M
-        LEFT JOIN TrainNoLine L ON M.TrainNoLineId=L.Id
-        LEFT JOIN TrainNo N ON L.TrainNoId=N.Id
-        LEFT JOIN BaseStation S ON M.TrainStationId=S.Id</item>
+
+        <item>create view ViewTrainNoLIne as SELECT TN.Id, TN.FullName, TL.Id AS TrainNoLineId,
+            TL.Sort, BL.Id AS LineId, BL.LineName, BL.FirstStationId, BL.FirstStation,
+            BL.LastStationId, BL.LastStation FROM TrainNo AS TN LEFT OUTER JOIN TrainNoLine AS TL ON
+            TN.Id = TL.TrainNoId LEFT OUTER JOIN BaseLine AS BL ON TL.LineId = BL.Id WHERE
+            (TN.IsDelete = 0);
+        </item>
+
+        <item>create view View_Station as SELECT Id, SN, StationName, Spell, UpdateTime, FileCount,
+            ZdCount, CzCount, ZcCount FROM (SELECT S.Id, S.SN, S.StationName, S.Spell, S.UpdateTime,
+            (SELECT COUNT(1) AS Expr1 FROM StationFiles WHERE (StationId = S.Id) AND (IsDelete = 0))
+            AS FileCount, (SELECT COUNT(1) AS Expr1 FROM StationFiles WHERE (StationId = S.Id) AND
+            (IsDelete = 0) AND (FileType = 1)) AS ZdCount, (SELECT COUNT(1) AS Expr1 FROM
+            StationFiles WHERE (StationId = S.Id) AND (IsDelete = 0) AND (FileType = 2)) AS CzCount,
+            (SELECT COUNT(1) AS Expr1 FROM StationFiles WHERE (StationId = S.Id) AND (IsDelete = 0)
+            AND (FileType = 3)) AS ZcCount FROM BaseStation AS S LEFT OUTER JOIN StationFiles AS F
+            ON S.Id = F.StationId WHERE (S.IsDelete = 0)) AS T GROUP BY Id, SN, StationName, Spell,
+            UpdateTime, FileCount, ZdCount, ZcCount, CzCount;
+        </item>
+
+        <item>create view ViewTrainMoment as
+            SELECT
+            M.Id,M.TrainNoLineId,M.TrainStationId,M.ArriveTime,M.DepartTime,M.StopMinutes,M.IntervalKms,M.SuggestSpeed,M.Sort,
+            N.FullName,S.StationName,N.Id AS TrainNoId,L.LineId,B.LineName
+            FROM TrainMoment M
+            LEFT JOIN TrainNoLine L ON M.TrainNoLineId=L.Id
+            LEFT JOIN TrainNo N ON L.TrainNoId=N.Id
+            LEFT JOIN BaseLine B ON L.LineId=B.Id
+            LEFT JOIN BaseStation S ON M.TrainStationId=S.Id
+        </item>
+
+        <item>
+            CREATE VIEW ViewAnnounceCommands
+            AS
+            SELECT
+            AC.Id,AC.CommandNo,AC.CommandInterval,AC.SpeedLimitLocation,AC.StartEndTime,AC.LoseEffectTime,AC.LimitedSpeed,AC.AddTime,AC.IsActive,
+            TN.FullName,TN.Code,TN.Number,TN.Direction,TN.RunType,TN.FirstStation,TN.LastStation,TN.UpdateTime,
+            LAC.TrainNoId
+            FROM TrainNo TN
+            LEFT JOIN LineAnnounceCommands LAC ON TN.Id=LAC.TrainNoId
+            LEFT JOIN AnnounceCommands AC ON LAC.CommandId=AC.Id
+            WHERE AC.IsActive=1
+        </item>
+
+        <item>
+            create view ViewDriveRecord as
+            SELECT
+            DR.Id, DR.DriverId1, DR.DriverId2, DR.ViceDriverId, DR.StudentDriverId,
+            DR.OtherDriverId, DR.LocomotiveType, DR.AttendTime, DR.GetTrainTime, DR.LeaveDepotTime1,
+            DR.LeaveDepotTime2, DR.AttendForecast, DR.ArriveDepotTime1, DR.ArriveDepotTime2,
+            DR.GiveTrainTime, DR.RecordEndTime, DR.OperateConsume, DR.StopConsume, DR.RecieveEnergy,
+            DR.LeftEnergy, DR.EngineOil, DR.AirCompressorOil, DR.TurbineOil, DR.GearOil,
+            DR.GovernorOil, DR.OtherOil, DR.Staple, DR.MultiLocoDepot, DR.MultiLocoType,
+            DR.MultiLocoSection, DR.EndSummary, DR.AddTime, DR.IsDelete,
+            VP1.WorkNo AS DriverWorkNo,VP1.Name AS DriverName,
+            VP2.WorkNo AS ViceDriverWorkNo, VP2.Name AS ViceDriverName,
+            VP3.WorkNo AS StuDriverWorkNo, VP3.Name AS StuDriverName,
+            VP4.WorkNo AS OtherDriverWorkNo, VP4.Name AS OtherDriverName,
+            DT.Id AS DriveTrainNoAndLineId, DT.TrainNoId, DT.LineId,
+            TN.Code,TN.Direction,TN.FirstStation,TN.FullName,TN.LastStation,TN.Number,TN.RunType,
+            DR.LineName
+            FROM DriveRecords DR
+            LEFT JOIN ViewPersonInfo VP1 ON DR.DriverId1=VP1.Id
+            LEFT JOIN ViewPersonInfo VP2 ON DR.DriverId2=VP2.Id
+            LEFT JOIN ViewPersonInfo VP3 ON DR.StudentDriverId=VP3.Id
+            LEFT JOIN ViewPersonInfo VP4 ON DR.OtherDriverId=VP4.Id
+            LEFT JOIN DriveTrainNoAndLine DT ON DR.Id=DT.DriveRecordId
+            LEFT JOIN TrainNo TN ON DT.TrainNoId=TN.Id
+            LEFT JOIN BaseLine BL ON DT.LineId=BL.Id
+        </item>
 
     </array>
 

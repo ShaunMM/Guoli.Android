@@ -1,40 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="3dp"
-    >
+    android:orientation="horizontal">
 
     <TextView
         android:id="@+id/editlist_item1"
-        android:paddingLeft="10dp"
         android:layout_width="0dp"
-        android:layout_weight="1"
-        android:textSize="@dimen/getsearchlistitemtextsize"
-        android:padding="10dp"
         android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:padding="10dp"
+        android:paddingLeft="10dp"
         android:text=""
-        />
+        android:textSize="@dimen/getsearchlistitemtextsize" />
 
     <TextView
         android:id="@+id/editlist_item2"
-        android:paddingLeft="10dp"
         android:layout_width="0dp"
-        android:layout_weight="1"
-        android:textSize="@dimen/getsearchlistitemtextsize"
-        android:padding="10dp"
         android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:padding="10dp"
+        android:paddingLeft="10dp"
         android:text=""
-        />
+        android:textSize="@dimen/getsearchlistitemtextsize" />
+
     <TextView
         android:id="@+id/editlist_item3"
-        android:paddingLeft="10dp"
         android:layout_width="0dp"
-        android:layout_weight="1"
-        android:textSize="@dimen/getsearchlistitemtextsize"
-        android:padding="10dp"
-
         android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:padding="10dp"
+        android:paddingLeft="10dp"
         android:text=""
-        />
+        android:textSize="@dimen/getsearchlistitemtextsize" />
 </LinearLayout>

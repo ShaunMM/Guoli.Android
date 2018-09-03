@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:visibility="visible"
-    >
+    android:visibility="visible">
 
     <RelativeLayout
         android:id="@+id/breakruls_relayout"
         android:layout_width="match_parent"
-        android:layout_height="45dp"
-        >
+        android:layout_height="@dimen/hd_function">
+
         <TextView
             android:id="@+id/daily_breakruls_title2"
             android:layout_width="match_parent"
@@ -19,101 +17,96 @@
             android:background="@color/colorwhite"
             android:gravity="center"
             android:padding="10dp"
-            android:text="违章违纪记录"
-android:textStyle="bold"
-            android:textSize="16sp" />
+            android:text="违 章 违 纪 记 录"
+            android:textSize="@dimen/ts_twenty_four"
+            android:textStyle="bold" />
+
         <LinearLayout
             android:id="@+id/daily_breakruls_titleback"
             android:layout_width="wrap_content"
-            android:layout_height= "45dp"
-            android:textSize="16sp"
+            android:layout_height="match_parent"
             android:gravity="center"
-            android:padding="10dp"
             android:orientation="horizontal"
-            >
+            android:padding="10dp"
+            android:textSize="@dimen/ts_sixteen">
 
             <TextView
                 android:layout_width="15dp"
                 android:layout_height="match_parent"
-                android:background="@mipmap/db_1"
-                />
+                android:background="@mipmap/db_1" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="返回"
                 android:layout_gravity="center"
-                android:textSize="16sp"
                 android:paddingLeft="5dp"
-                />
+                android:text="返回"
+                android:textSize="@dimen/ts_twenty" />
         </LinearLayout>
     </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_marginTop="40dp"
         android:layout_height="match_parent"
-        >
+        android:layout_marginTop="60dp">
+
         <ScrollView
 
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:scrollbars="none"
-            >
+            android:scrollbars="none">
+
             <include
                 android:id="@+id/breakruls_include"
-                layout="@layout/breakruls2"
-                />
+                layout="@layout/breakruls2" />
         </ScrollView>
     </RelativeLayout>
+
     <RelativeLayout
+        android:id="@+id/breakruls_popuwindow"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/colorwhite"
-        android:id="@+id/breakruls_popuwindow"
-        android:visibility="gone"
-        >
-
+        android:background="@color/searchbackground"
+        android:visibility="gone">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center"
+            android:layout_marginLeft="@dimen/searchMarginLeft"
+            android:layout_marginRight="@dimen/searchMarginRight"
+            android:layout_marginTop="@dimen/searchMarginTop"
             android:background="@color/white"
-            android:layout_marginLeft="200dp"
-            android:layout_marginRight="200dp"
-            android:layout_marginTop="10dp"
-            >
+            android:gravity="center"
+            android:orientation="horizontal">
+
             <EditText
+                android:id="@+id/breakruls_edit_key2"
                 android:layout_width="0dp"
-                android:singleLine="true"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:layout_marginLeft="10dp"
                 android:inputType="text"
-                android:layout_height="wrap_content"
-                android:id="@+id/breakruls_edit_key2" />
+                android:singleLine="true" />
+
             <Button
+                android:id="@+id/breakruls_popuwindow_yes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="确定"
                 android:layout_margin="5dp"
-                android:id="@+id/breakruls_popuwindow_yes"
-                />
-
+                android:text="确定" />
         </LinearLayout>
 
         <ListView
+            android:id="@+id/lstv_all"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
             android:layout_marginLeft="210dp"
             android:layout_marginRight="295dp"
             android:layout_marginTop="52dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/lstv_all"
-            android:visibility="visible"
             android:background="@color/white"
-            android:layout_gravity="center_horizontal"
-            />
+            android:visibility="visible" />
     </RelativeLayout>
 
 </RelativeLayout>

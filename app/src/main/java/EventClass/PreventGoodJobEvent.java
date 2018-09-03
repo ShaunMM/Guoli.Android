@@ -55,7 +55,4 @@ public class PreventGoodJobEvent {
         this.list = list;
     }
 
-
-
-
 }

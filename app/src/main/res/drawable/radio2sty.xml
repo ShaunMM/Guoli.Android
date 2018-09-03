@@ -2,7 +2,7 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item android:state_checked="false" android:drawable="@color/colorblue2"/>
-    <item android:state_checked="true" android:drawable="@mipmap/zd_aa1"/>
+    <item android:state_checked="true" android:drawable="@mipmap/zd_aaa"/>
 
     <item android:state_checkable="false" android:drawable="@color/colorAccent"/>
 

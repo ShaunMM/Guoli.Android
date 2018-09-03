@@ -1,40 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:id="@+id/daily_wroklayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    >
+    android:orientation="vertical">
+
     <FrameLayout
         android:id="@+id/fl_container"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"></FrameLayout>
+        android:layout_weight="1" />
 
     <LinearLayout
         android:id="@+id/ll_content"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/dailyworktitle"
-            android:gravity="center"
-            android:textSize="16sp"
-            android:padding="10dp"
-            android:textStyle="bold"
+            android:layout_height="@dimen/hd_function"
             android:background="@color/colorwhite"
-            />
+            android:gravity="center"
+            android:text="日 常 工 作"
+            android:textSize="@dimen/ts_twenty_four"
+            android:textStyle="bold" />
+
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
-            android:scrollbars="none"
-            >
-            <include
-                layout="@layout/dailyworkconn"
-                />
+            android:scrollbars="none">
+
+            <include layout="@layout/dailyworkconn" />
         </ScrollView>
 
     </LinearLayout>

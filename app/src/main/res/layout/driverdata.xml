@@ -1,148 +1,170 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:id="@+id/daily_wroklayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    >
+    android:orientation="vertical">
+
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="45dp">
+        android:layout_height="@dimen/hd_function">
+
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="45dp"
+            android:layout_height="match_parent"
             android:background="@color/colorwhite"
-            android:text="行车资料"
             android:gravity="center"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            />
+            android:text="行 车 资 料"
+            android:textSize="@dimen/ts_twenty_four"
+            android:textStyle="bold" />
+
         <LinearLayout
+            android:id="@+id/search_result_back"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:orientation="horizontal"
-            android:id="@+id/search_result_back"
-            android:visibility="gone"
-            >
-            <TextView
-                android:layout_margin="10dp"
+            android:visibility="gone">
 
+            <TextView
                 android:layout_width="15dp"
                 android:layout_height="match_parent"
-                android:background="@mipmap/db_1"
-                />
+                android:layout_margin="10dp"
+                android:background="@mipmap/db_1" />
+
             <TextView
-                android:gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="返回"
-                />
+                android:gravity="center"
+                android:textSize="@dimen/ts_eighteen"
+                android:text="返回" />
         </LinearLayout>
     </RelativeLayout>
 
-
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:orientation="horizontal"
-        android:layout_marginTop="50dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
-        android:layout_marginBottom="20dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginTop="40dp"
+            android:orientation="horizontal">
 
 
-        >
-        <AutoCompleteTextView
-            android:id="@+id/search_edittext"
-            android:layout_width="0dp"
-            android:layout_weight="6"
-            android:layout_height="match_parent"
-            android:hint="输入关键字搜索"
-            android:completionThreshold ="1"
-            android:background="@drawable/textview_border"
-            />
-        <Button
-            android:id="@+id/search_buttonsearch"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="搜索"
-            android:focusable="false"
-            android:clickable="true"
-            android:textColor="@color/white"
-            android:background="@drawable/buttonclickcolor"
-            />
-    </LinearLayout>
+            <EditText
+                android:id="@+id/search_edittext"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="7"
+                android:background="@drawable/search_edittext_shape"
+                android:completionThreshold="1"
+                android:hint=" 输入关键字搜索" />
+
+            <Button
+                android:id="@+id/search_buttonsearch"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/buttonclickcolor"
+                android:clickable="true"
+                android:focusable="false"
+                android:text="搜索"
+                android:textColor="@color/white" />
+        </LinearLayout>
+
+        <ListView
+            android:id="@+id/ls_hint"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_alignStart="@+id/linearLayout2"
+            android:layout_alignTop="@+id/linearLayout2"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="180dp"
+            android:layout_marginTop="51dp"
+            android:background="@color/whitesmoke"
+            android:visibility="gone" />
+    </RelativeLayout>
+
     <LinearLayout
         android:id="@+id/search_layout1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/color_white"
         android:orientation="vertical"
-        >
+        android:visibility="visible">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:layout_marginLeft="50dp"
-            android:layout_marginRight="150dp"
-            >
+            android:layout_marginRight="100dp"
+            android:layout_marginTop="@dimen/ts_eighteen"
+            android:orientation="horizontal">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="历史记录："
-                android:textSize="@dimen/detailstextsize"
-
-                />
+                android:textSize="@dimen/ts_twenty" />
 
             <GridView
+                android:id="@+id/search_keywords_history"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:numColumns="5"
-                android:id="@+id/search_keywords_history"
-                ></GridView>
+                android:numColumns="3" />
 
         </LinearLayout>
+
         <GridView
             android:id="@+id/search_gridview"
-            android:layout_margin="30dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginTop="30dp"
+            android:horizontalSpacing="30dp"
             android:numColumns="3"
-            android:horizontalSpacing="10dp"
-            android:verticalSpacing="10dp"
-            ></GridView>
+            android:scrollbars="none"
+            android:verticalSpacing="20dp" />
     </LinearLayout>
+
     <TextView
         android:id="@+id/search_result_textcount"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="共搜索到14个结果"
         android:layout_marginLeft="30dp"
-        />
+        android:text="共搜索到0个结果"
+        android:textSize="@dimen/ts_sixteen" />
+
     <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
         android:layout_marginTop="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/colorblue"
-        />
+        android:background="@color/colorblue" />
+
     <LinearLayout
-        android:layout_marginTop="10dp"
         android:id="@+id/search_layout2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal"
         android:layout_marginBottom="20dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
 
-        >
         <ListView
             android:id="@+id/search_type"
-            android:layout_marginLeft="30dp"
             android:layout_width="150dp"
             android:layout_height="match_parent"
-            android:divider="@null"
-            ></ListView>
+            android:layout_marginLeft="30dp"
+            android:divider="@null" />
 
         <ListView
             android:id="@+id/search_details"
@@ -150,8 +172,25 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
-            ></ListView>
+            android:background="@drawable/circle_bg" />
 
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/search_layout3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical">
+
+        <ListView
+            android:id="@+id/search_local_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/circle_bg" />
     </LinearLayout>
 
 </LinearLayout>

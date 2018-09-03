@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="列车时刻"
+        android:textSize="16sp"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp"
+        android:textColor="@color/black"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#339aff"></View>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="@color/llblack">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="车站"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:padding="10dp"
+            android:hint="建议车速" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="到"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:padding="10dp"
+            android:hint="建议车速" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="发"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:padding="10dp"
+            android:hint="建议车速" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="建议车速"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:padding="10dp"
+            android:hint="建议车速" />
+    </LinearLayout>
+    
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="90dp"></ListView>
+
+    <TextView
+        android:id="@+id/tv_tain_arrive"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="到达签点"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/buttonclickcolor"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:padding="10dp"
+        android:hint="sdfafeadfaefa" />
+</LinearLayout>

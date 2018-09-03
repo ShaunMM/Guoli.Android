@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="100dp"
+    android:layout_height="80dp"
+    android:background="@color/colorblue2"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <ImageView
+        android:id="@+id/gv_itemimage"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@mipmap/folder" />
+
+    <TextView
+        android:id="@+id/gv_itemtext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="应急处置"
+        android:textColor="@color/color_white"
+        android:textSize="@dimen/ts_twenty"
+        android:singleLine="true"
+        android:ellipsize="end"
+        android:textStyle="bold" />
+</LinearLayout>

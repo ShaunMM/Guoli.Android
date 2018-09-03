@@ -119,7 +119,7 @@ public class WifiAdmin {
         mWifiInfo = mWifiManager.getConnectionInfo();
         if (mWifiInfo != null) {
             Log.d("wifiInfo", mWifiInfo.toString());
-            Log.d("SSID",mWifiInfo.getSSID());
+            Log.d("SSID", mWifiInfo.getSSID());
         }
     }
 
@@ -134,9 +134,8 @@ public class WifiAdmin {
     }
 
     /**
-     * @检查当前网络状态
-     *
      * @return String
+     * @检查当前网络状态
      */
     public void checkNetWorkState() {
         if (mWifiInfo != null) {
@@ -161,14 +160,14 @@ public class WifiAdmin {
     }
 
     /**
-    *@锁定WifiLock
-    */
+     * @锁定WifiLock
+     */
     public void acquireWifiLock() {
         mWifiLock.acquire();
     }
 
     /**
-    *@解锁WifiLock
+     * @解锁WifiLock
      **/
     public void releaseWifiLock() {
         // 判断时候锁定
@@ -178,21 +177,21 @@ public class WifiAdmin {
     }
 
     /**
-    *@创建一个WifiLock
-    **/
+     * @创建一个WifiLock
+     **/
     public void creatWifiLock() {
         mWifiLock = mWifiManager.createWifiLock("Test");
     }
 
     /**
      * @得到配置好的网络
-     * */
+     */
     public List<WifiConfiguration> getConfiguration() {
         return mWifiConfiguration;
     }
 
     /**
-     *@指定配置好的网络进行连接
+     * @指定配置好的网络进行连接
      */
     public void connectConfiguration(int index) {
         // 索引大于配置好的网络索引返回
@@ -205,29 +204,29 @@ public class WifiAdmin {
     }
 
     /**
-     *@得到MAC地址
-     * */
+     * @得到MAC地址
+     */
     public String getMacAddress() {
         return (mWifiInfo == null) ? "NULL" : mWifiInfo.getMacAddress();
     }
 
     /**
-     *@得到接入点的BSSID
-     * */
+     * @得到接入点的BSSID
+     */
     public String getBSSID() {
         return (mWifiInfo == null) ? "NULL" : mWifiInfo.getBSSID();
     }
 
     /**
-     *@得到WifiInfo的所有信息包
-     * */
+     * @得到WifiInfo的所有信息包
+     */
     public String getWifiInfo() {
         return (mWifiInfo == null) ? "NULL" : mWifiInfo.toString();
     }
 
     /**
-     *@添加一个网络并连接
-     * */
+     * @添加一个网络并连接
+     */
     public int addNetwork(WifiConfiguration wcg) {
         int wcgID = mWifiManager.addNetwork(mWifiConfiguration.get(3));
         mWifiManager.enableNetwork(wcgID, true);

@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="45dp">
+    android:layout_height="@dimen/hd_function"
+    android:orientation="vertical">
+
     <TextView
+        android:id="@+id/textView9"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/homepage"
-        android:gravity="center"
-        android:textSize="@dimen/detailstextsize"
-        android:textStyle="bold"
         android:background="@color/colorwhite"
-
-        />
+        android:gravity="center"
+        android:text="@string/homepage"
+        android:textSize="@dimen/ts_twenty_four"
+        android:textStyle="bold" />
 </LinearLayout>

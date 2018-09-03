@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/hd_function"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/colorwhite"
+        android:gravity="center"
+        android:text="列 车 时 刻"
+        android:textSize="@dimen/ts_twenty_four"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:id="@+id/ll_station"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView"
+        android:layout_marginTop="10dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+
+        <EditText
+            android:id="@+id/et_startstation"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="100dp"
+            android:layout_weight="0.4"
+            android:background="@drawable/search_edittext_shape"
+            android:gravity="center"
+            android:hint="起始站"
+            android:textSize="@dimen/ts_twenty" />
+
+        <Button
+            android:id="@+id/bt_exchange"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_weight="0.2"
+            android:textSize="@dimen/ts_eighteen"
+            android:background="@drawable/buttonclickcolor"
+            android:text="互~换" />
+
+
+        <EditText
+            android:id="@+id/et_endstation"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginRight="100dp"
+            android:layout_weight="0.4"
+            android:background="@drawable/search_edittext_shape"
+            android:gravity="center"
+            android:hint="终点站"
+            android:textSize="@dimen/ts_twenty" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/v_line1"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@id/ll_station"
+        android:layout_marginLeft="80dp"
+        android:layout_marginRight="80dp"
+        android:background="@color/colorblue" />
+
+    <LinearLayout
+        android:id="@+id/ll_trainmode"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/v_line1"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginRight="80dp"
+        android:layout_marginTop="5dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <RadioGroup
+            android:id="@+id/rg_options"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rb_allcodes"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/scheduleradio"
+                android:button="@null"
+                android:gravity="center"
+                android:text="全部"
+                android:textSize="@dimen/ts_twenty" />
+
+            <RadioButton
+                android:id="@+id/rb_gdccodes"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/scheduleradio"
+                android:button="@null"
+                android:gravity="center"
+                android:text="G/D/C"
+                android:textSize="@dimen/ts_twenty" />
+
+            <RadioButton
+                android:id="@+id/rb_zcodes"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/scheduleradio"
+                android:button="@null"
+                android:gravity="center"
+                android:text="Z字头"
+                android:textSize="@dimen/ts_twenty" />
+
+            <RadioButton
+                android:id="@+id/rb_kcodes"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/scheduleradio"
+                android:button="@null"
+                android:gravity="center"
+                android:text="K字头"
+                android:textSize="@dimen/ts_twenty" />
+
+            <RadioButton
+                android:id="@+id/rb_ycodes"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/scheduleradio"
+                android:button="@null"
+                android:gravity="center"
+                android:text="Y字头"
+                android:textSize="@dimen/ts_twenty" />
+
+            <RadioButton
+                android:id="@+id/rb_othercodes"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/scheduleradio"
+                android:button="@null"
+                android:gravity="center"
+                android:text="其他"
+                android:textSize="@dimen/ts_twenty" />
+        </RadioGroup>
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/v_line2"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@id/ll_trainmode"
+        android:layout_marginLeft="80dp"
+        android:layout_marginRight="80dp"
+        android:background="@color/colorblue" />
+
+    <Button
+        android:id="@+id/bt_querycode"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/v_line2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/buttonclickcolor"
+        android:text="查             询"
+        android:textSize="@dimen/ts_twenty"
+        android:textStyle="bold" />
+
+    <View
+        android:id="@+id/v_line3"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@id/bt_querycode"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/colorblue" />
+
+    <View
+        android:id="@+id/v_line4"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@id/v_line3"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/colorblue" />
+
+    <ExpandableListView
+        android:id="@+id/el_searchresult"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/v_line4"
+        android:layout_marginLeft="80dp"
+        android:layout_marginRight="80dp"
+        android:layout_marginTop="10dp" />
+</RelativeLayout>

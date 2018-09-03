@@ -6,9 +6,9 @@
     <dimen name="appbar_padding_top">8dp</dimen>
 
     <dimen name="detailslayoutpadingtop">30dp</dimen>
-    <dimen name="detailstextsize">18sp</dimen>
+    <dimen name="detailstextsize">20sp</dimen>
 
-    <dimen name="homepagetextsize">16sp</dimen>
+
     <dimen name="registeredittexttop">16dp</dimen>
     <dimen name="registertitletop1">50dp</dimen>
     <dimen name="registertitletop2">70dp</dimen>
@@ -16,8 +16,51 @@
     <dimen name="registertitlesize1">48sp</dimen>
     <dimen name="registertitlesize2">24sp</dimen>
 
-    <!--人名popuwindows  下拉列表item  文字大小-->
+    <!--人名popuwindows  搜索  下拉列表item  文字大小-->
     <dimen name="getsearchlistitemtextsize">18sp</dimen>
+    <dimen name="searchMarginTop">50dp</dimen>
+    <dimen name="searchMarginLeft">200dp</dimen>
+    <dimen name="searchMarginRight">200dp</dimen>
 
+    <!-- 指导司机   -->
+    <dimen name="dailyWorkHomePageTextView">30dp</dimen>
+
+    <!-- 指导司机  系统工具  -->
+    <dimen name="dWSystemToolstv_margin">30dp</dimen>
+    <dimen name="dWSystemToolstv_paddingLeft">80dp</dimen>
+
+    <!-- 列车时刻  -->
+    <dimen name="tSResulttv_height">30dp</dimen>
+
+    <!-- MainActivity  功能模块字体大小  -->
+    <dimen name="ms_functionbutton">22sp</dimen>
+
+    <!-- HomePage字体大小  -->
+    <dimen name="homepagetextsize">18sp</dimen>
+
+    <!-- 字体大小  -->
+    <dimen name="ts_sixteen">16sp</dimen>
+    <dimen name="ts_eighteen">18sp</dimen>
+    <dimen name="ts_twenty">20sp</dimen>
+    <dimen name="ts_twenty_two">22sp</dimen>
+    <dimen name="ts_twenty_four">24sp</dimen>
+    <dimen name="ts_twenty_eight">28sp</dimen>
+    <dimen name="ts_thirty">30sp</dimen>
+
+
+    <!-- 登录 Register -->
+    <dimen name="menu_width">185dp</dimen>
+    <dimen name="menu_paddingLeft">6dp</dimen>
+
+
+
+    <dimen name="ts_primary_title">20sp</dimen>
+    <dimen name="menu_ts_twenty_four">24sp</dimen>
+    <dimen name="ts_text_content">18sp</dimen>
+
+    <!-- 功能模块标题高度  -->
+    <dimen name="hd_function">50dp</dimen>
+    <!-- 功能模块标题高度  -->
+    <dimen name="padding_ten">10dp</dimen>
 
 </resources>

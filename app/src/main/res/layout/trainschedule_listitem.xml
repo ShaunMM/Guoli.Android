@@ -1,77 +1,147 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    >
+    android:layout_height="match_parent">
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/hd_function"
         android:layout_gravity="center_horizontal"
         android:background="@color/colorwhite"
         android:gravity="center"
         android:padding="10dp"
         android:text="列车时刻"
-        android:textStyle="bold"
-        android:textSize="16sp" />
+        android:textSize="@dimen/detailstextsize"
+        android:textStyle="bold" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center_horizontal"
-        android:orientation="vertical"
         android:layout_marginTop="120dp"
-        >
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="50dp"
-            android:layout_marginRight="50dp"
+            android:layout_marginRight="60dp"
             android:orientation="horizontal">
+            <!--android:background="@color/colorwhite"-->
 
-            <AutoCompleteTextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+
+            <EditText
                 android:id="@+id/trainsche_search_edit"
-                android:singleLine="true"
-
-                android:completionThreshold ="1"
-                android:hint="请输入有要查询的列车"
-                android:background="@color/colorwhite"
-                android:layout_weight="1" />
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="7"
+                android:background="@drawable/search_edittext_shape"
+                android:completionThreshold="1"
+                android:hint="请输入要查询的车次" />
 
             <Button
                 android:id="@+id/trainsche_search"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:background="@mipmap/i22_1"
-                />
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/buttonclickcolor"
+                android:clickable="true"
+                android:focusable="false"
+                android:text="搜索"
+                android:textColor="@color/white" />
         </LinearLayout>
 
         <LinearLayout
-            android:layout_marginTop="30dp"
-            android:layout_marginRight="50dp"
-            android:layout_marginLeft="50dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            >
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="60dp"
+            android:layout_marginTop="30dp"
+            android:orientation="horizontal">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="历史记录："
                 android:layout_marginRight="10dp"
-                android:textSize="@dimen/detailstextsize"
-                />
+                android:text="历史记录："
+                android:textSize="@dimen/detailstextsize" />
+
             <GridView
-                android:layout_marginRight="50dp"
                 android:id="@+id/searchhistory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="50dp"
+                android:cacheColorHint="#00000000"
+                android:horizontalSpacing="20dp"
+                android:listSelector="@android:color/transparent"
+                android:numColumns="6" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="60dp"
+            android:layout_marginRight="60dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/circle_bg"
+            android:orientation="vertical">
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:numColumns="6"
-                ></GridView>
+                android:layout_height="50dp"
+                android:background="@color/colorblue2"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="3dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="车次"
+                    android:textSize="@dimen/ts_twenty" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="线路"
+                    android:textSize="@dimen/ts_twenty" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="起始站"
+                    android:textSize="@dimen/ts_twenty" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="终点站"
+                    android:textSize="@dimen/ts_twenty" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="途径站数"
+                    android:textSize="@dimen/ts_twenty" />
+
+            </LinearLayout>
+
+            <ListView
+                android:id="@+id/lv_trainnoline"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
         </LinearLayout>
     </LinearLayout>
 </RelativeLayout>

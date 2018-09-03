@@ -18,30 +18,30 @@ import java.util.Date;
 
 import zj.com.mc.R;
 
-
 /**
- * Created by zhou on 2016/8/23.
+ * 基类Fragment
  */
-public abstract class BaseFragment extends Fragment implements View.OnClickListener{
+public abstract class BaseFragment extends Fragment implements View.OnClickListener {
 
     protected View mView;
-    private TextView daily_tiancheng_spmonth;
+    private TextView daily_tiancheng_spmonth;//时间选择
     private FrameLayout fl_base;
     private NumberPicker yearPicker;
     private NumberPicker monthPicker;
     protected TextView title;
+    private TextView adddata;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_base, container, false);
         initUI(view);
-        mView = initView(inflater,container,savedInstanceState);
+        mView = initView(inflater, container, savedInstanceState);
         fl_base.addView(mView);
         return view;
     }
 
-    protected  void initUI(View view){
+    protected void initUI(View view) {
         view.findViewById(R.id.back).setOnClickListener(this);
         title = (TextView) view.findViewById(R.id.daily_tiancheng_title);
         view.findViewById(R.id.daily_tiancheng_databutton).setOnClickListener(this);
@@ -49,20 +49,22 @@ public abstract class BaseFragment extends Fragment implements View.OnClickListe
         view.findViewById(R.id.tainjia_shuju).setOnClickListener(this);
         setDailyMonth();
         fl_base = (FrameLayout) view.findViewById(R.id.fl_base);
+        adddata = (TextView) view.findViewById(R.id.daily_tiancheng_databutton);
+        showAddButton(adddata);
 
     }
 
-    protected  void setDailyMonth(){
+    protected void setDailyMonth() {
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM");
         daily_tiancheng_spmonth.setText(format.format(new Date()));
-        daily_tiancheng_spmonth.setOnClickListener(this) ;
+        daily_tiancheng_spmonth.setOnClickListener(this);
     }
 
     abstract View initView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState);
 
     @Override
     public void onClick(View view) {
-        switch (view.getId()){
+        switch (view.getId()) {
             case R.id.back:
                 Intent intent = new Intent();
                 intent.setAction("CLOSE_FRAG");
@@ -76,7 +78,7 @@ public abstract class BaseFragment extends Fragment implements View.OnClickListe
                 String month = split[1];
                 View dialogView = View.inflate(getActivity(), R.layout.dailog_spmonth, null);
                 //屏蔽软键盘自动弹出
-                TextView textView = (TextView)dialogView.findViewById(R.id.text_notuse);
+                TextView textView = (TextView) dialogView.findViewById(R.id.text_notuse);
                 textView.requestFocus();
 
                 yearPicker = (NumberPicker) dialogView.findViewById(R.id.year);
@@ -99,7 +101,6 @@ public abstract class BaseFragment extends Fragment implements View.OnClickListe
                                 daily_tiancheng_spmonth.setText(checkYear + "-" + checkMonth);
 
                                 setDateChanged(checkYear + "-" + checkMonth);
-
 
                             }
                         })
@@ -126,7 +127,14 @@ public abstract class BaseFragment extends Fragment implements View.OnClickListe
 
     protected abstract void setDateChanged(String date);
 
+    protected abstract void setDataButton();
+
     protected abstract void setTestButton();
 
-    protected abstract void setDataButton();
+    protected abstract void showAddButton(TextView textView);
+
+    @Override
+    public void onResume() {
+        super.onResume();
+    }
 }

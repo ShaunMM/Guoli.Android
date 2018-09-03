@@ -1,63 +1,92 @@
 package zj.com.mc;
 
 import android.app.Activity;
-import android.content.SharedPreferences;
-import android.graphics.Color;
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
 import DBUtils.DBOpenHelper;
-
+import config.ISystemConfig;
+import config.SystemConfigFactory;
 
 /**
- * Created by dell on 2016/8/3.
+ * 我的错题
  */
-public class MineError extends Activity implements View.OnClickListener{
-//我的错题
-    private Button downbutton,exams_remove;
+public class MineError extends Activity implements View.OnClickListener {
+
+    private Button downbutton, exams_remove;
     private TextView normaltesttitle, normaltesttime, testnumber;
     private LinearLayout vp, test_l1, test_l2, test_l3, test_l4;
-    private TextView answer_a, answer_b, answer_c, answer_d, answer_ia, answer_ib, answer_ic, answer_id, test_leixing, test_leixing2,a_line,b_line,c_line,d_line;
-    private TextView  chose_a,chose_b,chose_c,chose_d;
+    private TextView answer_a, answer_b, answer_c, answer_d, answer_ia, answer_ib, answer_ic, answer_id, test_leixing, test_leixing2, a_line, b_line, c_line, d_line;
+    private TextView chose_a, chose_b, chose_c, chose_d;
     private TextView error_number;
+    private TextView tv_error;
+    private TextView tv_errorrecord;
     private int currentnum;
     private int maxcount;
     private DBOpenHelper dbOpenHelper;
     private List<Map> errorlist;
-    private List<TextView> listabcd2,listchoseanswers,listansweric,listline;//abcd集合，abcd选项集合，对勾集合,下划线；
-    private List<List> questionchose;//所有选项
-    private List<String> listId;//
-    private LinearLayout linlayouttime,mineerror_errorlayout;
+    private List<TextView> listabcd2, listchoseanswers, listansweric, listline;//abcd集合，abcd选项集合，对勾集合,下划线；
+    private List<List> questionchose;
+    private List<String> listId;
+    private LinearLayout linlayouttime, mineerror_errorlayout;
     private String personID;
+    private String tableNamessss;
+    private ISystemConfig systemConfig;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.test_exams_single);
+        Myapplilcation.addActivity(this);
+        Intent intentget = getIntent();
+        Bundle bundleget = intentget.getBundleExtra("bundle");
+        tableNamessss = bundleget.getString("TableNamessss");
         initnormaltest();
-        if (errorlist.size()!=0){
-        setchose();
-        }else {
+        recordOperateLog(8, "我的错题: " + tableNamessss);
+        if (errorlist.size() != 0) {
+            setchose();
         }
     }
 
+    private void recordOperateLog(int LogType, String LogContent) {
+        Date dt = new Date();
+        DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String nowTime = df.format(dt);
+        dbOpenHelper.insert("AppOperateLog", new String[]{"LogType", "LogContent", "OperatorId", "DeviceId", "AddTime"},
+                new Object[]{LogType, LogContent, systemConfig.getOperatorId(), 0, nowTime});
+    }
+
     private void initnormaltest() {
+
         currentnum = 0;
-        maxcount=0;
-        dbOpenHelper= DBOpenHelper.getInstance(getApplicationContext());
+        maxcount = 0;
+        dbOpenHelper = DBOpenHelper.getInstance(getApplicationContext());
+        systemConfig = SystemConfigFactory.getInstance(this).getSystemConfig();
+        personID = systemConfig.getUserId();
+
+        findViewById(R.id.search_file_back).setOnClickListener(this);
         normaltesttitle = (TextView) findViewById(R.id.daily_normaltest_title);//标题
         normaltesttitle.setText("我的错题");
-        linlayouttime= (LinearLayout) findViewById(R.id.linlayouttime);
+        linlayouttime = (LinearLayout) findViewById(R.id.linlayouttime);
         linlayouttime.setVisibility(View.GONE);
-        mineerror_errorlayout= (LinearLayout) findViewById(R.id.mineerror_errorlayout);
+        mineerror_errorlayout = (LinearLayout) findViewById(R.id.mineerror_errorlayout);
         mineerror_errorlayout.setVisibility(View.VISIBLE);
+        tv_error = (TextView) findViewById(R.id.tv_error);
+        tv_errorrecord = (TextView) findViewById(R.id.tv_errorrecord);
+        tv_error.setVisibility(View.VISIBLE);
+        tv_errorrecord.setVisibility(View.VISIBLE);
 
         test_leixing = (TextView) findViewById(R.id.test_leixing);//类型
         test_leixing2 = (TextView) findViewById(R.id.test_leixing2);
@@ -66,10 +95,10 @@ public class MineError extends Activity implements View.OnClickListener{
         findViewById(R.id.normaltest_upbutton).setOnClickListener(this);//上一题
         downbutton = (Button) findViewById(R.id.normaltest_downbutton);//下一题
         downbutton.setOnClickListener(this);//下一题
-        exams_remove= (Button) findViewById(R.id.exams_remove);
+        exams_remove = (Button) findViewById(R.id.exams_remove);
         exams_remove.setOnClickListener(this);//移除
         exams_remove.setVisibility(View.GONE);
-        error_number= (TextView) findViewById(R.id.error_number);
+        error_number = (TextView) findViewById(R.id.error_number);
         vp = (LinearLayout) findViewById(R.id.viewpager_layout);
         test_l1 = (LinearLayout) findViewById(R.id.test_l1);//第一题
         test_l1.setOnClickListener(this);
@@ -80,151 +109,142 @@ public class MineError extends Activity implements View.OnClickListener{
         test_l4 = (LinearLayout) findViewById(R.id.test_l4);//第四题
         test_l4.setOnClickListener(this);
 
-        answer_a = (TextView) findViewById(R.id.answer_a);//选项A的内容
-        chose_a= (TextView) findViewById(R.id.chose_a);
+        answer_a = (TextView) findViewById(R.id.answer_a);//选项A 具体答案内容
+        chose_a = (TextView) findViewById(R.id.chose_a);
         answer_b = (TextView) findViewById(R.id.answer_b);//选项B
-        chose_b= (TextView) findViewById(R.id.chose_b);
+        chose_b = (TextView) findViewById(R.id.chose_b);
         answer_c = (TextView) findViewById(R.id.answer_c);//选项C
-        chose_c= (TextView) findViewById(R.id.chose_c);
+        chose_c = (TextView) findViewById(R.id.chose_c);
         answer_d = (TextView) findViewById(R.id.answer_d);//选项D
-        chose_d= (TextView) findViewById(R.id.chose_d);
+        chose_d = (TextView) findViewById(R.id.chose_d);
 
-
-        answer_ia = (TextView) findViewById(R.id.answer_ia);//选项A对勾
+        answer_ia = (TextView) findViewById(R.id.answer_ia);//选项A 对勾
         answer_ib = (TextView) findViewById(R.id.answer_ib);//选项B
         answer_ic = (TextView) findViewById(R.id.answer_ic);//选项C
         answer_id = (TextView) findViewById(R.id.answer_id);//选项D
-        listabcd2=new ArrayList<TextView>();
+
+        listabcd2 = new ArrayList<TextView>();
         listabcd2.add(chose_a);
         listabcd2.add(chose_b);
         listabcd2.add(chose_c);
         listabcd2.add(chose_d);
-        listchoseanswers=new ArrayList<TextView>();
+        listchoseanswers = new ArrayList<TextView>();
         listchoseanswers.add(answer_a);
         listchoseanswers.add(answer_b);
         listchoseanswers.add(answer_c);
         listchoseanswers.add(answer_d);
-        listansweric=new ArrayList<TextView>();
+        listansweric = new ArrayList<TextView>();
         listansweric.add(answer_ia);
         listansweric.add(answer_ib);
         listansweric.add(answer_ic);
         listansweric.add(answer_id);
 
-        listline=new ArrayList<>();
-        a_line= (TextView) findViewById(R.id.a_line);
-        b_line= (TextView) findViewById(R.id.b_line);
-        c_line= (TextView) findViewById(R.id.c_line);
-        d_line= (TextView) findViewById(R.id.d_line);
+        listline = new ArrayList<>();
+        a_line = (TextView) findViewById(R.id.a_line);
+        b_line = (TextView) findViewById(R.id.b_line);
+        c_line = (TextView) findViewById(R.id.c_line);
+        d_line = (TextView) findViewById(R.id.d_line);
         listline.add(a_line);
         listline.add(b_line);
         listline.add(c_line);
         listline.add(d_line);
 
-        SharedPreferences sharedPreferences=getSharedPreferences("PersonInfo",MODE_PRIVATE);
-        personID=sharedPreferences.getString("PersonId",null);
-
-        errorlist=dbOpenHelper.queryListMap("select * from ExamErrorQuestions where PersionId=?",new String[]{personID});
+        errorlist = dbOpenHelper.queryListMap("select * from ExamErrorQuestions where PersionId=? and TableNamessss = ?", new String[]{personID, tableNamessss});
         System.out.println(String.valueOf(errorlist));
-        listId=new ArrayList<String>();
-        if (errorlist.size()!=0) {
+
+        //获取错题ID集合，同时获取相对应的错误选项
+        listId = new ArrayList<String>();
+        if (errorlist.size() != 0) {
             for (int i = 0; i < errorlist.size(); i++) {
                 listId.add(errorlist.get(i).get("QuestionId") + "");
+                Log.i("getPersonChoses", "MineError--->errorlist" + errorlist.get(i).get("HasRemembered").toString());
             }
         }
-        System.out.println("ssssssssss"+String.valueOf(listId));
-        questionchose=new ArrayList<>();
-        if (listId.size()!=0) {
+
+        System.out.println("ssssssssss" + String.valueOf(listId));
+        questionchose = new ArrayList<>();
+
+        if (listId.size() != 0) {
             for (int i = 0; i < listId.size(); i++) {
-                List<Map> list=dbOpenHelper.queryListMap("select * from ExamQuestion where Id=?",new String[]{listId.get(i)});
-                System.out.println("ssssssssss"+String.valueOf(list));
+                List<Map> list = dbOpenHelper.queryListMap("select * from ExamQuestion where Id=?", new String[]{listId.get(i)});
+                System.out.println("ssssssssss" + String.valueOf(list));
                 questionchose.add(list);
-
             }
         }
-        maxcount=errorlist.size();
-            error_number.setText((currentnum+1)+"/"+maxcount);
-
+        maxcount = errorlist.size();
+        error_number.setText((currentnum + 1) + "/" + maxcount);
     }
-
 
     @Override
     public void onClick(View view) {
-
-        switch (view.getId()){
+        switch (view.getId()) {
             case R.id.normaltest_upbutton:
                 //上一题
-                if (errorlist.size()!=0) {
-                if (currentnum!=0) {
+                if (errorlist.size() != 0) {
+                    if (currentnum != 0) {
 
-                    currentnum=currentnum-1;
-                    setchose();
-                    error_number.setText((currentnum+1)+"/"+maxcount);
-
-                }else {
-                    UtilisClass.showToast(MineError.this,"已经是第一题了");
-                }
-                }else {}
-                 break;
-            case R.id.normaltest_downbutton:
-            //下一题
-                if (errorlist.size()!=0) {
-
-                    if (currentnum != maxcount - 1) {
-
-                        currentnum = currentnum + 1;
+                        currentnum = currentnum - 1;
                         setchose();
                         error_number.setText((currentnum + 1) + "/" + maxcount);
 
-
                     } else {
-                        UtilisClass.showToast(MineError.this, "已经是最后一题");
-
+                        UtilisClass.showToast(MineError.this, "已经是第一题了");
                     }
-                }else {}
+                }
 
                 break;
+            case R.id.normaltest_downbutton:
+                //下一题
+                if (errorlist.size() != 0) {
 
-
-
+                    if (currentnum != maxcount - 1) {
+                        currentnum = currentnum + 1;
+                        setchose();
+                        error_number.setText((currentnum + 1) + "/" + maxcount);
+                    } else {
+                        UtilisClass.showToast(MineError.this, "已经是最后一题");
+                    }
+                }
+                break;
+            case R.id.search_file_back:
+                finish();
+                break;
         }
-
     }
 
     private void setchose() {
+        List<Map> singlechose = questionchose.get(currentnum);
+        String chosetype = singlechose.get(0).get("AnswerType") + "";
+        String questbody = singlechose.get(0).get("Question") + "";
+        String singlequestId = errorlist.get(currentnum).get("QuestionId") + "";
 
-        List<Map> singlechose= questionchose.get(currentnum);
-        String chosetype = singlechose.get(0 ).get("AnswerType") + "";
-        String questbody = singlechose.get(0 ).get("Question") + "";
-        String singlequestId = errorlist.get(currentnum ).get("QuestionId") + "";
-
-        if (chosetype.equals("1")){
-
-            test_leixing.setText("【"+"单项选择"+"】");
-        }else if (chosetype.equals("2")){
-            test_leixing.setText("【"+"多项选择"+"】");
-
-        }else if (chosetype.equals("3")){
-            test_leixing.setText("【"+"判断"+"】");
-
+        if (chosetype.equals("1")) {
+            test_leixing.setText("【" + "单项选择" + "】");
+        } else if (chosetype.equals("2")) {
+            test_leixing.setText("【" + "多项选择" + "】");
+        } else if (chosetype.equals("3")) {
+            test_leixing.setText("【" + "判断" + "】");
         }
         test_leixing2.setText(questbody);
+        tv_errorrecord.setText(errorlist.get(currentnum).get("HasRemembered").toString());
+
         List<Map> choseslist = dbOpenHelper.queryListMap("select * from ExamAnswers where QuestionId=?", new String[]{singlequestId});
-        for (int i=0; i<4;i++ ) {
+
+        for (int i = 0; i < 4; i++) {
             listchoseanswers.get(i).setTextColor(this.getResources().getColor(R.color.sblack));
             listabcd2.get(i).setTextColor(this.getResources().getColor(R.color.sblack));
             listline.get(i).setBackgroundColor(this.getResources().getColor(R.color.llblack));
             listansweric.get(i).setVisibility(View.GONE);
         }
-        for (int j=0; j<choseslist.size(); j++){
-            if (choseslist.get(j).get("IsRight").equals("1")) {
 
+
+        for (int j = 0; j < choseslist.size(); j++) {
+            if (choseslist.get(j).get("IsRight").equals("1")) {
                 listchoseanswers.get(j).setTextColor(this.getResources().getColor(R.color.colorblue2));
                 listabcd2.get(j).setTextColor(this.getResources().getColor(R.color.colorblue2));
-//                listline.get(j).setTextColor(this.getResources().getColor(R.color.colorblue2));
+                //listline.get(j).setTextColor(this.getResources().getColor(R.color.colorblue2));
                 listline.get(j).setBackgroundColor(this.getResources().getColor(R.color.colorblue2));
-
                 listansweric.get(j).setVisibility(View.VISIBLE);
-
             }
         }
 
@@ -238,9 +258,8 @@ public class MineError extends Activity implements View.OnClickListener{
             b_line.setVisibility(View.GONE);
             c_line.setVisibility(View.GONE);
             d_line.setVisibility(View.GONE);
-
-            answer_a.setText(choseslist.get(0).get("Answer")+"");
-        }else if (choseslist.size()==2){
+            answer_a.setText(choseslist.get(0).get("Answer") + "");
+        } else if (choseslist.size() == 2) {
             test_l1.setVisibility(View.VISIBLE);
             test_l2.setVisibility(View.VISIBLE);
             test_l3.setVisibility(View.GONE);
@@ -251,9 +270,10 @@ public class MineError extends Activity implements View.OnClickListener{
             c_line.setVisibility(View.GONE);
             d_line.setVisibility(View.GONE);
 
-            answer_a.setText(choseslist.get(0).get("Answer")+"");
-            answer_b.setText(choseslist.get(1).get("Answer")+"");
-        }else if (choseslist.size()==3){
+            answer_a.setText(choseslist.get(0).get("Answer") + "");
+            answer_b.setText(choseslist.get(1).get("Answer") + "");
+
+        } else if (choseslist.size() == 3) {
             test_l1.setVisibility(View.VISIBLE);
             test_l2.setVisibility(View.VISIBLE);
             test_l3.setVisibility(View.VISIBLE);
@@ -264,10 +284,11 @@ public class MineError extends Activity implements View.OnClickListener{
             c_line.setVisibility(View.VISIBLE);
             d_line.setVisibility(View.GONE);
 
-            answer_a.setText(choseslist.get(0).get("Answer")+"");
-            answer_b.setText(choseslist.get(1).get("Answer")+"");
-            answer_c.setText(choseslist.get(2).get("Answer")+"");
-        }else if (choseslist.size()==4){
+            answer_a.setText(choseslist.get(0).get("Answer") + "");
+            answer_b.setText(choseslist.get(1).get("Answer") + "");
+            answer_c.setText(choseslist.get(2).get("Answer") + "");
+
+        } else if (choseslist.size() == 4) {
             test_l1.setVisibility(View.VISIBLE);
             test_l2.setVisibility(View.VISIBLE);
             test_l3.setVisibility(View.VISIBLE);
@@ -278,10 +299,17 @@ public class MineError extends Activity implements View.OnClickListener{
             c_line.setVisibility(View.VISIBLE);
             d_line.setVisibility(View.VISIBLE);
 
-            answer_a.setText(choseslist.get(0).get("Answer")+"");
-            answer_b.setText(choseslist.get(1).get("Answer")+"");
-            answer_c.setText(choseslist.get(2).get("Answer")+"");
-            answer_d.setText(choseslist.get(3).get("Answer")+"");
-        }else {}
+            answer_a.setText(choseslist.get(0).get("Answer") + "");
+            answer_b.setText(choseslist.get(1).get("Answer") + "");
+            answer_c.setText(choseslist.get(2).get("Answer") + "");
+            answer_d.setText(choseslist.get(3).get("Answer") + "");
+
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Myapplilcation.removeActivity(this);
     }
 }

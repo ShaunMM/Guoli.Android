@@ -10,9 +10,7 @@ import java.net.URLEncoder;
 import java.util.Map;
 import java.util.Set;
 
-/**
- * Created by dell on 2016/8/26.
- */
+
 /*
  * 此类用来发送HTTP请求
  * */
@@ -25,7 +23,7 @@ public class HttpRequestUtil {
      * @return
      * @throws Exception
      */
-    public static URLConnection sendGetRequest(String url,Map<String, String> params, Map<String, String> headers)
+    public static URLConnection sendGetRequest(String url, Map<String, String> params, Map<String, String> headers)
             throws Exception {
         StringBuilder buf = new StringBuilder(url);
         Set<Map.Entry<String, String>> entrys = null;
@@ -53,6 +51,7 @@ public class HttpRequestUtil {
         conn.getResponseCode();
         return conn;
     }
+
     /**
      * 发送POST请求
      * @param url
@@ -87,8 +86,7 @@ public class HttpRequestUtil {
                 conn.setRequestProperty(entry.getKey(), entry.getValue());
             }
         }
-       conn.getResponseCode(); // 为了发送成功
-
+        conn.getResponseCode(); // 为了发送成功
         return conn;
     }
 
@@ -99,69 +97,62 @@ public class HttpRequestUtil {
      * @return
      * @throws Exception
      */
-    public static byte[] read2Byte(InputStream inStream)throws Exception{
+    public static byte[] read2Byte(InputStream inStream) throws Exception {
         ByteArrayOutputStream outSteam = new ByteArrayOutputStream();
         byte[] buffer = new byte[1024];
         int len = 0;
-        while( (len = inStream.read(buffer)) !=-1 ){
+        while ((len = inStream.read(buffer)) != -1) {
             outSteam.write(buffer, 0, len);
         }
         outSteam.close();
         inStream.close();
         return outSteam.toByteArray();
     }
+
     /**
      * 将输入流转为字符串
+     *
      * @param inStream
      * @return
      * @throws Exception
      */
-    public static String read2String(InputStream inStream)throws Exception{
+    public static String read2String(InputStream inStream) throws Exception {
         ByteArrayOutputStream outSteam = new ByteArrayOutputStream();
         byte[] buffer = new byte[1024];
         int len = 0;
-        while( (len = inStream.read(buffer)) !=-1 ){
+        while ((len = inStream.read(buffer)) != -1) {
             outSteam.write(buffer, 0, len);
         }
         outSteam.close();
         inStream.close();
-        return new String(outSteam.toByteArray(),"UTF-8");
+        return new String(outSteam.toByteArray(), "UTF-8");
     }
+
     /**
      * 发送xml数据
-     * @param path 请求地址
-     * @param xml xml数据
+     *
+     * @param path     请求地址
+     * @param xml      xml数据
      * @param encoding 编码
      * @return
      * @throws Exception
      */
-    public static byte[] postXml(String path, String xml, String encoding) throws Exception{
+    public static byte[] postXml(String path, String xml, String encoding) throws Exception {
         byte[] data = xml.getBytes(encoding);
         URL url = new URL(path);
-        HttpURLConnection conn = (HttpURLConnection)url.openConnection();
+        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
         conn.setRequestMethod("POST");
         conn.setDoOutput(true);
-        conn.setRequestProperty("Content-Type", "text/xml; charset="+ encoding);
+        conn.setRequestProperty("Content-Type", "text/xml; charset=" + encoding);
         conn.setRequestProperty("Content-Length", String.valueOf(data.length));
         conn.setConnectTimeout(5 * 1000);
         OutputStream outStream = conn.getOutputStream();
         outStream.write(data);
         outStream.flush();
         outStream.close();
-        if(conn.getResponseCode()==200){
+        if (conn.getResponseCode() == 200) {
             return read2Byte(conn.getInputStream());
         }
         return null;
-
     }
-
-
-
-
-
-
-
-
-
-
 }

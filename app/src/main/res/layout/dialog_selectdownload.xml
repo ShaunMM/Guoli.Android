@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:text="下载文件比较耗时请根据允许的时间选择本次更新下载的相关内容"
+        android:textSize="@dimen/ts_eighteen" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/colorblue" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ListView
+                android:id="@+id/lv_datainfor"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/bt_announcement"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:layout_marginTop="5dp"
+                android:text="开始下载最新公告相关文件"
+                android:textSize="@dimen/ts_sixteen" />
+
+            <Button
+                android:id="@+id/bt_stationfiles"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:layout_marginTop="5dp"
+                android:text="开始下载站点相关文件"
+                android:textSize="@dimen/ts_sixteen" />
+
+            <Button
+                android:id="@+id/bt_traficfiles"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:layout_marginTop="5dp"
+                android:text="开始下载行车资料相关文件"
+                android:textSize="@dimen/ts_sixteen" />
+
+            <Button
+                android:id="@+id/bt_alldownload"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:gravity="center"
+                android:text="开始下载全部未下载资料"
+                android:textSize="@dimen/ts_sixteen" />
+
+            <Button
+                android:id="@+id/bt_close"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:gravity="center"
+                android:text="关闭提示"
+                android:textSize="@dimen/ts_sixteen" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

@@ -1,20 +1,15 @@
 package Fragments;
 
-/**
- * Created by dell on 2016/9/9.
- */
 import java.io.File;
 import java.util.ArrayList;
 import java.util.LinkedList;
 
 /**
- *  文件夹遍历
- * @author once
- *
+ * 文件夹遍历
  */
 public class DirTraversal {
 
-    //no recursion
+    //不递归遍历
     public static LinkedList<File> listLinkedFiles(String strPath) {
         LinkedList<File> list = new LinkedList<File>();
         File dir = new File(strPath);
@@ -46,7 +41,7 @@ public class DirTraversal {
     }
 
 
-    //recursion
+    //递归遍历
     public static ArrayList<File> listFiles(String strPath) {
         return refreshFileList(strPath);
     }
@@ -62,7 +57,7 @@ public class DirTraversal {
             if (files[i].isDirectory()) {
                 refreshFileList(files[i].getAbsolutePath());
             } else {
-                if(files[i].getName().toLowerCase().endsWith("zip"))
+                if (files[i].getName().toLowerCase().endsWith("zip"))
                     filelist.add(files[i]);
             }
         }

@@ -1,187 +1,180 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="10dp"
-    >
+    android:orientation="vertical">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:paddingTop="@dimen/detailslayoutpadingtop"
-        >
-        <TextView
-            android:layout_height="wrap_content"
-            android:text="确定日期："
-            android:layout_width="150dp"
-            android:gravity="right"
-            android:textSize="@dimen/detailstextsize"
+        android:paddingTop="@dimen/detailslayoutpadingtop">
 
-            />
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:text="确定日期："
+            android:textStyle="bold"
+            android:textSize="@dimen/ts_twenty" />
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            >
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/addremovekp_takedate"
                 android:layout_width="140dp"
+                android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text=""
-                android:textSize="@dimen/detailstextsize"
-                android:layout_height="wrap_content"
-                />
+                android:textSize="@dimen/detailstextsize" />
         </LinearLayout>
 
         <TextView
             android:id="@+id/checi"
-            android:layout_width="150dp"
-            android:gravity="right"
-            android:textSize="@dimen/detailstextsize"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
+            android:gravity="right"
             android:text="关键人："
-            />
-            <TextView
-                android:textSize="@dimen/detailstextsize"
-                android:id="@+id/addremovekp_TrainCode"
-                android:layout_width="140dp"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:text=""
-                />
+            android:textStyle="bold"
+            android:textSize="@dimen/detailstextsize" />
+
+        <TextView
+            android:id="@+id/addremovekp_TrainCode"
+            android:layout_width="140dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text=""
+            android:textSize="@dimen/detailstextsize" />
 
 
         <TextView
-            android:textSize="@dimen/detailstextsize"
-            android:layout_width="150dp"
-            android:gravity="right"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
+            android:gravity="right"
             android:text="包保人："
+            android:textStyle="bold"
+            android:textSize="@dimen/detailstextsize"/>
 
-            />
         <EditText
             android:id="@+id/addremovekp_LocomotiveType"
-            android:layout_width="140dp"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:background="@null"
-            android:textSize="@dimen/detailstextsize"
-            android:text=""
-
-            android:singleLine="true"
             android:gravity="center"
-            />
+            android:singleLine="true"
+            android:text=""
+            android:textSize="@dimen/ts_twenty" />
 
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="140dp"
+            android:layout_height="1dp"
+            android:layout_marginLeft="150dp"
+            android:background="@color/sblack" />
+
+        <TextView
+            android:layout_width="120dp"
+            android:layout_height="1dp"
+            android:layout_marginLeft="120dp"
+            android:background="@color/sblack" />
+
+        <TextView
+            android:layout_width="120dp"
+            android:layout_height="1dp"
+            android:layout_marginLeft="140dp"
+            android:background="@color/sblack" />
+
+    </LinearLayout>
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        >
-        <TextView
-            android:layout_marginLeft="150dp"
-            android:layout_width="140dp"
-            android:layout_height="1dp"
-            android:background="@color/sblack"
-            />
-        <TextView
-            android:layout_marginLeft="150dp"
-            android:layout_width="140dp"
-            android:layout_height="1dp"
-            android:background="@color/sblack"
-            />
-        <TextView
-            android:layout_marginLeft="150dp"
-            android:layout_width="140dp"
-            android:layout_height="1dp"
-            android:background="@color/sblack"
-            />
+        android:paddingTop="@dimen/detailslayoutpadingtop">
 
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:paddingTop="@dimen/detailslayoutpadingtop"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        >
         <TextView
             android:layout_width="150dp"
-            android:gravity="right"
             android:layout_height="wrap_content"
+            android:gravity="right"
             android:text="预计解除日期："
-            android:textSize="@dimen/detailstextsize"
-            />
+            android:textStyle="bold"
+            android:textSize="@dimen/ts_twenty" />
 
-            <TextView
-                android:id="@+id/addremovekp_AttendTime"
-                android:layout_width="140dp"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text=""
-                android:textSize="@dimen/detailstextsize"
-                />
+        <TextView
+            android:id="@+id/addremovekp_AttendTime"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text=""
+            android:textSize="@dimen/detailstextsize" />
 
 
         <TextView
-            android:textSize="@dimen/detailstextsize"
-            android:layout_width="150dp"
-            android:gravity="right"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
+            android:gravity="right"
             android:text="关键点："
-            />
+            android:textStyle="bold"
+            android:textSize="@dimen/ts_twenty" />
 
-            <TextView
-                android:id="@+id/addremovekp_EndAttendTime"
-                android:layout_width="140dp"
-                android:text=""
-                android:textSize="@dimen/detailstextsize"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                />
+        <TextView
+            android:id="@+id/addremovekp_EndAttendTime"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text=""
+            android:textSize="@dimen/detailstextsize" />
+
         <TextView
             android:layout_width="150dp"
-            android:gravity="right"
             android:layout_height="wrap_content"
+            android:gravity="right"
             android:text="实际解除日期："
-            android:textSize="@dimen/detailstextsize"
-            />
+            android:textStyle="bold"
+            android:textSize="@dimen/ts_twenty" />
 
         <TextView
             android:id="@+id/daily_addremovekp_removedata"
-            android:layout_width="140dp"
-            android:text=""
-            android:textSize="@dimen/detailstextsize"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:gravity="center"
-            />
+            android:text=""
+            android:textSize="@dimen/detailstextsize" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        >
+        android:orientation="horizontal">
+
         <TextView
-            android:layout_marginLeft="150dp"
             android:layout_width="140dp"
             android:layout_height="1dp"
-            android:background="@color/sblack"
-            />
-        <TextView
             android:layout_marginLeft="150dp"
-            android:layout_width="140dp"
-            android:layout_height="1dp"
-            android:background="@color/sblack"
-            />
+            android:background="@color/sblack" />
+
         <TextView
-            android:layout_marginLeft="150dp"
-            android:layout_width="140dp"
+            android:layout_width="120dp"
             android:layout_height="1dp"
-            android:background="@color/sblack"
-            />
+            android:layout_marginLeft="120dp"
+            android:background="@color/sblack" />
+
+        <TextView
+            android:layout_width="120dp"
+            android:layout_height="1dp"
+            android:layout_marginLeft="140dp"
+            android:background="@color/sblack" />
 
     </LinearLayout>
 
@@ -190,309 +183,311 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:paddingTop="@dimen/detailslayoutpadingtop"
-        >
+        android:paddingTop="@dimen/detailslayoutpadingtop">
+
         <TextView
             android:layout_width="180dp"
-            android:gravity="right"
             android:layout_height="wrap_content"
+            android:gravity="right"
             android:text="关键人确定原因："
-            android:textSize="@dimen/detailstextsize"
-            />
+            android:textStyle="bold"
+            android:textSize="@dimen/detailstextsize" />
+
         <EditText
             android:id="@+id/daily_addremovekp_aim1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@null"
             android:maxLines="4"
             android:text=""
-            android:textSize="@dimen/detailstextsize"
-            android:background="@null"
-            />
+            android:textSize="@dimen/detailstextsize" />
 
     </LinearLayout>
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginLeft="180dp"
         android:layout_marginRight="30dp"
-        android:background="@color/sblack"
-        />
+        android:background="@color/sblack" />
 
 
     <LinearLayout
-        android:paddingTop="@dimen/detailslayoutpadingtop"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        >
+        android:paddingTop="@dimen/detailslayoutpadingtop">
+
         <TextView
-            android:textSize="@dimen/detailstextsize"
             android:layout_width="180dp"
-            android:gravity="right"
             android:layout_height="wrap_content"
+            android:gravity="right"
             android:text="关键点确定原因："
-            />
+            android:textStyle="bold"
+            android:textSize="@dimen/detailstextsize" />
+
         <EditText
-            android:textSize="@dimen/detailstextsize"
             android:id="@+id/daily_addremovekp_problem"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@null"
             android:maxLines="4"
             android:text=""
-            android:background="@null"
-            />
+            android:textSize="@dimen/detailstextsize" />
 
     </LinearLayout>
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginLeft="180dp"
         android:layout_marginRight="30dp"
-        android:background="@color/sblack"
-        />
+        android:background="@color/sblack" />
+
     <LinearLayout
-        android:paddingTop="@dimen/detailslayoutpadingtop"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        >
+        android:paddingTop="@dimen/detailslayoutpadingtop">
+
         <TextView
             android:layout_width="180dp"
-            android:gravity="right"
             android:layout_height="wrap_content"
+            android:gravity="right"
             android:text="帮救措施："
-            android:textSize="@dimen/detailstextsize"
-            />
+            android:textStyle="bold"
+            android:textSize="@dimen/detailstextsize" />
+
         <EditText
             android:id="@+id/daily_addremovekp_problem1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@null"
             android:maxLines="4"
             android:text=""
-            android:textSize="@dimen/detailstextsize"
-            android:background="@null"
-            />
+            android:textSize="@dimen/detailstextsize" />
 
     </LinearLayout>
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginLeft="180dp"
         android:layout_marginRight="30dp"
-        android:background="@color/sblack"
-        />
+        android:background="@color/sblack" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:paddingTop="@dimen/detailslayoutpadingtop"
-        >
+        android:paddingTop="@dimen/detailslayoutpadingtop">
+
         <TextView
             android:layout_width="180dp"
-            android:gravity="right"
             android:layout_height="wrap_content"
+            android:gravity="right"
             android:text="转变情况："
-            android:textSize="@dimen/detailstextsize"
-            />
+            android:textStyle="bold"
+            android:textSize="@dimen/detailstextsize" />
+
         <EditText
-            android:textSize="@dimen/detailstextsize"
             android:id="@+id/daily_addremovekp_dopinion1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:maxLines="4"
             android:background="@null"
+            android:maxLines="4"
             android:text=""
-            />
+            android:textSize="@dimen/detailstextsize" />
     </LinearLayout>
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginLeft="180dp"
         android:layout_marginRight="30dp"
-        android:background="@color/sblack"
-        />
+        android:background="@color/sblack" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:paddingTop="@dimen/detailslayoutpadingtop"
-        >
+        android:paddingTop="@dimen/detailslayoutpadingtop">
+
         <TextView
-            android:textSize="@dimen/detailstextsize"
             android:layout_width="180dp"
-            android:gravity="right"
             android:layout_height="wrap_content"
+            android:gravity="right"
             android:text="关键人解除意见："
-            />
+            android:textStyle="bold"
+            android:textSize="@dimen/detailstextsize" />
+
         <EditText
-            android:textSize="@dimen/detailstextsize"
             android:id="@+id/daily_addremovekp_aim"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@null"
             android:maxLines="4"
             android:text=""
-            android:background="@null"
-            />
+            android:textSize="@dimen/detailstextsize" />
 
     </LinearLayout>
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginLeft="180dp"
         android:layout_marginRight="30dp"
-        android:background="@color/sblack"
-        />
+        android:background="@color/sblack" />
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:paddingTop="@dimen/detailslayoutpadingtop"
-        >
+        android:paddingTop="@dimen/detailslayoutpadingtop">
+
         <TextView
-            android:textSize="@dimen/detailstextsize"
             android:layout_width="180dp"
-            android:gravity="right"
             android:layout_height="wrap_content"
+            android:gravity="right"
             android:text="盯控措施："
-            />
+            android:textStyle="bold"
+            android:textSize="@dimen/detailstextsize" />
+
         <EditText
-            android:textSize="@dimen/detailstextsize"
             android:id="@+id/daily_addremovekp_dopinion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:maxLines="4"
             android:background="@null"
+            android:maxLines="4"
             android:text=""
-            />
+            android:textSize="@dimen/detailstextsize" />
     </LinearLayout>
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginLeft="180dp"
         android:layout_marginRight="30dp"
-        android:background="@color/sblack"
-        />
+        android:background="@color/sblack" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:paddingTop="@dimen/detailslayoutpadingtop"
-        >
+        android:paddingTop="@dimen/detailslayoutpadingtop">
+
         <TextView
-            android:textSize="@dimen/detailstextsize"
             android:layout_width="180dp"
-            android:gravity="right"
             android:layout_height="wrap_content"
+            android:gravity="right"
             android:text="落实措施："
-            />
+            android:textStyle="bold"
+            android:textSize="@dimen/detailstextsize" />
+
         <EditText
-            android:textSize="@dimen/detailstextsize"
             android:id="@+id/daily_addremovekp_dopinion3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:maxLines="4"
             android:background="@null"
+            android:maxLines="4"
             android:text=""
-            />
+            android:textSize="@dimen/detailstextsize" />
 
     </LinearLayout>
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginLeft="180dp"
         android:layout_marginRight="30dp"
-        android:background="@color/sblack"
-        />
+        android:background="@color/sblack" />
+
     <LinearLayout
-        android:paddingTop="@dimen/detailslayoutpadingtop"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        >
+        android:paddingTop="@dimen/detailslayoutpadingtop">
+
         <TextView
-            android:textSize="@dimen/detailstextsize"
             android:layout_width="180dp"
-            android:gravity="right"
             android:layout_height="wrap_content"
+            android:gravity="right"
             android:text="关键点解除意见："
-            />
+            android:textStyle="bold"
+            android:textSize="@dimen/detailstextsize" />
+
         <EditText
-            android:textSize="@dimen/detailstextsize"
             android:id="@+id/daily_addremovekp_dopinion4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:maxLines="4"
             android:background="@null"
+            android:maxLines="4"
             android:text=""
-            />
+            android:textSize="@dimen/detailstextsize" />
 
     </LinearLayout>
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginLeft="180dp"
         android:layout_marginRight="30dp"
-        android:background="@color/sblack"
-        />
+        android:background="@color/sblack" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="30dp"
         android:layout_marginBottom="30dp"
+        android:layout_marginTop="30dp"
         android:gravity="center_horizontal"
-        >
+        android:orientation="horizontal">
 
         <Button
             android:id="@+id/daily_addremovekp_save"
             android:layout_width="150dp"
             android:layout_height="45dp"
+            android:background="@drawable/buttonclickcolor"
             android:gravity="center"
             android:text="保存"
-            android:textSize="@dimen/detailstextsize"
             android:textColor="@color/white"
-            android:background="@drawable/buttonclickcolor"
-            />
+            android:textSize="@dimen/detailstextsize" />
 
         <Button
             android:id="@+id/daily_addremovekp_remove"
             android:layout_width="150dp"
             android:layout_height="45dp"
+            android:layout_marginLeft="60dp"
+            android:background="@drawable/buttonclickcolor"
             android:gravity="center"
             android:text="解除"
-            android:textSize="@dimen/detailstextsize"
             android:textColor="@color/white"
-            android:background="@drawable/buttonclickcolor"
-            android:layout_marginLeft="60dp"
-            android:visibility="invisible"
-            />
+            android:textSize="@dimen/detailstextsize"
+            android:visibility="gone" />
+
         <Button
             android:id="@+id/daily_addremovekp_saveup"
             android:layout_width="150dp"
             android:layout_height="45dp"
-            android:gravity="center"
-            android:text="解除关键人"
-            android:textSize="@dimen/detailstextsize"
-            android:background="@drawable/buttonclickcolor"
-android:visibility="invisible"
-            android:textColor="@color/white"
             android:layout_marginLeft="60dp"
             android:layout_marginRight="60dp"
+            android:background="@drawable/buttonclickcolor"
+            android:gravity="center"
+            android:text="解除/上传"
+            android:textColor="@color/white"
+            android:textSize="@dimen/detailstextsize"
+            android:visibility="visible" />
 
-            />
         <Button
             android:id="@+id/daily_addremovekp_cancle"
             android:layout_width="150dp"
             android:layout_height="45dp"
+            android:layout_marginLeft="60dp"
+            android:background="@drawable/buttonclickcolor"
             android:gravity="center"
             android:text="取消"
-            android:textSize="@dimen/detailstextsize"
-            android:layout_marginLeft="60dp"
             android:textColor="@color/white"
-            android:background="@drawable/buttonclickcolor"
-            />
+            android:textSize="@dimen/detailstextsize" />
 
     </LinearLayout>
 </LinearLayout>

@@ -1,0 +1,950 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="32dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_weight="1"
+                        android:background="@mipmap/i3_5"
+                        android:gravity="top"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:text="时间点"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/ts_twenty"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="32dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_weight="1"
+                        android:background="@mipmap/i3_5"
+                        android:gravity="top"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:text="能源消耗"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/ts_twenty"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:hint="入本段时间："
+                        android:padding="10dp"
+                        android:text="入本段时间："
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/ts_eighteen" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.3"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_ArriveDepotTime1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:ellipsize="end"
+                            android:hint="点击选择"
+                            android:paddingBottom="10dp"
+                            android:paddingTop="10dp"
+                            android:singleLine="true"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/ts_eighteen" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/llblack" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="50dp"
+                        android:gravity="right"
+                        android:hint="运转使用油/电量："
+                        android:padding="10dp"
+                        android:text="运转使用油/电量："
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/ts_eighteen" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <EditText
+                            android:id="@+id/edt_OperateConsume"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:ellipsize="end"
+                            android:hint="请输入"
+                            android:inputType="number"
+                            android:paddingBottom="10dp"
+                            android:paddingTop="10dp"
+                            android:singleLine="true"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/ts_eighteen" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/llblack" />
+                    </LinearLayout>
+                </LinearLayout>
+                <!--+++++++++++++++++++++++++++++++++++=-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:hint="入外段时间："
+                        android:padding="10dp"
+                        android:text="入外段时间："
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/ts_eighteen" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.3"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_ArriveDepotTime2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:ellipsize="end"
+                            android:hint="点击选择"
+                            android:paddingBottom="10dp"
+                            android:paddingTop="10dp"
+                            android:singleLine="true"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/ts_eighteen" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/llblack" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="50dp"
+                        android:gravity="right"
+                        android:hint="运转使用油/电量："
+                        android:padding="10dp"
+                        android:text="段内打温时间消耗："
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/ts_eighteen" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <EditText
+                            android:id="@+id/tv_StopConsume"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:ellipsize="end"
+                            android:hint="请输入"
+                            android:inputType="number"
+                            android:paddingBottom="10dp"
+                            android:paddingTop="10dp"
+                            android:singleLine="true"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/ts_eighteen" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/llblack" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!--+++++++++++++++++++++++++++++++++++=-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:hint="入本段时间："
+                        android:padding="10dp"
+                        android:text="交车时间："
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/ts_eighteen" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.3"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_GiveTrainTime"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="end"
+                            android:hint="点击选择"
+                            android:paddingBottom="10dp"
+                            android:paddingTop="10dp"
+                            android:singleLine="true"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/ts_eighteen" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/llblack" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="50dp"
+                        android:ellipsize="end"
+                        android:gravity="right"
+                        android:hint="运转使用油/电量："
+                        android:padding="10dp"
+                        android:singleLine="true"
+                        android:text="接收量："
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/ts_eighteen" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <EditText
+                            android:id="@+id/edt_RecieveEnergy"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:hint="请输入"
+                            android:inputType="number"
+                            android:paddingBottom="10dp"
+                            android:paddingTop="10dp"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/ts_eighteen" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/llblack" />
+                    </LinearLayout>
+                </LinearLayout>
+                <!--+++++++++++++++++++++++++++++++++++=-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:hint="入本段时间："
+                        android:padding="10dp"
+                        android:text="退勤时间："
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/ts_eighteen" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.3"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_RecordEndTime"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="点击选择"
+                            android:paddingBottom="10dp"
+                            android:paddingTop="10dp"
+                            android:singleLine="true"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/ts_eighteen" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/llblack" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="50dp"
+                        android:gravity="right"
+                        android:hint="运转使用油/电量："
+                        android:padding="10dp"
+                        android:text="交出量："
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/ts_eighteen" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <EditText
+                            android:id="@+id/edt_LeftEnergy"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:ellipsize="end"
+                            android:hint="请输入"
+                            android:inputType="number"
+                            android:paddingBottom="10dp"
+                            android:paddingTop="10dp"
+                            android:singleLine="true"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/ts_eighteen" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/llblack" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="32dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_weight="1"
+                        android:background="@mipmap/i3_5"
+                        android:gravity="top"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:text="重联机车"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/ts_twenty"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!--+++++++++++++++++++++++++++++++++++=-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:id="@+id/textView3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:gravity="right"
+                        android:hint="运转使用："
+                        android:padding="10dp"
+                        android:singleLine="true"
+                        android:text="所属机："
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/ts_eighteen" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="150dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <EditText
+                            android:id="@+id/edt_MultiLocoDepot"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:ellipsize="end"
+                            android:hint="请输入"
+                            android:paddingBottom="10dp"
+                            android:paddingTop="10dp"
+                            android:singleLine="true"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/ts_eighteen" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/llblack" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!--+++++++++++++++++++++++++++++++++++=-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:hint="运转使用："
+                        android:padding="10dp"
+                        android:text="机车型号："
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/ts_eighteen" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="150dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <EditText
+
+                            android:id="@+id/edt_MultiLocoType"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:ellipsize="end"
+                            android:hint="请输入"
+                            android:paddingBottom="10dp"
+                            android:paddingTop="10dp"
+                            android:singleLine="true"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/ts_eighteen" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/llblack" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!--+++++++++++++++++++++++++++++++++++=-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:hint="运转使用："
+                        android:padding="10dp"
+                        android:text="副挂区间："
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/ts_eighteen" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="150dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <EditText
+                            android:id="@+id/edt_MultiLocoSection"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:ellipsize="end"
+                            android:hint="请输入"
+                            android:paddingBottom="10dp"
+                            android:paddingTop="10dp"
+                            android:singleLine="true"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/ts_eighteen" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/llblack" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="32dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="30dp"
+                        android:layout_marginTop="15dp"
+                        android:background="@mipmap/i3_5"
+                        android:gravity="top"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:text="油脂消耗"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/ts_twenty"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:hint="其他油类："
+                            android:padding="10dp"
+                            android:text="机油："
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/ts_eighteen" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <EditText
+                                android:id="@+id/edt_EngineOil"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@null"
+                                android:ellipsize="end"
+                                android:hint="请输入"
+                                android:inputType="number"
+                                android:paddingBottom="10dp"
+                                android:paddingTop="10dp"
+                                android:singleLine="true"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/ts_eighteen" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:background="@color/llblack" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:hint="其他油类："
+                            android:padding="10dp"
+                            android:text="风泵油："
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/ts_eighteen" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <EditText
+                                android:id="@+id/edt_AirCompressorOil"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@null"
+                                android:ellipsize="end"
+                                android:hint="请输入"
+                                android:inputType="number"
+                                android:paddingBottom="10dp"
+                                android:paddingTop="10dp"
+                                android:singleLine="true"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/ts_eighteen" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:background="@color/llblack" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:hint="其他油类："
+                            android:padding="10dp"
+                            android:text="透平油："
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/ts_eighteen" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <EditText
+                                android:id="@+id/edt_TurbineOil"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@null"
+                                android:ellipsize="end"
+                                android:hint="请输入"
+                                android:inputType="number"
+                                android:paddingBottom="10dp"
+                                android:paddingTop="10dp"
+                                android:singleLine="true"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/ts_eighteen" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:background="@color/llblack" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:hint="其他油类："
+                            android:padding="10dp"
+                            android:text="齿轮油："
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/ts_eighteen" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <EditText
+                                android:id="@+id/edt_GearOil"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@null"
+                                android:ellipsize="end"
+                                android:hint="请输入"
+                                android:inputType="number"
+                                android:paddingBottom="10dp"
+                                android:paddingTop="10dp"
+                                android:singleLine="true"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/ts_eighteen" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:background="@color/llblack" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:hint="其他油类："
+                            android:padding="10dp"
+                            android:text="调速器油："
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/ts_eighteen" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <EditText
+                                android:id="@+id/edt_GovernorOil"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@null"
+                                android:ellipsize="end"
+                                android:hint="请输入"
+                                android:inputType="number"
+                                android:paddingBottom="10dp"
+                                android:paddingTop="10dp"
+                                android:singleLine="true"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/ts_eighteen" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:background="@color/llblack" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:hint="其他油类："
+                            android:padding="10dp"
+                            android:text="其他油类："
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/ts_eighteen" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <EditText
+                                android:id="@+id/edt_OtherOil"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@null"
+                                android:ellipsize="end"
+                                android:hint="请输入"
+                                android:inputType="number"
+                                android:paddingBottom="10dp"
+                                android:paddingTop="10dp"
+                                android:singleLine="true"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/ts_eighteen" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:background="@color/llblack" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:hint="其他油类："
+                            android:padding="10dp"
+                            android:text="棉丝："
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/ts_eighteen" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <EditText
+                                android:id="@+id/edt_Staple"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@null"
+                                android:ellipsize="end"
+                                android:hint="请输入"
+                                android:inputType="number"
+                                android:paddingBottom="10dp"
+                                android:paddingTop="10dp"
+                                android:singleLine="true"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/ts_eighteen" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:background="@color/llblack" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="32dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@mipmap/i3_5"
+                    android:gravity="top"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="退勤会"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/ts_eighteen"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="30dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/edt_EndSummary"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:hint="请输入"
+                        android:maxLines="3"
+                        android:padding="10dp"
+                        android:textSize="@dimen/ts_eighteen" />
+
+                    <TextView
+                        android:id="@+id/tv_tain_back"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/buttonclickcolor"
+                        android:gravity="center"
+                        android:hint="sdfafeadfasdfe"
+                        android:padding="10dp"
+                        android:text="确认退勤"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="3dp" />
+
+            </LinearLayout>
+
+
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </ScrollView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/colorwhite"
+        android:gravity="center"
+        android:text="退勤"
+        android:textSize="@dimen/ts_sixteen"
+        android:textStyle="bold"
+        android:visibility="gone" />
+
+</LinearLayout>

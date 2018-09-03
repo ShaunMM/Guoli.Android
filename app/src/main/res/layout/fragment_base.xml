@@ -1,99 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    >
+    android:orientation="vertical">
+
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:background="@color/colorwhite"
-        >
+        android:layout_height="@dimen/hd_function"
+        android:layout_gravity="center_vertical"
+        android:background="@color/colorwhite">
+
         <TextView
             android:id="@+id/daily_tiancheng_title"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:textSize="16sp"
-            android:padding="10dp"
-            android:textStyle="bold"
+            android:textSize="@dimen/ts_twenty_four"
+            android:textStyle="bold" />
 
-            />
         <LinearLayout
             android:id="@+id/back"
             android:layout_width="wrap_content"
-            android:layout_height= "45dp"
-            android:padding="10dp"
+            android:layout_height="match_parent"
             android:orientation="horizontal"
-            >
+            android:padding="10dp">
+
             <TextView
                 android:layout_width="15dp"
                 android:layout_height="match_parent"
-                android:background="@mipmap/db_1"
-                />
+                android:background="@mipmap/db_1" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="返回"
                 android:layout_gravity="center"
-                android:textSize="16sp"
                 android:paddingLeft="5dp"
-                />
-
+                android:text="返回"
+                android:textSize="@dimen/ts_eighteen" />
         </LinearLayout>
-
-
     </RelativeLayout>
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="10dp"
-            >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+
         <TextView
             android:id="@+id/base_month"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="筛选日期："
             android:padding="10dp"
+            android:text="筛选日期："
             android:textSize="@dimen/homepagetextsize"
-            />
+            android:visibility="invisible" />
+
         <TextView
             android:id="@+id/daily_tiancheng_spmonth"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/base_month"
             android:background="@color/white"
+            android:paddingBottom="10dp"
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
             android:paddingTop="10dp"
-            android:paddingBottom="10dp"
-            android:layout_toRightOf="@id/base_month"
             android:textSize="@dimen/homepagetextsize"
-            />
+            android:visibility="invisible" />
 
-            <TextView
-                android:layout_marginRight="20dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="添加记录"
-                android:padding="10dp"
-                android:id="@+id/daily_tiancheng_databutton"
-                android:textColor="@color/white"
-                android:background="@drawable/buttonclickcolor"
-                android:textSize="@dimen/homepagetextsize"
-                android:layout_alignParentRight="true"
-                />
-        </RelativeLayout>
+        <TextView
+            android:id="@+id/daily_tiancheng_databutton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/buttonclickcolor"
+            android:padding="10dp"
+            android:text="添加记录"
+            android:textColor="@color/white"
+            android:textSize="@dimen/ts_twenty" />
+    </RelativeLayout>
+
     <TextView
         android:id="@+id/tainjia_shuju"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="点击↑日期选择筛选条件，点击↓具体某一行可查看或修改"
         android:paddingLeft="20dp"
+        android:text="点击↑日期选择筛选条件，点击↓具体某一行可查看或修改"
         android:textSize="@dimen/homepagetextsize"
-        />
+        android:visibility="gone" />
+
     <FrameLayout
         android:id="@+id/fl_base"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent" />
 </LinearLayout>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="3dp">
+
+        <TextView
+            android:id="@+id/tv_trainnumber"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="车次"
+            android:textSize="@dimen/ts_twenty" />
+
+        <TextView
+            android:id="@+id/tv_trainline"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="线路"
+            android:textSize="@dimen/ts_twenty" />
+
+        <TextView
+            android:id="@+id/tv_firststation"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="起始站"
+            android:textSize="@dimen/ts_twenty" />
+
+        <TextView
+            android:id="@+id/tv_finalstation"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="终点站"
+            android:textSize="@dimen/ts_twenty" />
+
+        <TextView
+            android:id="@+id/tv_stations"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="途径站数"
+            android:textSize="@dimen/ts_twenty" />
+
+    </LinearLayout>
+
+</LinearLayout>

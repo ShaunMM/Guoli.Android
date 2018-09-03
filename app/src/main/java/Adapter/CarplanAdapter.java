@@ -5,25 +5,35 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.TextView;
 
 import java.util.List;
+import java.util.Map;
 
 import zj.com.mc.R;
 
 /**
- * Created by mao on 2016/11/30.
+ * 今日行车计划Adapter
  */
-
-public class CarplanAdapter extends BaseAdapter{
-    private List<?> list;
+public class CarplanAdapter extends BaseAdapter {
+    private List<Map> drivePlanList;
     private Context context;
-    public CarplanAdapter(List<?> list,Context context){
-        this.list=list;
-        this.context=context;
+    private ViewHoder viewHoder;
+
+    public CarplanAdapter(List<Map> drivePlanList, Context context) {
+        this.drivePlanList = drivePlanList;
+        this.context = context;
     }
+
+    public void setData(List<Map> drivePlanList) {
+        this.drivePlanList = drivePlanList;
+        notifyDataSetChanged();
+    }
+
+
     @Override
     public int getCount() {
-        return list.size();
+        return drivePlanList.size();
     }
 
     @Override
@@ -38,9 +48,24 @@ public class CarplanAdapter extends BaseAdapter{
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        if (convertView==null){
-            convertView= LayoutInflater.from(context).inflate(R.layout.item_carplan,null);
+        Map map = (Map) drivePlanList.get(position);
+        if (convertView == null) {
+            convertView = LayoutInflater.from(context).inflate(R.layout.item_carplan, null);
+            viewHoder = new ViewHoder();
+            viewHoder.tv_driveplan = (TextView) convertView.findViewById(R.id.tv_driveplan);
+            viewHoder.tv_traincode = (TextView) convertView.findViewById(R.id.tv_traincode);
+            convertView.setTag(viewHoder);
+        } else {
+            viewHoder = (ViewHoder) convertView.getTag();
         }
+
+        viewHoder.tv_traincode.setText(String.valueOf(map.get("TrainCode")));
+        viewHoder.tv_driveplan.setText(String.valueOf(map.get("LineName")));
+
         return convertView;
+    }
+
+    static class ViewHoder {
+        TextView tv_driveplan, tv_traincode;
     }
 }

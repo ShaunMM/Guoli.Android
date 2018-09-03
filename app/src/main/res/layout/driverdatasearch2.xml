@@ -1,34 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+    android:id="@+id/search_result_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/search_result_layout"
-    android:clickable="true"
-    android:focusable="true"
-    android:background="@color/white"
-    android:descendantFocusability="blocksDescendants"
     android:layout_marginTop="10dp"
-    >
+    android:background="@color/white"
+    android:clickable="true"
+    android:descendantFocusability="blocksDescendants"
+    android:focusable="true"
+    android:orientation="vertical">
 
     <WebView
         android:id="@+id/search_result_webview"
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:focusableInTouchMode="false"
-        ></WebView>
+        android:focusableInTouchMode="false"/>
 
     <TextView
-        android:layout_below="@+id/search_result_webview"
         android:id="@+id/search_result_title"
         android:layout_width="match_parent"
         android:layout_height="20dp"
-        android:text="标题"
+        android:layout_below="@+id/search_result_webview"
         android:gravity="right"
-        />
+        android:text="标题" />
+
     <TextView
-    android:id="@+id/search_result_click"
-    android:layout_width="match_parent"
-    android:layout_height="130dp"
-        />
+        android:id="@+id/search_result_click"
+        android:layout_width="match_parent"
+        android:layout_height="130dp" />
 </RelativeLayout>

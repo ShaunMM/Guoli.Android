@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.Collections;
 import java.util.List;
@@ -18,13 +19,16 @@ import DBUtils.DBOpenHelper;
 import Utils.CommonAdapter;
 import Utils.NetUtils;
 import Utils.ViewHolder;
+import config.ISystemConfig;
+import config.SystemConfigFactory;
+import zj.com.mc.MainActivity;
 import zj.com.mc.Myapplilcation;
 import zj.com.mc.PreventionAccid;
 import zj.com.mc.R;
 import zj.com.mc.UtilisClass;
 
 /**
- * Created by dell on 2016/8/3.
+ * 防止事故及好人好事记录Fragment
  */
 public class DailyPreventionAccid extends BaseFragment {
 
@@ -32,29 +36,30 @@ public class DailyPreventionAccid extends BaseFragment {
     private List<Map> listgoodp;
     private CommonAdapter adaptergoodp;
     private ListView addlvgoodp;
+    private TextView tv_nopreventionaccid;
     private Intent intentgoodp;
     private Bundle bundlegoodp;
     private String personId;
-    private String searchdate;
-
+    private ISystemConfig systemConfig;
 
     @Override
     View initView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view=inflater.inflate(R.layout.dailypreventofaccidents,container,false);
-        addlvgoodp= (ListView) view.findViewById(R.id.daily_preventtofacc_list);
-        dbOpenHelper= DBOpenHelper.getInstance(getActivity().getApplicationContext());
+        View view = inflater.inflate(R.layout.dailypreventofaccidents, container, false);
+        addlvgoodp = (ListView) view.findViewById(R.id.daily_preventtofacc_list);
+        tv_nopreventionaccid = (TextView) view.findViewById(R.id.tv_nopreventionaccid);
+        dbOpenHelper = DBOpenHelper.getInstance(getActivity().getApplicationContext());
+        systemConfig = SystemConfigFactory.getInstance(getActivity()).getSystemConfig();
         title.setText("防止事故及好人好事记录");
-        searchdate=UtilisClass.getStringDate2();
-        personId=getActivity().getSharedPreferences("PersonInfo", Context.MODE_PRIVATE).getString("PersonId",null);
-//        initview();
+        personId = systemConfig.getUserId();
         return view;
     }
 
     private void initview() {
 
-        listgoodp=dbOpenHelper.queryListMap("select * from InstructorGoodJob where WriteDate like ? and InstructorId=?",new String[]{searchdate+"%",personId});
+        listgoodp = dbOpenHelper.queryListMap("select * from InstructorGoodJob where InstructorId=?", new String[]{personId});
 
-        if (listgoodp.size()!=0) {
+        if (listgoodp.size() != 0) {
+            tv_nopreventionaccid.setVisibility(View.GONE);
             Collections.reverse(listgoodp);
             adaptergoodp = new CommonAdapter<Map>(getActivity(), listgoodp, R.layout.dailylistinglistitem) {
                 @Override
@@ -62,26 +67,17 @@ public class DailyPreventionAccid extends BaseFragment {
                     holder.getView(R.id.daily_Listing_itemdo).setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                            if (map.get("IsUploaded").equals(1)) {
+                            if (map.get("IsUploaded").equals(0)) {
                                 Myapplilcation.getExecutorService().execute(new Runnable() {
                                     @Override
                                     public void run() {
-                                        NetUtils.updataarguments3dingle(dbOpenHelper, "InstructorGoodJob", map.get("Id") + "");
+                                        NetUtils.updataarguments3dingle(dbOpenHelper, systemConfig, "InstructorGoodJob", map.get("Id") + "");
                                     }
                                 });
-//                            List<Map> isUpdata= dbOpenHelper.queryListMap("select * from InstructorAnalysis where Id=?",new String[]{map.get("Id")+""});
-//                            String isuploaded=isUpdata.get(0).get("IsUploaded")+"";
-//                            if (isuploaded.equals(0)){
-                                map.put("IsUploaded", "0");
+                                map.put("IsUploaded", "1");
                                 holder.setText(R.id.daily_Listing_itemdo, "已上传");
-//                            }else {
-//                                UtilisClass.showToast(getActivity(),"上传失败！");
-//                            }
-
-                            } else {
+                                holder.setTextViewBGD(R.id.daily_Listing_itemdo, R.mipmap.i2_2);
                             }
-
-
                         }
                     });
 
@@ -94,10 +90,11 @@ public class DailyPreventionAccid extends BaseFragment {
                     holder.setText(R.id.daily_Listing_itemnumber, map.get("GoodJobType") + "");
                     holder.setText(R.id.daily_Listing_itemtime, map.get("WriteDate") + "");
 
-                    if (map.get("IsUploaded").equals(1)) {
+                    if (map.get("IsUploaded").equals(0)) {
                         holder.setText(R.id.daily_Listing_itemdo, "上传");
                     } else {
                         holder.setText(R.id.daily_Listing_itemdo, "已上传");
+                        holder.setTextViewBGD(R.id.daily_Listing_itemdo, R.mipmap.i2_2);
                     }
                 }
 
@@ -110,25 +107,30 @@ public class DailyPreventionAccid extends BaseFragment {
                     intentgoodp = new Intent(getActivity(), PreventionAccid.class);
                     bundlegoodp = new Bundle();
                     bundlegoodp.putInt("listitemId", (Integer) listgoodp.get(i).get("Id"));
+                    bundlegoodp.putString("IsUploaded", listgoodp.get(i).get("IsUploaded").toString());
                     intentgoodp.putExtra("InstructorGoodJob", bundlegoodp);
                     startActivity(intentgoodp);
-
                 }
             });
+        } else {
+            tv_nopreventionaccid.setVisibility(View.VISIBLE);
         }
 
     }
 
 
-
     @Override
     protected void setDateChanged(String date) {
-        searchdate=date;
         initview();
     }
 
     @Override
     protected void setTestButton() {
+
+    }
+
+    @Override
+    protected void showAddButton(TextView textView) {
 
     }
 
@@ -147,4 +149,5 @@ public class DailyPreventionAccid extends BaseFragment {
         super.onResume();
         initview();
     }
+
 }

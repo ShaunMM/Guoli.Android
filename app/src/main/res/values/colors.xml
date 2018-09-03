@@ -8,8 +8,17 @@
     <color name="colorAccent">#FF4081</color>
     <color name="colorred">#ff0000</color>
     <color name="colorwhite">#11000000</color>
+    <color name="searchbackground">#44000000</color>
     <color name="white">#ffffff</color>
     <color name="black">#000000</color>
     <color name="sblack">#99000000</color>
     <color name="llblack">#33000000</color>
+    <color name="whitesmoke">#f5f5f5</color>
+
+    <color name="myred">#eb4f38</color>
+    <color name="darkgray">#cccc</color>
+    <color name="color_white">#ffffff</color>
+    <color name="btn_press_color">#5677fc</color>
+    <color name="btn_pressed_color">#3ca0ec</color>
+
 </resources>

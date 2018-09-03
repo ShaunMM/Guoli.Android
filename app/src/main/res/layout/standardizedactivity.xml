@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -8,109 +7,107 @@
     <RelativeLayout
         android:id="@+id/accept_relayout"
         android:layout_width="match_parent"
-        android:layout_height="45dp"
-        >
-    <TextView
-        android:id="@+id/accept_title2"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="center_horizontal"
-        android:background="@color/colorwhite"
-        android:gravity="center"
-        android:padding="10dp"
-        android:textStyle="bold"
-        android:text="标准化验收详情"
-        android:textSize="16sp" />
-    <LinearLayout
-        android:id="@+id/accept_titleback"
-        android:layout_width="wrap_content"
-        android:layout_height= "45dp"
-        android:padding="10dp"
-        android:orientation="horizontal"
-        >
+        android:layout_height="@dimen/hd_function">
+
         <TextView
-            android:layout_width="15dp"
+            android:id="@+id/accept_title2"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@mipmap/db_1"
-            />
-        <TextView
+            android:layout_gravity="center_horizontal"
+            android:background="@color/colorwhite"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="标准化验收详情"
+            android:textSize="@dimen/ts_twenty_four"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/accept_titleback"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="返回"
-            android:layout_gravity="center"
-            android:textSize="16sp"
-            android:paddingLeft="5dp"
-            />
-    </LinearLayout>
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="15dp"
+                android:layout_height="match_parent"
+                android:background="@mipmap/db_1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingLeft="5dp"
+                android:text="返回"
+                android:textSize="@dimen/ts_sixteen" />
+        </LinearLayout>
     </RelativeLayout>
+
     <RelativeLayout
-        android:layout_marginTop="40dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        >
+        android:layout_marginTop="60dp">
+
         <ScrollView
 
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:scrollbars="none"
-            >
+            android:scrollbars="none">
+
             <include
                 android:id="@+id/accept_include"
-                layout="@layout/acceptdetails2"
-                />
+                layout="@layout/acceptdetails2" />
         </ScrollView>
     </RelativeLayout>
+
     <RelativeLayout
+        android:id="@+id/accept_popuwindow"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/colorwhite"
-        android:id="@+id/accept_popuwindow"
-        android:visibility="gone"
-        >
+        android:background="@color/searchbackground"
+        android:visibility="gone">
 
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center"
+            android:layout_marginLeft="@dimen/searchMarginLeft"
+            android:layout_marginRight="@dimen/searchMarginRight"
+            android:layout_marginTop="@dimen/searchMarginTop"
             android:background="@color/white"
-            android:layout_marginLeft="200dp"
-            android:layout_marginRight="200dp"
-            android:layout_marginTop="10dp"
-            >
+            android:gravity="center"
+            android:orientation="horizontal">
+
             <EditText
+                android:id="@+id/acceptedit_key"
                 android:layout_width="0dp"
-                android:singleLine="true"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:layout_marginLeft="10dp"
                 android:inputType="text"
-                android:layout_height="wrap_content"
-                android:id="@+id/acceptedit_key" />
+                android:singleLine="true" />
+
             <Button
+                android:id="@+id/accept_popuwindow_yes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="确定"
                 android:layout_margin="5dp"
-                android:id="@+id/accept_popuwindow_yes"
-                />
+                android:text="确定" />
 
         </LinearLayout>
 
 
-
         <ListView
+            android:id="@+id/accept_poplist"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
             android:layout_marginLeft="210dp"
             android:layout_marginRight="295dp"
             android:layout_marginTop="52dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/accept_poplist"
-            android:visibility="visible"
             android:background="@color/white"
-            android:layout_gravity="center_horizontal"
-            />
+            android:visibility="visible" />
     </RelativeLayout>
 
 </RelativeLayout>
